@@ -1,0 +1,36 @@
+{
+  "navigation-bar": [
+    {"name": "HOME", "link": "/"},
+    {"name": "NEW & EVENT", "link": "/newsfeed"},
+    {"name": "ABOUT US", "link": "/about"},
+    {"name": "CONTACT US", "link": "/contact"}
+  ],
+  "footer": [
+    {"name": "NEW & EVENT", "link": "/newsfeed"},
+    {"name": "ABOUT US", "link": "/about"},
+    {"name": "CONTACT US", "link": "/contact"}
+  ],
+  "more-detail": "More Detail",
+  "age": "Age",
+  "height": "Height",
+  "discover-more": "Discover More",
+  "see-more": "See More",
+  "partnership": "Partnership",
+  "events": "Events",
+  "event": "Event",
+  "latest-news": "Latest News",
+  "members": "Members" ,
+  "news-events": "News & Events",
+  "contact": "Contact",
+  "about": "About",
+  "following-us": "FOLLOWING US",
+  "contact-us": "Contact Us",
+  "our-office": "Our Office",
+  "send-us-message": "Send us a message",
+  "send-message": "Send Message",
+  "phone": "Phone",
+  "email": "Email",
+  "telegram": "Telegram",
+  "sending": "Sending",
+  "copyright": "© 2022 Cambodia Film Association. All rights reserved."
+}

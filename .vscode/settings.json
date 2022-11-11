@@ -1,0 +1,29 @@
+{
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".nyc_output": true,
+    ".vscode": false,
+    "coverage": true,
+    "dist": true,
+    "**/node_modules": true,
+    "**/.next": true,
+    "**/.swc": true,
+    "**/.cache": true,
+    "**/dist": true
+    
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true
+  },
+  "cSpell.words": [
+    "Navbars",
+    "strapi"
+  ]
+}

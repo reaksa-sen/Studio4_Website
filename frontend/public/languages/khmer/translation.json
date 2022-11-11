@@ -1,0 +1,35 @@
+{
+  "navigation-bar": [
+    {"name": "ទំព័រដើម", "link": "/"},
+    {"name": "ព័ត៌មានថ្មីៗ & ព្រឹត្តិការណ៍", "link": "/newsfeed"},
+    {"name": "អំពីយើង", "link": "/about"},
+    {"name": "ទាក់ទងយើង", "link": "/contact"}
+  ],
+  "footer": [
+    {"name": "ព័ត៌មានថ្មីៗ & ព្រឹត្តិការណ៍", "link": "/newsfeed"},
+    {"name": "អំពីយើង", "link": "/about"},
+    {"name": "ទាក់ទងយើង", "link": "/contact"}
+  ],
+  "more-detail": "ព័ត៌មានបន្ថែម",
+  "age": "អាយុ",
+  "height": "កម្ពស់",
+  "discover-more": "ស្វែងយល់បន្ថែម",
+  "see-more": "មើលបន្ថែម",
+  "partnership": "ដៃគូសហការណ៍",
+  "events": "ព្រឹត្តិការណ៍",
+  "latest-news": "ព័ត៌មានថ្មីៗ",
+  "members": "សមាជិកក្រុម" ,
+  "news-events": "ព័ត៌មានថ្មីៗ & ព្រឹត្តិការណ៍",
+  "contact": "ទាក់ទងយើង",
+  "about": "អំពីយើង",
+  "following-us": "បណ្ដាញសង្គមរបស់ពួកយើង",
+  "contact-us": "ទាក់ទងយើង",
+  "our-office": "ការិយាល័យកណ្ដាល",
+  "send-us-message": "ផ្ញើសារមកយើង",
+  "send-message": "ផ្ញើ​សារ",
+  "phone": "ទូរស័ព្ទ",
+  "email": "អ៊ីមែល",
+  "telegram": "តេឡេក្រាម",
+  "sending": "កំពុងផ្ញើ",
+  "copyright": "​© រក្សា​រ​សិទ្ធ​គ្រប់យ៉ាងដោយសមាគមន៍ភាពយន្តកម្ពុជា 2022​​ ។"
+}

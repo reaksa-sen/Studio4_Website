@@ -1,0 +1,263 @@
+{
+  "key": "plugin_content_manager_configuration_content_types::api::contact.contact",
+  "value": {
+    "uid": "api::contact.contact",
+    "settings": {
+      "bulkable": true,
+      "filterable": true,
+      "searchable": true,
+      "pageSize": 10,
+      "mainField": "email",
+      "defaultSortBy": "phone",
+      "defaultSortOrder": "ASC"
+    },
+    "metadatas": {
+      "id": {
+        "edit": {},
+        "list": {
+          "label": "id",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "phone": {
+        "edit": {
+          "label": "Phone",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "phone",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "email": {
+        "edit": {
+          "label": "Email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "telegram": {
+        "edit": {
+          "label": "Telegram",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "telegram",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "address": {
+        "edit": {
+          "label": "Address",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "address",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "google_map_url": {
+        "edit": {
+          "label": "Google Map URL",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "google_map_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "facebook_url": {
+        "edit": {
+          "label": "Facebook URL",
+          "description": "",
+          "placeholder": "https://www.facebook.com/username",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "facebook_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "youtube_url": {
+        "edit": {
+          "label": "Youtube URL",
+          "description": "",
+          "placeholder": "https://www.youtube.com/c/channel",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "youtube_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "instagram_url": {
+        "edit": {
+          "label": "Instagram URL",
+          "description": "",
+          "placeholder": "https://www.instagram.com/username",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "instagram_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "tiktok_url": {
+        "edit": {
+          "label": "TikTok URL",
+          "description": "",
+          "placeholder": "https://www.tiktok.com/@username",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "tiktok_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "twitter_url": {
+        "edit": {
+          "label": "Twitter URL",
+          "description": "",
+          "placeholder": "https://twitter.com/username",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "twitter_url",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "createdAt": {
+        "edit": {
+          "label": "createdAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "createdAt",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "updatedAt": {
+        "edit": {
+          "label": "updatedAt",
+          "description": "",
+          "placeholder": "",
+          "visible": false,
+          "editable": true
+        },
+        "list": {
+          "label": "updatedAt",
+          "searchable": true,
+          "sortable": true
+        }
+      }
+    },
+    "layouts": {
+      "edit": [
+        [
+          {
+            "name": "phone",
+            "size": 8
+          }
+        ],
+        [
+          {
+            "name": "email",
+            "size": 8
+          }
+        ],
+        [
+          {
+            "name": "telegram",
+            "size": 8
+          }
+        ],
+        [
+          {
+            "name": "address",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "google_map_url",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "facebook_url",
+            "size": 6
+          },
+          {
+            "name": "youtube_url",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "instagram_url",
+            "size": 6
+          },
+          {
+            "name": "tiktok_url",
+            "size": 6
+          }
+        ],
+        [
+          {
+            "name": "twitter_url",
+            "size": 6
+          }
+        ]
+      ],
+      "editRelations": [],
+      "list": [
+        "id",
+        "phone",
+        "email",
+        "telegram"
+      ]
+    }
+  },
+  "type": "object",
+  "environment": null,
+  "tag": null
+}

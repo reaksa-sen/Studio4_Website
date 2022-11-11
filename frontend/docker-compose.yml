@@ -1,0 +1,18 @@
+version: '3.5'
+
+services:
+  nextjs:
+    image: cfa-nextjs
+    container_name: cfa-nextjs
+    restart: 'always'
+    logging:
+      options:
+        max-size: '10m'
+    build:
+      context: .
+    ports:
+      - '${PORT}:${PORT}'
+    volumes:
+      - ./.next/cache/images:/app/.next/cache/images
+    env_file:
+      - .env
