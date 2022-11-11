@@ -1,10 +1,10 @@
 <img src="./.github/logo.jpg" alt="logo" align="right" width="140" />
 
-# Cambodia Film Association
+# Studio Four
 
 ## Introduction
 
-A monorepo for Cambodia Film Association with [Strapi](https://docs.strapi.io/) as backend and [Next.js](https://nextjs.org/) as frontend.
+A monorepo for Studio Four with [Strapi](https://docs.strapi.io/) as backend and [Next.js](https://nextjs.org/) as frontend.
 
 ## Installation
 

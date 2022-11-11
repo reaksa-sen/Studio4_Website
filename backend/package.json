@@ -1,8 +1,8 @@
 {
-  "name": "cambodia-film-association",
+  "name": "studio_four",
   "private": true,
   "version": "0.1.0",
-  "description": "A Strapi application for Cambodia Film Association",
+  "description": "A Strapi application for studio four",
   "author": "OneWorld <info@oneworldcambodia.com> (https://oneworldsoftware.com/)",
   "license": "UNLICENSED",
   "scripts": {

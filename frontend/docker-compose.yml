@@ -2,8 +2,8 @@ version: '3.5'
 
 services:
   nextjs:
-    image: cfa-nextjs
-    container_name: cfa-nextjs
+    image: studio4-nextjs
+    container_name: studio4-nextjs
     restart: 'always'
     logging:
       options:

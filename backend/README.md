@@ -1,10 +1,10 @@
 <img src="../.github/logo.jpg" alt="logo" align="right" width="140" />
 
-# Cambodia Film Association with Strapi
+# Studio Four with Strapi
 
 ## Introduction
 
-A backend for Cambodia Film Association using [Strapi](https://docs.strapi.io/) with a couple plugins:
+A backend for Studio Four using [Strapi](https://docs.strapi.io/) with a couple plugins:
 
 - [Config Sync](https://market.strapi.io/plugins/strapi-plugin-config-sync)
 - [tiptap-editor.js](https://market.strapi.io/plugins/strapi-tiptap-editor)
@@ -43,7 +43,7 @@ $ docker compose build
 $ docker compose up -d
 
 # Logging Strapi in Docker
-$ docker logs -f cfa-strapi
+$ docker logs -f -strapi
 ```
 
 ### Deployment

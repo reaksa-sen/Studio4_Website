@@ -1,10 +1,10 @@
 <img src="../.github/logo.jpg" alt="logo" align="right" width="140" />
 
-# Cambodia Film Association Website
+# Studio Four
 
 ## Introduction
 
-An official website for Cambodia Film Association. We are using [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/) for UI implementation and [Strapi](https://strapi.io/) for Backend as headless CMS.  
+An official website for Studio Four. We are using [Next.js](https://nextjs.org/) & [Tailwind CSS](https://tailwindcss.com/) for UI implementation and [Strapi](https://strapi.io/) for Backend as headless CMS.
 
 ## Installation
 
