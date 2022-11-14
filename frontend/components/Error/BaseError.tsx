@@ -15,23 +15,21 @@ export const BaseError: React.FC<Props> = props => {
         <div className="flex flex-shrink-0 justify-center">
           <Link href="/" className="inline-flex">
             <a>
-              <span className="sr-only">Cambodia Film Association</span>
-              <img className="h-16 w-auto cursor-pointer" src="/images/logo.png" alt="cfa" />
+              <span className="sr-only">Studio Four</span>
+              <img className="h-16 w-auto cursor-pointer" src="/images/logo.png" alt="stdio4" />
             </a>
           </Link>
         </div>
         <div className="py-4">
           <div className="text-center">
-            <p className="text-primary-100 text-sm font-semibold uppercase tracking-wide">
-              {error}
-            </p>
-            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl">
+            <p className="text-sm font-semibold uppercase tracking-wide text-white">{error}</p>
+            <h1 className="mt-2 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
               {title}
             </h1>
-            <p className="mt-2 text-base text-gray-500">{subtitle}</p>
+            <p className="mt-2 text-base text-white">{subtitle}</p>
             <div className="mt-6">
               <Link href="/">
-                <a className="text-primary-600 hover:text-primary-500 text-base font-medium">
+                <a className="text-base font-medium text-primary-600 hover:text-primary-500">
                   Go back home<span aria-hidden="true"> &rarr;</span>
                 </a>
               </Link>

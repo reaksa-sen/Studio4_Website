@@ -11,25 +11,30 @@ module.exports = {
         sm: '640px',
         md: '768px',
         lg: '1024px',
-        // xl: '1280px',
+        xl: '1280px',
       },
     },
     fontFamily: {
       sans: ['Kantumruy', 'Titillium Web', ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      /**
+       * Reference Code Generate
+       * https://www.tailwindshades.com/#color=0%2C84.23645320197043%2C60.19607843137255&step-up=8&step-down=11&hue-shift=0&name=flamingo&base-stop=4&overrides=e30%3D
+       */
       colors: {
         primary: {
-          '50': '#FF9D27',
-          '100': '#F8931D',
-          '200': '#F6871B',
-          '300': '#F57A18',
-          '400': '#F46E16',
-          '500': '#F36315',
-          '600': '#F25E14',
-          '700': '#F15B13',
-          '800': '#F05812',
-          '900': '#EF5511',
+          DEFAULT: '#EF4444',
+          '50': '#FAC8C8',
+          '100': '#F9B5B5',
+          '200': '#F58F8F',
+          '300': '#F26A6A',
+          '400': '#EF4444',
+          '500': '#E71414',
+          '600': '#B30F0F',
+          '700': '#800B0B',
+          '800': '#4C0707',
+          '900': '#180202'
         },
         background: '#f4f4f4',
       }

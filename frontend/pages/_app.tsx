@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
-    <div className="flex min-h-screen flex-col justify-between bg-background">
+    <div className="flex min-h-screen flex-col justify-between bg-black">
       <LanguageModalProvider>
         <header className="relative">
           <NavigationBar />
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps }: AppProps) {
             <VideoModalProvider>
               <NextNProgress
                 height={3}
-                color="#F8931D"
+                color="#E71414"
                 showOnShallow={false}
                 options={{ showSpinner: false }}
               />

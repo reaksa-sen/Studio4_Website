@@ -14,7 +14,7 @@ const Members: NextPage = () => {
   const router = useRouter();
   const TITLE = 'Members';
   const PAGE_SIZE = 20;
-  const DESCRIPTION = 'Cambodia Film Association Team Members';
+  const DESCRIPTION = 'Studio Four Team Members';
 
   const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
     'infiniteMembers',

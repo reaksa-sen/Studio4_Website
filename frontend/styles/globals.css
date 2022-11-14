@@ -18,7 +18,7 @@ body {
 }
 
 ::selection {
-  @apply bg-primary-50 text-white;
+  @apply bg-primary-500 text-white;
 }
 
 :root {
@@ -30,6 +30,7 @@ body {
 .swiper-pagination-bullet {
   background-color: white !important;
 }
+
 .swiper-pagination-bullet-active {
   background-color: #ca8a04 !important;
 }

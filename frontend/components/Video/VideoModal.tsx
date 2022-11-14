@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
-import XCircleIcon from '@heroicons/react/outline/XIcon';
 import { Fragment } from 'react';
+import { IoClose } from 'react-icons/io5';
 
 interface Props {
   setOpen: (b: boolean) => void;
@@ -35,15 +35,15 @@ export const VideoModal: React.FC<Props> = ({ open, src, setOpen }) => {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="container h-full w-full outline-none">
-                <div className="absolute -top-12 right-2 lg:-right-4">
+              <Dialog.Panel className="container h-full w-full max-w-5xl outline-none">
+                <div className="absolute -top-10 right-2 lg:-right-4">
                   <button
                     type="button"
                     className="text-white outline-none"
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Close</span>
-                    <XCircleIcon className="h-10 w-10" aria-hidden="true" />
+                    <IoClose className="h-10 w-10" aria-hidden="true" />
                   </button>
                 </div>
 
