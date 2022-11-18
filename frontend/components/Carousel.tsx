@@ -16,13 +16,17 @@ const SliderContent: React.FC = () => {
   return (
     <div className=" flex items-center justify-end">
       <div className="mr-7 flex flex-col gap-y-2 md:gap-y-4">
-        <a>
+        <a href="https://www.facebook.com/OneWorldSoftware" target="_blank" rel="noreferrer">
           <IoLogoFacebook className="h-6 w-auto cursor-pointer text-gray-800 md:h-8" />
         </a>
-        <a>
+        <a href="https://www.youtube.com/watch?v=t1zVoqL7E_k" target="_blank" rel="noreferrer">
           <IoLogoYoutube className="h-6 w-auto cursor-pointer text-gray-800 md:h-8" />
         </a>
-        <a>
+        <a
+          href="https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j"
+          target="_blank"
+          rel="noreferrer"
+        >
           <IoLogoTiktok className="h-6 w-auto cursor-pointer text-gray-800 md:h-8" />
         </a>
       </div>

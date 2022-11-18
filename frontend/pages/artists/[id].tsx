@@ -90,16 +90,11 @@ const ArtistsProfile: NextPage = () => {
               <>
                 <div key={i} className="grid grid-cols-1 gap-3 md:grid-cols-6">
                   <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
-                    {/* <Image
-                      className="cursor-pointer rounded-full"
-                      alt={a.alt}
-                      height={1}
-                      width={1}
-                      layout="responsive"
-                      objectFit="cover"
+                    <img
+                      className="h-56 w-56 cursor-pointer rounded-full object-cover"
                       src={a.img}
-                    /> */}
-                    <img className="h-56 w-56 rounded-full object-cover" src={a.img} alt={a.alt} />
+                      alt={a.alt}
+                    />
                   </div>
                   <div className="col-span-4 p-5 text-white md:pt-0">
                     <Heading text={a.fullname} />

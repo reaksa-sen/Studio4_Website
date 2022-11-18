@@ -78,7 +78,7 @@ const Navigator = () => {
             <NavLink href="/movies" name="Movies" />
             <NavLink href="/works" name="Works" />
             <Link href="/" passHref>
-              <img src="/images/logo.png" className="h-16 w-auto" alt="studio4" />
+              <img src="/images/logo.png" className="h-16 w-auto cursor-pointer" alt="studio4" />
             </Link>
             <NavLink href="/news" name="News" />
             <NavLink href="/artists" name="Artists" />
@@ -90,7 +90,7 @@ const Navigator = () => {
           <div className="flex items-center justify-between">
             <NavButton onClick={() => handleNavBar()} isNavOpen={isNavOpen} />
             <Link href="/" passHref>
-              <img src="/images/logo.png" className=" h-12 w-auto" alt="studio" />
+              <img src="/images/logo.png" className=" h-12 w-auto cursor-pointer" alt="studio" />
             </Link>
           </div>
         </div>

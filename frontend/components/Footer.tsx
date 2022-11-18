@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
       <div className="container py-4 md:px-8 md:py-6 ">
         <div className="font-heading text-base-100 flex flex-col items-center justify-between lg:flex-row">
           <div className="flex flex-col items-center justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
-            <Link href="/" className="relative mx-auto w-36 lg:mx-0">
-              <img src="/images/logo.png" className="z-10 h-auto w-56" alt="Logo" />
+            <Link href="/">
+              <img src="/images/logo.png" className="z-10 h-auto w-56 cursor-pointer" alt="Logo" />
             </Link>
             <span className="hidden font-bold !leading-relaxed text-white md:block md:text-base">
               Studio4
@@ -19,50 +19,59 @@ const Footer: React.FC = () => {
             </span>
           </div>
           <div className="flex flex-col md:pr-8 lg:flex-row lg:gap-16 xl:gap-24">
-            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-5 pb-6 text-lg font-bold text-white lg:w-1/3 lg:flex-col lg:justify-start">
-              <Link href="/about" className="cursor-pointer hover:text-primary-500 hover:underline">
+            <div className="flex flex-wrap   gap-x-6 gap-y-5 pb-6 text-lg font-bold text-white lg:w-1/3 lg:flex-col lg:justify-start">
+              <a href="/about" className="cursor-pointer hover:text-primary-500 hover:underline">
                 អំពីយើង
-              </Link>
-              <Link
-                href="/contact"
-                className="cursor-pointer hover:text-primary-500 hover:underline"
-              >
+              </a>
+              <a href="/contact" className="cursor-pointer hover:text-primary-500 hover:underline">
                 ទាក់ទងយើង
-              </Link>
-              <Link className="cursor-pointer hover:text-primary-500 hover:underline" href={''}>
+              </a>
+              <a className="cursor-pointer hover:text-primary-500 hover:underline" href={''}>
                 Term & Privacy
-              </Link>
+              </a>
             </div>
-            <div className="mt-2 flex flex-col  items-center justify-start lg:mt-0">
-              <div className="font-bold text-white">
-                <h2 className="text-center text-lg">បណ្តាញសង្គមរបស់ពួកយើង</h2>
-              </div>
+            <div className="mt-2 flex flex-col justify-start lg:mt-0">
+              <p className="whitespace-pre text-center text-lg font-bold text-white">
+                បណ្តាញសង្គមរបស់ពួកយើង
+              </p>
               <div className="mt-5 flex justify-center space-x-5 text-white ">
                 {
-                  <a rel="noreferrer" target="_blank">
+                  <a
+                    href="https://www.facebook.com/OneWorldSoftware"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     <Facebook className="cursor-pointer" size="32" />
                   </a>
                 }
                 {
-                  <a rel="noreferrer" target="_blank">
+                  <a
+                    href="https://www.youtube.com/watch?v=t1zVoqL7E_k"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     <Youtube size="32" className="cursor-pointer" />
                   </a>
                 }
-                {
+                {/* {
                   <a rel="noreferrer" target="_blank">
                     <Instagram size="32" className="cursor-pointer" />
                   </a>
-                }
+                } */}
                 {
-                  <a rel="noreferrer" target="_blank">
+                  <a
+                    href="https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j"
+                    rel="noreferrer"
+                    target="_blank"
+                  >
                     <Tiktok size="32" className="cursor-pointer" />
                   </a>
                 }
-                {
+                {/* {
                   <a rel="noreferrer" target="_blank">
                     <Twitter size="32" className="cursor-pointer" />
                   </a>
-                }
+                } */}
               </div>
             </div>
           </div>

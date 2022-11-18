@@ -12,7 +12,7 @@ const NewsList: NextPage = () => {
     <>
       <Header title={'News'} />
 
-      <div className="container mt-20">
+      <div className="container mt-12 md:mt-20">
         <Wrapper>
           <Link href={''}>
             <div className="mx-auto max-w-4xl p-4 pb-8 pt-8">
