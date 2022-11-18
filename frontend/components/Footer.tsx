@@ -20,15 +20,21 @@ const Footer: React.FC = () => {
           </div>
           <div className="flex flex-col md:pr-8 lg:flex-row lg:gap-16 xl:gap-24">
             <div className="flex flex-wrap   gap-x-6 gap-y-5 pb-6 text-lg font-bold text-white lg:w-1/3 lg:flex-col lg:justify-start">
-              <a href="/about" className="cursor-pointer hover:text-primary-500 hover:underline">
-                អំពីយើង
-              </a>
-              <a href="/contact" className="cursor-pointer hover:text-primary-500 hover:underline">
-                ទាក់ទងយើង
-              </a>
-              <a className="cursor-pointer hover:text-primary-500 hover:underline" href={''}>
-                Term & Privacy
-              </a>
+              <Link href="/about">
+                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
+                  អំពីយើង
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
+                  ទាក់ទងយើង
+                </a>
+              </Link>
+              <Link href={''}>
+                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
+                  Term & Privacy
+                </a>
+              </Link>
             </div>
             <div className="mt-2 flex flex-col justify-start lg:mt-0">
               <p className="whitespace-pre text-center text-lg font-bold text-white">
