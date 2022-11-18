@@ -24,7 +24,7 @@ const Home: NextPage<Props> = props => {
     <div>
       <Header title="Home" />
 
-      <Carousel />
+      {/* <Carousel /> */}
       <HomeReleased />
       <HomeWorkShowcase />
       <HomeArtists />
