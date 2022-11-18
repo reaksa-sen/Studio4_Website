@@ -29,7 +29,7 @@ const InputBox: React.FC<Input> = ({ props, error, name, type, placeholder }) =>
   <div>
     <input
       {...props}
-      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 placeholder-white"
+      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-white placeholder-white"
       name={name}
       type={type}
       placeholder={placeholder}
@@ -42,7 +42,7 @@ const TextArea: React.FC<TextArea> = ({ props, error, name, placeholder, rows })
   <div>
     <textarea
       {...props}
-      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 placeholder-white"
+      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-white placeholder-white"
       id={name}
       name={name}
       placeholder={placeholder}
@@ -125,18 +125,18 @@ export const ContactForm: React.FC = () => {
           rows={4}
         />
 
-        <div>
-          {/* <ReCAPTCHA
+        {/* <div>
+          <ReCAPTCHA
             size="normal"
             ref={reCaptchaRef}
             onChange={token => setValue('captchaToken', token as never)}
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_KEY || ''}
-          /> */}
+          />
 
           {formState.errors.captchaToken && (
             <HelperText error={formState.errors.captchaToken.message} />
           )}
-        </div>
+        </div> */}
 
         <button
           type="submit"

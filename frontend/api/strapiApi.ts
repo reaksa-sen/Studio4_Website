@@ -2,25 +2,7 @@ import { fetchAPI } from './api';
 import * as I from './interface';
 
 export function getAbout(): Promise<I.AboutResponse> {
-  return fetchAPI('/about', {
-    populate: {
-      localizations: {
-        fields: ['*']
-      }
-    }
-  });
-}
-
-export function getAboutSection(): Promise<I.AboutResponse> {
-  return fetchAPI('/about', {
-    fields: ['title', 'description'],
-    populate: {
-      image: { fields: ['name', 'url', 'formats'] },
-      localizations: {
-        fields: ['*']
-      }
-    }
-  });
+  return fetchAPI('/about', {});
 }
 
 export function getContact(): Promise<I.ContactResponse> {
@@ -28,7 +10,7 @@ export function getContact(): Promise<I.ContactResponse> {
 }
 
 export function getMembers(pagination: I.Pagination): Promise<I.MembersResponse> {
-  return fetchAPI('/members', {
+  return fetchAPI('/artists', {
     sort: ['id:desc'],
     fields: ['fullname', 'roles'],
     pagination,

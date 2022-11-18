@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 
 interface Props {
   id: number;
@@ -55,13 +56,12 @@ const titles = [
 export const NewsCard: React.FC<Props> = ({ id, title, image, description, slug }) => {
   return (
     <div>
-      <a>
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+      <Link href={`/news/${id}`}>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {items.map((a, i) => (
             <div key={i} className="flex h-full cursor-pointer flex-col overflow-hidden">
               <div className="flex-shrink-0">
                 <Image
-                  className=""
                   src={a.img}
                   width={1.19}
                   height={1}
@@ -85,7 +85,7 @@ export const NewsCard: React.FC<Props> = ({ id, title, image, description, slug 
             </div>
           ))}
         </div>
-      </a>
+      </Link>
     </div>
   );
 };

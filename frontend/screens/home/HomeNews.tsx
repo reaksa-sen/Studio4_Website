@@ -1,12 +1,12 @@
 import { Heading } from 'components/Heading';
-import { NewsCard } from 'components/NewsCard';
+import { NewsCard } from 'components/News/NewsCard';
 import Image from 'next/image';
 
 export const HomeNews: React.FC = () => {
   return (
     <div>
-      <div className="container py-4 px-8">
-        <Heading text={'News'} link="/" />
+      <div className="container py-4 md:px-8">
+        <Heading text={'News'} link="/news" />
         <div>
           <NewsCard id={0} title={''} description={''} slug={''} image={undefined} />
         </div>

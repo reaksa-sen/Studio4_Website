@@ -1,0 +1,26 @@
+import { Heading } from 'components/Heading';
+import { MoviesItems } from 'components/Movies/Movies';
+import { NewReleased } from 'components/NewReleased/NewReleased';
+import { Wrapper } from 'components/Wrapper';
+import { NextPage } from 'next';
+
+const Movies: NextPage = () => {
+  return (
+    <div className="container mt-14">
+      <Wrapper>
+        <div>
+          <div className="">
+            <Heading text={'Movies'} />
+            <NewReleased />
+          </div>
+          <div className="w-full border-b-2 border-primary-500 pt-10"></div>
+          <div className="mt-4">
+            <MoviesItems />
+          </div>
+        </div>
+      </Wrapper>
+    </div>
+  );
+};
+
+export default Movies;

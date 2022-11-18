@@ -1,55 +1,13 @@
 import { Heading } from 'components/Heading';
-import Link from 'next/link';
-import { useState } from 'react';
 import { ContactAddress } from 'screens/contact/ContactAddress';
 import { ContactForm } from 'screens/contact/ContactForm';
 
 export const HomeContact: React.FC = () => {
-  const [fullName, setFullName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: any) => {
-    if (!fullName || !email || !message) {
-      return;
-    }
-
-    e.preventDefault();
-
-    let data = { fullName, email, message, phoneNumber };
-
-    try {
-      setIsSubmitting(true);
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          Accept: 'application/json, text/plain, */*',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-      }).then(res => {
-        if (res.status === 200) {
-          alert('Your message has been sent!');
-          setFullName('');
-          setEmail('');
-          setMessage('');
-          setPhoneNumber('');
-          setIsSubmitting(false);
-        } else {
-          throw new Error('Something went wrong!');
-        }
-      });
-    } catch (error) {
-      alert('Something went wrong!');
-    }
-  };
   return (
     <div>
-      <div className="container py-4 px-8">
+      <div className="container py-4 md:px-8">
         <Heading text={'Contact'} />
-        <div className=" flex flex-col justify-between gap-14  pr-6 md:grid md:grid-cols-4 md:pr-8">
+        <div className="flex flex-col justify-between gap-14 md:grid md:grid-cols-4 md:pr-8">
           <div className="col-span-2 flex flex-col space-y-8">
             <ContactAddress
               contact={{

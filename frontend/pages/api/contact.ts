@@ -23,11 +23,11 @@ export default async function send(req: NextApiRequest, res: NextApiResponse) {
   const mailPackage = {
     from: `${body}`,
     to: `${REDIRECT_EMAIL}`,
-    subject: `Contact from ${body.fullname}`,
+    subject: `Contact from ${body.fullName}`,
     text: `${body.message}`,
     html: `<br>${body.message}
             <br><br><br><b>From:</b> ${body.email}
-            <br><b>Name:</b> ${body.fullname}
+            <br><b>Name:</b> ${body.fullName}
             <br><b>Phone Number:</b> ${body.phone}`
   };
 

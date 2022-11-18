@@ -4,12 +4,7 @@ import XIcon from '@heroicons/react/outline/XIcon';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import { Menu } from '@headlessui/react';
-import ChevronDownIcon from '@heroicons/react/solid/ChevronDownIcon';
-import { Language, useLanguageModalContext } from 'hooks/LanguageModalContext';
-import English from '../public/languages/english/translation.json';
-import Khmer from '../public/languages/khmer/translation.json';
+import { useState } from 'react';
 
 interface NavLinkProps {
   href: string;
@@ -62,27 +57,18 @@ const NavButton: React.FC<{ onClick: () => void; isNavOpen: boolean }> = ({
   onClick,
   isNavOpen
 }) => (
-  <button onClick={() => onClick()} type="button" className="block p-2 lg:hidden">
+  <button onClick={() => onClick()} type="button" className="block lg:hidden">
     {isNavOpen && <XIcon className="h-6 w-6 fill-current text-gray-200" aria-hidden="true" />}
     {!isNavOpen && <MenuIcon className="h-6 w-6 fill-current text-gray-200" aria-hidden="true" />}
   </button>
 );
 
 const Navigator = () => {
-  const router = useRouter();
-  const { pathname, asPath, query } = router;
-  const { lang, setLanguage } = useLanguageModalContext();
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const navLinkNames = lang === 'en' ? English : Khmer;
+
   function handleNavBar() {
     setIsNavOpen(!isNavOpen);
   }
-  //   router.push({ pathname, query }, asPath, {
-  //     locale: lang === 'km' ? 'kh' : lang,
-  //     shallow: true
-  //   });
-  // }, [lang]);
-
   return (
     <nav className="fixed z-20 w-full bg-transparent bg-gradient-to-b from-gray-800">
       <div className="container px-4 py-4">
@@ -92,9 +78,7 @@ const Navigator = () => {
             <NavLink href="/movies" name="Movies" />
             <NavLink href="/works" name="Works" />
             <Link href="/" passHref>
-              <a>
-                <img src="/images/logo.png" className=" h-16 w-auto" alt="studio" />
-              </a>
+              <img src="/images/logo.png" className="h-16 w-auto" alt="studio4" />
             </Link>
             <NavLink href="/news" name="News" />
             <NavLink href="/artists" name="Artists" />
@@ -106,9 +90,7 @@ const Navigator = () => {
           <div className="flex items-center justify-between">
             <NavButton onClick={() => handleNavBar()} isNavOpen={isNavOpen} />
             <Link href="/" passHref>
-              <a>
-                <img src="/images/logo.png" className=" h-12 w-auto" alt="studio" />
-              </a>
+              <img src="/images/logo.png" className=" h-12 w-auto" alt="studio" />
             </Link>
           </div>
         </div>
@@ -120,7 +102,7 @@ const Navigator = () => {
           id="mobile-menu"
         >
           <div className="grid-cols grid grid-cols-2 px-2 pt-2 pb-3">
-            <SmNavLink exact href="/about" name="About" onClick={handleNavBar} />
+            <SmNavLink href="/about" name="About" onClick={handleNavBar} />
             <SmNavLink href="/movies" name="Movies" onClick={handleNavBar} />
             <SmNavLink href="/works" name="Works" onClick={handleNavBar} />
             <SmNavLink href="/news" name="News" onClick={handleNavBar} />

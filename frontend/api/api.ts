@@ -1,7 +1,7 @@
 import qs from 'qs';
 
 export const getStaticURL = (path = '') => {
-  return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'https://localhost:1338.com'}${path}`;
+  return `${process.env.NEXT_PUBLIC_STRAPI_API_URL || 'http://localhost:1337'}${path}`;
 };
 
 export const fetchAPI = async (path: string, urlParamsObject = {}, options = {}) => {

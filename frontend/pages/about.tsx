@@ -1,38 +1,52 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable @next/next/no-img-element */
 import { AboutResponse } from 'api/interface';
 import { getAbout } from 'api/strapiApi';
 import Header from 'components/Header';
 import { Wrapper } from 'components/Wrapper';
 import { GetStaticProps, NextPage } from 'next/types';
-import Khmer from 'public/languages/khmer/translation.json';
-import English from 'public/languages/english/translation.json';
-import { useLanguageModalContext } from 'hooks/LanguageModalContext';
+import Image from 'next/image';
+import team from '../../public/images/team.jpg';
 
 interface Props {
   about: AboutResponse;
 }
 
 const About: NextPage<Props> = ({ about }) => {
-  const { lang } = useLanguageModalContext();
-  const title = lang !== 'en' ? Khmer['about'] : English['about'];
-  const translateData =
-    about.data.attributes.localizations.data.find(x => x.attributes.locale === lang) ?? about.data;
-  const data = lang === 'en' ? about.data : translateData;
+  const TITLE = 'About';
+  // const { data } = about;
+
   return (
-    <>
-      <Header title={title} siteUrl="/about" />
+    <div className="container mt-16">
+      <Header title={TITLE} siteUrl="/about" />
       <Wrapper>
-        <article
+        {/* <article
           className="prose max-w-none pt-6"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
-        />
+        /> */}
+        <div className=" text-white ">
+          <div>
+            <p className="py-5 text-xl font-bold">Studio Four</p>
+            <p>
+              The decision about what to put into your paragraphs begins with the germination of a
+              seed of ideas; this “germination process” is better known as brainstorming. There are
+              many techniques for brainstorming; whichever one you choose, this stage of paragraph
+              development cannot be skipped. Building paragraphs can be like building a skyscraper:
+              there must be a well-planned foundation that supports what you are building. Any
+              cracks, inconsistencies, or other corruptions of the foundation can cause your whole
+              paper to crumble.
+            </p>
+            <img className="w-full object-cover py-5" src="/images/team.jpg" alt="team" />
+          </div>
+        </div>
       </Wrapper>
-    </>
+    </div>
   );
 };
 
-export const getStaticProps: GetStaticProps<Props> = async () => {
-  const about = await getAbout();
-  return { props: { about }, revalidate: 60 };
-};
+// export const getStaticProps: GetStaticProps<Props> = async () => {
+//   const about = await getAbout();
+//   return { props: { about }, revalidate: 60 };
+// };
 
 export default About;

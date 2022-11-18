@@ -1,6 +1,6 @@
 import { Dialog, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
-import { IoClose } from 'react-icons/io5';
+import { CgCloseR } from 'react-icons/cg';
 
 interface Props {
   setOpen: (b: boolean) => void;
@@ -21,7 +21,7 @@ export const VideoModal: React.FC<Props> = ({ open, src, setOpen }) => {
           leaveFrom="opacity-100"
           leaveTo="opacity-0"
         >
-          <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+          <div className="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity" />
         </Transition.Child>
 
         <div className="fixed inset-0 z-10 overflow-y-auto outline-none">
@@ -36,14 +36,14 @@ export const VideoModal: React.FC<Props> = ({ open, src, setOpen }) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="container h-full w-full max-w-5xl outline-none">
-                <div className="absolute -top-10 right-2 lg:-right-4">
+                <div className="absolute -top-11 right-2 lg:-right-4">
                   <button
                     type="button"
                     className="text-white outline-none"
                     onClick={() => setOpen(false)}
                   >
                     <span className="sr-only">Close</span>
-                    <IoClose className="h-10 w-10" aria-hidden="true" />
+                    <CgCloseR className="h-10 w-10" aria-hidden="true" />
                   </button>
                 </div>
 

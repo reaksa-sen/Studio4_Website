@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { useLanguageModalContext } from 'hooks/LanguageModalContext';
 import { IoPlaySkipForwardSharp } from 'react-icons/io5';
 interface HeadingProps {
   text: string;

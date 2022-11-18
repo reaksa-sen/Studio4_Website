@@ -12,25 +12,25 @@ interface Props {
   contact: I.ContactResponse;
 }
 
-const About: NextPage = () => {
+const About: NextPage<Props> = () => {
+  // const { data } = contact;
+
   return (
     <div className="container mt-16">
-      <Header title={title} siteUrl="/contact" />
+      <Header title={'Contact'} siteUrl="/contact" />
       <Wrapper>
         <Heading text={'Contact'} />
         <div className="grid gap-8 md:grid-cols-2">
           <ContactAddress
             contact={{
               address:
-                'OneWorld Information Technology Co., Ltd No. 336C st 93 Corner 282, Boeung Kengkong1 Commune, Boeung Kengkong District, Phnom Penh, Cambodia 12211',
+                'OneWorld Information Technology Co., Ltd No. 336C st 93 Corner 282, Boeung Kengkong 1 Commune, Boeung Kengkong District, Phnom Penh, Cambodia 12211',
               google_map_url:
                 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3908.966401567658!2d104.91875771471881!3d11.554266347513604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3109513d577464f9%3A0xce74c8b169973bd1!2sOneworld%20Technology!5e0!3m2!1sen!2skh!4v1648529706836!5m2!1sen!2skh'
-            }} // address={address}
-            // email={email}
-            // googleMapUrl={google_map_url}
-            // phone={phone}
-            // telegram={telegram}
-            // locale={lang}
+            }} // contact={{
+            //   address: data.attributes.address,
+            //   google_map_url: data.attributes.google_map_url
+            // }}
           />
           <ContactForm />
         </div>
