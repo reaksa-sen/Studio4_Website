@@ -11,7 +11,7 @@ export const NewReleased: React.FC = () => {
   return (
     <div>
       <Link href={''}>
-        <div className=" grid grid-cols-1 gap-8 py-8 lg:grid-cols-2 lg:gap-x-8 lg:py-0">
+        <div className=" grid grid-cols-1 gap-8 md:py-8 lg:grid-cols-2 lg:gap-x-8 lg:py-0">
           {/* <div className="relative ">
           <NextImage
             alt={'logo'}

@@ -12,13 +12,11 @@ const News: NextPage = () => {
   const DESCRIPTION = 'Studio Four Team Members';
   return (
     <div className="mt-14">
-      <Wrapper>
-        <Header title={TITLE} />
-        <div className="container ">
-          <Heading text={'News'} />
-          <NewsCard id={0} title={''} description={''} slug={''} image={undefined} />
-        </div>
-      </Wrapper>
+      <Header title={TITLE} />
+      <div className="container ">
+        <Heading text={'News'} />
+        <NewsCard id={0} title={''} description={''} slug={''} image={undefined} />
+      </div>
     </div>
   );
 };

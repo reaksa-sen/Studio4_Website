@@ -12,13 +12,11 @@ const WorkShowcase: NextPage = () => {
   const DESCRIPTION = 'Studio Four Team Members';
   return (
     <div className="mt-14">
-      <Wrapper>
-        <Header title={TITLE} />
-        <div className="container ">
-          <Heading text={'Works'} />
-          <EventItems />
-        </div>
-      </Wrapper>
+      <Header title={TITLE} />
+      <div className="container ">
+        <Heading text={'Works'} />
+        <EventItems />
+      </div>
     </div>
   );
 };
