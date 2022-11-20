@@ -30,13 +30,12 @@ const Artists: NextPage = () => {
   // );
 
   return (
-    <div className="container mt-14">
+    <div className="container mt-16 pb-6">
       <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
 
-      <Wrapper>
-        <Heading text={TITLE} />
+      <Heading text={TITLE} />
 
-        {/* {isLoading && <Spinner />}
+      {/* {isLoading && <Spinner />}
 
         {status === 'success' && (
           <XInfiniteScroll
@@ -44,15 +43,14 @@ const Artists: NextPage = () => {
             next={fetchNextPage}
             hasMore={hasNextPage}
           > */}
-        {/* {!data.pages[0].data.length && <NoResult />} */}
-        <ArtistsList />
+      {/* {!data.pages[0].data.length && <NoResult />} */}
+      <ArtistsList />
 
-        {/* {data?.pages.map((page, i) => (
+      {/* {data?.pages.map((page, i) => (
               <MemberList key={`member-${i}`} res={page.data} />
             ))} */}
-        {/* </XInfiniteScroll>
+      {/* </XInfiniteScroll>
         )} */}
-      </Wrapper>
     </div>
   );
 };

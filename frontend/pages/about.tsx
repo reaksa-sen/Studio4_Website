@@ -17,16 +17,16 @@ const About: NextPage<Props> = ({ about }) => {
   // const { data } = about;
 
   return (
-    <div className="container mt-16">
+    <div className="mt-12 md:mt-16">
       <Header title={TITLE} siteUrl="/about" />
       <Wrapper>
         {/* <article
           className="prose max-w-none pt-6"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
         /> */}
-        <div className=" text-white ">
+        <div className="text-white ">
           <div>
-            <p className="py-5 text-xl font-bold">Studio Four</p>
+            <p className="pb-5 text-xl font-bold">Studio Four</p>
             <p>
               The decision about what to put into your paragraphs begins with the germination of a
               seed of ideas; this “germination process” is better known as brainstorming. There are
