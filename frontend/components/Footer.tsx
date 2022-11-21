@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
               និងការអនុវត្តជាក់ស្ដែងរួមទាំងជំនាញដូចជាផលិតភាពយន្ត និងឯកសារ
             </span>
           </div>
-          <div className="flex flex-col gap-7 md:pr-8 lg:flex-row ">
+          <div className="flex flex-col gap-10 md:pr-8 lg:flex-row ">
             <div className="flex flex-wrap gap-y-9 gap-x-5 text-lg font-bold text-white lg:flex-col lg:justify-start">
               <Link href="/about">
                 <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
