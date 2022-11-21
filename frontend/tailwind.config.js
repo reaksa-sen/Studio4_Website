@@ -15,7 +15,9 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Kantumruy', 'Titillium Web', ...defaultTheme.fontFamily.sans],
+      // sans: ['Kantumruy', 'Titillium Web', ...defaultTheme.fontFamily.sans],
+      sans: ['open sans', 'Khmer CN Battambang', ...defaultTheme.fontFamily.sans],
+      heading: ['Kh Jrung Thom', ...defaultTheme.fontFamily.sans],
     },
     extend: {
       /**

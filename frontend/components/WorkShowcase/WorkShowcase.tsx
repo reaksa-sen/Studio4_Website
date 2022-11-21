@@ -53,17 +53,20 @@ export const EventItems: React.FC = () => {
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {items.map((a, i) => (
         <div key={i} className="relative cursor-pointer " onClick={() => onModalOpen(a.link)}>
-          <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <CiYoutube className="h-14 w-auto text-red-500" />
+          <div className="group cursor-pointer overflow-hidden">
+            <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+              <CiYoutube className="h-14 w-auto text-primary-500 group-hover:text-primary-600" />
+            </div>
+            <Image
+              className="transition duration-300 group-hover:scale-105"
+              src={a.img}
+              alt={a.names}
+              height={1.1}
+              width={1.7}
+              layout="responsive"
+              objectFit="cover"
+            />
           </div>
-          <Image
-            src={a.img}
-            alt={a.names}
-            height={1.1}
-            width={1.7}
-            layout="responsive"
-            objectFit="cover"
-          />
         </div>
       ))}
     </div>

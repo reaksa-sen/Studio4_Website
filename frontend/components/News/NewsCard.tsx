@@ -47,7 +47,7 @@ const items = [
 
 const titles = [
   {
-    title: 'លោក ទេរិនដារ៉ូ​​',
+    title: 'តួអង្គ សុភារិទ្ធ ប្រាប់ពីចរឹកពិតនៅក្នុងសាច់រឿងដែលខ្លួនសម្ដែង។​​',
     description:
       ' ពាក់ព័ន្ធទៅនឹងវីដេអូ ​ដែល​កំពុង​ទទួល​បាន​ការចាប់អារម្មណ៍​ច្រើន​នៅ​លើ​បណ្តាញ​សង្គម​នេះផងដែរ លោក ទេរិនដារ៉ូ​​ បានថ្លែងថា៖ «ខ្ញុំពិត​ជា​មានកិត្តិយសយ៉ាងខ្លាំងនិងសូម​​កោត​សរសើរអំពីសាច់រឿង​'
   }
@@ -60,26 +60,30 @@ export const NewsCard: React.FC<Props> = ({ id, title, image, description, slug 
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {items.map((a, i) => (
             <div key={i} className="flex h-full cursor-pointer flex-col overflow-hidden">
-              <div className="flex-shrink-0">
+              <div className="group cursor-pointer overflow-hidden">
                 <Image
+                  className="transition duration-300 group-hover:scale-105"
                   src={a.img}
-                  width={1.19}
+                  width={1.2}
                   height={1}
                   alt={'M'}
                   layout={'responsive'}
                   objectFit="cover"
                 />
-              </div>
-              <div className="flex flex-1 flex-col  bg-stone-800 p-3 hover:bg-stone-700">
-                <div className="mt-2 block">
-                  {titles.map((a, i) => (
-                    <div key={i}>
-                      <p className="text-xl font-bold text-gray-200">{a.title}</p>
-                      <p className="mt-3 text-base leading-7 text-gray-200 line-clamp-3">
+
+                <div className="flex flex-1 flex-col  bg-[#1E1E1E] p-3 hover:bg-stone-800">
+                  <div className="mt-2 block">
+                    {titles.map((a, i) => (
+                      <div key={i}>
+                        <p className="font-heading text-lg leading-loose text-gray-200">
+                          {a.title}
+                        </p>
+                        {/* <p className="mt-3 text-base leading-7 text-gray-200 line-clamp-3">
                         {a.description}
-                      </p>
-                    </div>
-                  ))}
+                      </p> */}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>

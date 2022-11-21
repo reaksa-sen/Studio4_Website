@@ -29,7 +29,7 @@ const InputBox: React.FC<Input> = ({ props, error, name, type, placeholder }) =>
   <div>
     <input
       {...props}
-      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-white placeholder-white"
+      className="w-full bg-[#1E1E1E] px-4 py-3 text-white placeholder-white"
       name={name}
       type={type}
       placeholder={placeholder}
@@ -42,7 +42,7 @@ const TextArea: React.FC<TextArea> = ({ props, error, name, placeholder, rows })
   <div>
     <textarea
       {...props}
-      className="w-full border border-stone-700 bg-stone-900 px-4 py-3 text-white placeholder-white"
+      className="w-full bg-[#1E1E1E] px-4 py-3 text-white placeholder-white"
       id={name}
       name={name}
       placeholder={placeholder}

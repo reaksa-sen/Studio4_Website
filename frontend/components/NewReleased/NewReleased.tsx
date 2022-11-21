@@ -10,9 +10,9 @@ export const NewReleased: React.FC = () => {
 
   return (
     <div>
-      <Link href={''}>
-        <div className=" grid grid-cols-1 gap-8 md:py-8 lg:grid-cols-2 lg:gap-x-8 lg:py-0">
-          {/* <div className="relative ">
+      {/* <Link href={''}> */}
+      <div className=" grid grid-cols-1 gap-8 md:grid-cols-2  ">
+        {/* <div className="relative ">
           <NextImage
             alt={'logo'}
             image={released}
@@ -22,29 +22,38 @@ export const NewReleased: React.FC = () => {
             layout="responsive"
           />
         </div> */}
-          <div
-            className="relative cursor-pointer"
-            onClick={() => onModalOpen('https://www.youtube.com/embed/QYVfb2TFZiQ')}
-          >
+        <div
+          className="relative cursor-pointer"
+          onClick={() => onModalOpen('https://www.youtube.com/embed/QYVfb2TFZiQ')}
+        >
+          <div className="group cursor-pointer overflow-hidden">
             <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-              <IoPlayCircleSharp className="h-20 w-auto text-red-500" />
+              <IoPlayCircleSharp className="h-14 w-auto text-primary-500 group-hover:text-primary-600 lg:h-20" />
             </div>
-            <Image src={released} alt={'logo'} height={9} width={15} layout="responsive" />
-          </div>
-
-          <div className="space-y-3 p-2 text-center md:text-left lg:max-w-md">
-            <h2 className="mb-5 text-3xl font-bold text-white">ជួបស៊យ វគ្គ៣</h2>
-            <p className="text-base font-bold text-white">
-              វគ្គ ៣ នេះ គឺការត្រឡប់មកវិញ របស់រឿង​ក្រោយចេញវគ្គ ២ កាលពី ៣ឆ្នាំមុន ពោលគឺឆ្នាំ ២០១៩។
-              ដោយពេល​នេះ​ គឺ​ដល់ពេល កូនប្រុស របស់នាយ ស៊យ គឺ នាយ ចង្រៃ បញ្ចេញឬទ្ធិម្ដងហើយ។
-            </p>
-            <p className="text-base text-white line-clamp-4 lg:line-clamp-4">
-              ម្យ៉ាងទៀតនោះ បើតាមការបញ្ជាក់ពីលោក លៀក លីដា បាន​ឲ្យដឹង នាយ គ្រឿន បង្ហើបមកថានឹងមាន វគ្គ
-              ៤ ជាបន្តទៀត។
-            </p>
+            <Image
+              className="transition duration-300 group-hover:scale-105"
+              src={released}
+              alt={'logo'}
+              height={9.5}
+              width={15}
+              layout="responsive"
+              objectFit="cover"
+            />
           </div>
         </div>
-      </Link>
+        <div className="p-2 text-center md:text-left lg:max-w-sm">
+          <h2 className="mb-4 font-heading text-lg text-white lg:text-2xl">
+            រឿង ទេពធីតាផ្កា ថ្កុលមាស
+          </h2>
+          <p className="font-sans text-sm !leading-relaxed text-white lg:text-base lg:!leading-8">
+            រឿង ទេពធីតាព្កុលមាស គឺជារឿងព្រេងនិទានខ្មែរដែលចាស់ៗតែងតែនិយាយដំណា
+            លតៗគ្នាតាំងពីបុរាណមកហៅថា ផ្កាថ្កុលតែពាក្យដែលត្រឹមត្រូវគឺ ព្កុល
+            នើយោងតាមការស្រាវជ្រាវពីវចនានុក្រមរបស់ សម្តេច ជួន ណាត។ នាពេលថ្មីៗនេះត្រូវបានខាង CTN TV
+            និង Studio4 Production សហការគ្នាផលិតឡើង។
+          </p>
+        </div>
+      </div>
+      {/* </Link> */}
     </div>
   );
 };

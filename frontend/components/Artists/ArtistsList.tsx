@@ -77,7 +77,7 @@ export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
             layout={'responsive'}
           /> */}
           {items.map((a, i) => (
-            <div key={i} className="p-3 px-5">
+            <div key={i} className="group relative rounded-full p-3 px-5">
               <>
                 <Image
                   className="cursor-pointer rounded-full"
@@ -89,6 +89,14 @@ export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
                   objectFit="cover"
                 />
               </>
+              <div className="absolute top-0 h-full w-full cursor-pointer opacity-50 group-hover:bg-black"></div>
+              <div className="absolute top-1/2 left-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 overflow-hidden text-white group-hover:block">
+                <div className="p-4 ">
+                  <div className="text-lg group-hover:underline">{a.fullname}</div>
+                  {/* <div className="text-sm">{a.roles}</div> */}
+                  {/* <div className="mt-4 text-sm">{}</div> */}
+                </div>
+              </div>
             </div>
           ))}
         </div>
@@ -120,3 +128,28 @@ export const ArtistsList: React.FC = () => {
     </div>
   );
 };
+
+{
+  /* <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {team.data.map((x, i) => (
+              <div key={i} className="group relative border">
+                <NextImage
+                  alt={image-${i}}
+                  image={x.attributes.image}
+                  width={1}
+                  height={1}
+                  size={'M'}
+                  layout={'responsive'}
+                />
+                <div className="absolute top-0 h-full w-full opacity-80 group-hover:bg-black"></div>
+                <div className="absolute top-0 hidden h-full w-full overflow-hidden text-white group-hover:block">
+                  <div className="p-4">
+                    <div className="text-2xl">{x.attributes.name}</div>
+                    <div className="text-sm">{x.attributes.position}</div>
+                    <div className="mt-4 text-sm">{x.attributes.description}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div> */
+}

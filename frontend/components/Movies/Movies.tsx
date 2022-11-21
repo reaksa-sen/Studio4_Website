@@ -63,23 +63,26 @@ export const MoviesItems: React.FC = () => {
       <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
         {items.map((a, i) => (
           <li key={i} className="group cursor-pointer">
-            <div className="relative cursor-pointer " onClick={() => onModalOpen(a.link)}>
-              <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-                <IoPlayCircleSharp className="h-14 w-auto text-red-500" />
+            <div className="group cursor-pointer overflow-hidden">
+              <div className="relative cursor-pointer " onClick={() => onModalOpen(a.link)}>
+                <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+                  <IoPlayCircleSharp className="h-14 w-auto text-primary-500 group-hover:text-primary-600" />
+                </div>
+                <Image
+                  className="transition duration-300 group-hover:scale-105"
+                  src={a.img}
+                  alt={a.names}
+                  height={1.1}
+                  width={1.7}
+                  layout="responsive"
+                  objectFit="cover"
+                />
               </div>
-              <Image
-                src={a.img}
-                alt={a.names}
-                height={1.1}
-                width={1.7}
-                layout="responsive"
-                objectFit="cover"
-              />
-            </div>
-            <div className="flex flex-col pt-3 pl-2">
-              <span className="text-white line-clamp-2 group-hover:text-primary-500 group-hover:underline">
-                {a.title}
-              </span>
+              <div className="flex flex-col pt-3 pl-2">
+                <span className="font-heading text-lg text-white group-hover:text-primary-600 group-hover:underline md:text-base">
+                  {a.title}
+                </span>
+              </div>
             </div>
           </li>
         ))}

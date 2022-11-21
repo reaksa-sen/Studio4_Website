@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-3 bg-stone-900">
+    <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
         <div className="text-base-100 flex flex-col items-center justify-between lg:flex-row">
           <div className="flex flex-col items-center justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                 alt="Logo"
               />
             </Link>
-            <span className="hidden font-bold !leading-relaxed text-white md:block md:text-base">
+            <span className="hidden font-heading !leading-loose text-white md:block md:text-base">
               Studio4
               គឺជាបណ្ដុំនៃអ្នកអនុវត្តប្រព័ន្ធផ្សព្វផ្សាយដែលមានជំនាញវិជ្ជាជីវៈដែលត្រូបានបង្កើតនៅពាក់កណ្ដាលឆ្នាំ
               2014។ក្រុមនេះត្រូវបានបង្កើតឡើងដោយអ្នកជំនាញដែលមានបទពិសោធន៍សិក្សា
@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2 md:gap-10 md:pr-8 lg:flex-row ">
-            <div className="flex flex-wrap gap-y-9 gap-x-5 text-lg font-bold text-white lg:flex-col lg:justify-start">
+            <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg text-white lg:flex-col lg:justify-start">
               <Link href="/about">
                 <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
                   អំពីយើង
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
               </Link>
             </div>
             <div className="mt-2 flex flex-col lg:mt-0">
-              <p className="whitespace-pre text-center text-lg font-bold text-white">
+              <p className="whitespace-pre text-center font-heading text-lg text-white">
                 បណ្តាញសង្គមរបស់ពួកយើង
               </p>
               <div className="mt-5 flex justify-center space-x-5 text-white ">
@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <p className="py-4 text-center text-sm font-bold text-gray-300 md:text-base">
+          <p className="py-4 text-center font-heading text-sm text-gray-400 ">
             © រក្សាសិទ្ថិគ្រប់យ៉ាងដោយ Studio 4 ឆ្នាំ 2022
           </p>
         </div>

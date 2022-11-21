@@ -35,7 +35,7 @@ export const ContactAddress: React.FC<Props> = ({ contact }) => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
         />
-        <div className="w-full pr-8 pt-4 font-semibold text-white">{address}</div>
+        <div className="w-full pr-8 pt-4  text-white">{address}</div>
       </div>
       {/* <div>
         <ContactHead title="Contact Us" />

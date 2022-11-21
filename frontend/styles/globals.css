@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,400;0,600;1,400&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,4 +23,42 @@ body {
 :root {
   --swiper-navigation-size: 1.5rem !important;
   --swiper-navigation-color: #000 !important;
+}
+
+/* fonts */
+
+/* kh Jrung Thum */
+
+@font-face {
+  font-family: 'Kh Jrung Thom';
+  src: url('/fonts/Kh Jrung Thom/Kh Jrung Thom Kh Jrung Thom.ttf') format('ttf');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* Khmer CN Battambang */
+@font-face {
+  font-family: 'Khmer CN Battambang';
+  src: url('/fonts/Khmer CN Battambang/Khmer CN Battambang.ttf') format('ttf');
+  font-weight: 300;
+  font-display: swap;
+}
+
+/* size client */
+
+.gold-logo--wide {
+  max-width: 290px !important;
+}
+
+.gold-logo--high {
+  max-height: 120px !important;
+}
+
+.gold-logo {
+  width: auto;
+  max-width: 185px;
+  margin: 10px 23px;
+  vertical-align: middle;
+  height: auto;
+  max-height: 180px;
 }
