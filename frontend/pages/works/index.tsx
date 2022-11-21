@@ -9,7 +9,6 @@ import { title } from 'process';
 const WorkShowcase: NextPage = () => {
   const router = useRouter();
   const TITLE = 'Works';
-  const DESCRIPTION = 'Studio Four Team Members';
   return (
     <div className="mt-16 pb-6">
       <Header title={TITLE} />

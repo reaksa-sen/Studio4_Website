@@ -1,6 +1,5 @@
 import { Heading } from 'components/Heading';
 import { NewsCard } from 'components/News/NewsCard';
-import Image from 'next/image';
 
 export const HomeNews: React.FC = () => {
   return (

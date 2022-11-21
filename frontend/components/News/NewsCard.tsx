@@ -72,8 +72,8 @@ export const NewsCard: React.FC<Props> = ({ id, title, image, description, slug 
               </div>
               <div className="flex flex-1 flex-col  bg-stone-800 p-3 hover:bg-stone-700">
                 <div className="mt-2 block">
-                  {titles.map(a => (
-                    <div key={''}>
+                  {titles.map((a, i) => (
+                    <div key={i}>
                       <p className="text-xl font-bold text-gray-200">{a.title}</p>
                       <p className="mt-3 text-base leading-7 text-gray-200 line-clamp-3">
                         {a.description}

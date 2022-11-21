@@ -6,12 +6,10 @@ import { LinkButton } from 'components/Button';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
 import NextImage from 'components/Image';
-import { Wrapper } from 'components/Wrapper';
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
 import { calculateAge } from 'utils/date';
 import { useEffect, useState } from 'react';
-// import Image from 'components/Image';
 import Image from 'next/image';
 
 const items = [
@@ -45,23 +43,6 @@ const items = [
   //   roles: 'actor'
   // }
 ];
-
-// const MemberProfile: NextPage<{ member: MemberResponse }> = ({ member }) => {
-//   const router = useRouter();
-//   const { lang } = useLanguageModalContext();
-//   const [profile, setProfile] = useState(member.data);
-//   const [saveAttribute, setSaveAttribute] = useState<any>(member.data.attributes);
-
-// useEffect(() => {
-//   setSaveAttribute(member.data.attributes);
-// }, []);
-
-// useEffect(() => {
-//   const translateProfile = member.data.attributes.localizations.data.find(
-//     p => p.attributes.locale === lang
-//   );
-//   setProfile(translateProfile ?? member.data);
-// }, [lang]);
 const ArtistsProfile: NextPage = () => {
   return (
     <>
@@ -73,7 +54,6 @@ const ArtistsProfile: NextPage = () => {
         imageUrl={saveAttribute.image?.data?.attributes?.formats?.medium?.url}
       /> */}
 
-      {/* <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2"> */}
       <div className="container mt-20">
         {/* -- To prevent play icon placing below image */}
         {/* <NextImage

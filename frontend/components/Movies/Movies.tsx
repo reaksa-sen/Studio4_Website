@@ -77,7 +77,6 @@ export const MoviesItems: React.FC = () => {
               />
             </div>
             <div className="flex flex-col pt-3 pl-2">
-              {/* <span className="pb-1 font-bold text-gray-500 group-hover:text-yellow-600">{tag}</span> */}
               <span className="text-white line-clamp-2 group-hover:text-primary-500 group-hover:underline">
                 {a.title}
               </span>

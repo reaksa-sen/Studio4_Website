@@ -9,7 +9,6 @@ const Movies: NextPage = () => {
   return (
     <div className="container mt-16">
       <Header title={'Movies'} />
-
       <div className="pb-6">
         <div className="">
           <Heading text={'Movies'} />

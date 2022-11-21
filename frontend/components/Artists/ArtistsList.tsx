@@ -1,7 +1,6 @@
 import { MemberAttribute } from 'api/interface';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
-import { Zoom } from 'react-awesome-reveal';
 import NextImage from '../Image';
 import Image from 'next/image';
 
@@ -66,9 +65,7 @@ const items = [
 export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
   return (
     <>
-      {/* <Zoom duration={500} delay={(delay * 50) % 750} triggerOnce> */}
       <Link href={`/artists/${id}`}>
-        {/* <div className="group flex cursor-pointer overflow-hidden"> */}
         <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {/* <NextImage
             alt={fullname}
@@ -91,16 +88,11 @@ export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
                   layout="responsive"
                   objectFit="cover"
                 />
-                {/* <div className="w-full py-2">
-                  <div className="text-base font-black text-white">{a.fullname}</div>
-                  <div className="text-sm text-white">{a.roles}</div>
-                </div> */}
               </>
             </div>
           ))}
         </div>
       </Link>
-      {/* </Zoom> */}
     </>
   );
 };

@@ -1,4 +1,3 @@
-import { Wrapper } from 'components/Wrapper';
 import { NextPage } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';

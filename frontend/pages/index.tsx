@@ -23,7 +23,6 @@ const Home: NextPage<Props> = props => {
   return (
     <div>
       <Header title="Home" />
-
       <Carousel />
       <HomeReleased />
       <HomeWorkShowcase />

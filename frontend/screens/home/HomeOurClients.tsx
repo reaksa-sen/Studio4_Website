@@ -1,6 +1,4 @@
 import { Heading } from 'components/Heading';
-import Link from 'next/link';
-import Image from 'next/image';
 import { ClientItems } from 'components/Clients/Clients';
 
 export const HomeOurClients: React.FC = () => {
