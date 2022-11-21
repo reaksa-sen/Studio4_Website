@@ -111,12 +111,10 @@ const ArtistsProfile: NextPage = () => {
                   </div>
                 </div>
 
-                    <div className="mt-10 ">
-                      <div className="w-full border-b-2 border-primary-500 pt-2"></div>
-                      <div className="mt-5 text-white">
-                        <span>{a.description}</span>
-                      </div>
-                    </div>
+                <div className="mt-10 ">
+                  <div className="w-full border-b-2 border-primary-500 pt-2"></div>
+                  <div className="mt-5 text-white">
+                    <span>{a.description}</span>
                   </div>
                 </div>
               </div>
@@ -125,7 +123,7 @@ const ArtistsProfile: NextPage = () => {
         ))}
       </div>
 
-          {/* <div className="flex flex-row space-x-4 py-8">
+      {/* <div className="flex flex-row space-x-4 py-8">
             {facebook && (
               <LinkButton target="_blank" dense href={facebook}>
                 <Facebook />
