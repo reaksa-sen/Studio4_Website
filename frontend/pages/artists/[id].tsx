@@ -76,8 +76,7 @@ const ArtistsProfile: NextPage = () => {
       {/* <div className="grid grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2"> */}
       <div className="container mt-20">
         {/* -- To prevent play icon placing below image */}
-        <div className="relative">
-          {/* <NextImage
+        {/* <NextImage
             alt={profile.attributes.fullname}
             image={saveAttribute.image}
             height={4}
@@ -85,46 +84,48 @@ const ArtistsProfile: NextPage = () => {
             layout="responsive"
             size="M"
           /> */}
-          {items.map((a, i) => (
-            <>
-              <div key={i} className="grid grid-cols-1 gap-3 md:grid-cols-6">
-                <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
-                  <img
-                    className="h-56 w-56 cursor-pointer rounded-full object-cover"
-                    src={a.img}
-                    alt={a.alt}
-                  />
-                </div>
-                <div className="col-span-4 text-white md:p-5 md:pt-0">
-                  <Heading text={a.fullname} />
-                  <div className="flex flex-col gap-y-5">
-                    {/* --- Date of Birth --- */}
-                    <span className=" font-semibold">Age: {a.Age}</span>
-                    {/* --- Height --- */}
-                    <span className="font-semibold">Height: {a.height} cm</span>
-                    {/* --- Email --- */}
-                    <p className="whitespace-pre-line  pr-28 font-semibold">Email: {a.email}</p>
-                    <div className="flex flex-row space-x-4 ">
-                      <Facebook className="cursor-pointer" />
-                      <Instagram className="cursor-pointer" />
-                      <Tiktok className="cursor-pointer" />
-                      <Youtube className="cursor-pointer" />
-                    </div>
+        {items.map((a, i) => (
+          <>
+            <div key={i} className="grid grid-cols-1 gap-3 md:grid-cols-6">
+              <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
+                <img
+                  className="h-56 w-56 cursor-pointer rounded-full object-cover"
+                  src={a.img}
+                  alt={a.alt}
+                />
+              </div>
+              <div className="col-span-4 text-white md:p-5 md:pt-0">
+                <Heading text={a.fullname} />
+                <div className="flex flex-col gap-y-5">
+                  {/* --- Date of Birth --- */}
+                  <span className=" font-semibold">Age: {a.Age}</span>
+                  {/* --- Height --- */}
+                  <span className="font-semibold">Height: {a.height} cm</span>
+                  {/* --- Email --- */}
+                  <p className="whitespace-pre-line  pr-28 font-semibold">Email: {a.email}</p>
+                  <div className="flex flex-row space-x-4 ">
+                    <Facebook className="cursor-pointer" />
+                    <Instagram className="cursor-pointer" />
+                    <Tiktok className="cursor-pointer" />
+                    <Youtube className="cursor-pointer" />
                   </div>
+                </div>
 
-                  <div className="mt-10 ">
-                    <div className="w-full border-b-2 border-primary-500 pt-2"></div>
-                    <div className="mt-5 text-white">
-                      <span>{a.description}</span>
+                    <div className="mt-10 ">
+                      <div className="w-full border-b-2 border-primary-500 pt-2"></div>
+                      <div className="mt-5 text-white">
+                        <span>{a.description}</span>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </>
-          ))}
-        </div>
+            </div>
+          </>
+        ))}
+      </div>
 
-        {/* <div className="flex flex-row space-x-4 py-8">
+          {/* <div className="flex flex-row space-x-4 py-8">
             {facebook && (
               <LinkButton target="_blank" dense href={facebook}>
                 <Facebook />
@@ -145,9 +146,9 @@ const ArtistsProfile: NextPage = () => {
                 <Youtube />
               </LinkButton>
             )} */}
-        {/* </div> */}
+      {/* </div> */}
 
-        {/* {!!movies.data.length && <h1 className="py-3 text-2xl font-semibold"> Cast In </h1>}
+      {/* {!!movies.data.length && <h1 className="py-3 text-2xl font-semibold"> Cast In </h1>}
           <ul role="list" className="grid gap-3 sm:grid-cols-2 md:grid-cols-2">
             {movies.data.map(x => (
               <li key={x.attributes.title} className="">
@@ -177,8 +178,7 @@ const ArtistsProfile: NextPage = () => {
               </li>
             ))}
           </ul> */}
-        {/* </div> */}
-      </div>
+      {/* </div> */}
     </>
   );
 };

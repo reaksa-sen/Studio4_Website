@@ -70,7 +70,12 @@ const Navigator = () => {
     setIsNavOpen(!isNavOpen);
   }
   return (
-    <nav className="fixed z-20 w-full bg-transparent bg-gradient-to-b from-gray-800">
+    <nav
+      className={classNames(
+        'fixed z-20 w-full',
+        isNavOpen ? 'bg-black' : 'bg-transparent bg-gradient-to-b from-gray-800'
+      )}
+    >
       <div className="container px-4 py-4">
         <div className=" flex justify-center">
           <div className="hidden md:flex ">

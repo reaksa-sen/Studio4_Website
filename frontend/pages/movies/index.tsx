@@ -1,3 +1,4 @@
+import Header from 'components/Header';
 import { Heading } from 'components/Heading';
 import { MoviesItems } from 'components/Movies/Movies';
 import { NewReleased } from 'components/NewReleased/NewReleased';
@@ -6,8 +7,10 @@ import { NextPage } from 'next';
 
 const Movies: NextPage = () => {
   return (
-    <div className="container mt-14">
-      <div>
+    <div className="container mt-16">
+      <Header title={'Movies'} />
+
+      <div className="pb-6">
         <div className="">
           <Heading text={'Movies'} />
           <NewReleased />

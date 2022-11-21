@@ -4,12 +4,16 @@ import Link from 'next/link';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mt-8 bg-stone-900">
+    <footer className="mt-3 bg-stone-900">
       <div className="container py-4 md:px-8 md:py-6 ">
-        <div className="font-heading text-base-100 flex flex-col items-center justify-between lg:flex-row">
+        <div className="text-base-100 flex flex-col items-center justify-between lg:flex-row">
           <div className="flex flex-col items-center justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
             <Link href="/">
-              <img src="/images/logo.png" className="z-10 h-auto w-56 cursor-pointer" alt="Logo" />
+              <img
+                src="/images/logo.png"
+                className="z-10 h-auto w-20 cursor-pointer md:w-32"
+                alt="Logo"
+              />
             </Link>
             <span className="hidden font-bold !leading-relaxed text-white md:block md:text-base">
               Studio4
@@ -18,8 +22,8 @@ const Footer: React.FC = () => {
               និងការអនុវត្តជាក់ស្ដែងរួមទាំងជំនាញដូចជាផលិតភាពយន្ត និងឯកសារ
             </span>
           </div>
-          <div className="flex flex-col md:pr-8 lg:flex-row lg:gap-16 xl:gap-24">
-            <div className="flex flex-wrap   gap-x-6 gap-y-5 pb-6 text-lg font-bold text-white lg:w-1/3 lg:flex-col lg:justify-start">
+          <div className="flex flex-col gap-7 md:pr-8 lg:flex-row ">
+            <div className="flex flex-wrap gap-y-9 gap-x-5 text-lg font-bold text-white lg:flex-col lg:justify-start">
               <Link href="/about">
                 <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
                   អំពីយើង
@@ -31,12 +35,15 @@ const Footer: React.FC = () => {
                 </a>
               </Link>
               <Link href={''}>
-                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
+                <a
+                  href=""
+                  className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline"
+                >
                   Term & Privacy
                 </a>
               </Link>
             </div>
-            <div className="mt-2 flex flex-col justify-start lg:mt-0">
+            <div className="mt-2 flex flex-col lg:mt-0">
               <p className="whitespace-pre text-center text-lg font-bold text-white">
                 បណ្តាញសង្គមរបស់ពួកយើង
               </p>

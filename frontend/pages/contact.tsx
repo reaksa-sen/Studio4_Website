@@ -19,7 +19,7 @@ const About: NextPage<Props> = () => {
     <div className="container mt-16">
       <Header title={'Contact'} siteUrl="/contact" />
       <Heading text={'Contact'} />
-      <div className="grid gap-8 md:grid-cols-2">
+      <div className="grid gap-8 pb-6 md:grid-cols-2">
         <ContactAddress
           contact={{
             address:

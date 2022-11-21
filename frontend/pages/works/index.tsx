@@ -11,7 +11,7 @@ const WorkShowcase: NextPage = () => {
   const TITLE = 'Works';
   const DESCRIPTION = 'Studio Four Team Members';
   return (
-    <div className="mt-14">
+    <div className="mt-16 pb-6">
       <Header title={TITLE} />
       <div className="container ">
         <Heading text={'Works'} />
