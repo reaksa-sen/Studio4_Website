@@ -73,7 +73,9 @@ const Navigator = () => {
     <nav
       className={classNames(
         'fixed z-20 w-full',
-        isNavOpen ? 'bg-black' : 'bg-transparent bg-gradient-to-b from-gray-800'
+        isNavOpen
+          ? 'bg-black md:bg-transparent md:bg-gradient-to-b md:from-gray-800'
+          : 'bg-transparent bg-gradient-to-b from-gray-800'
       )}
     >
       <div className="container px-4 py-4">
