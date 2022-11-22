@@ -17,7 +17,7 @@ const About: NextPage<Props> = ({ about }) => {
   // const { data } = about;
 
   return (
-    <div className="mt-12 md:mt-16">
+    <div className="mt-16 md:mt-24">
       <Header title={TITLE} siteUrl="/about" />
       <Wrapper>
         {/* <article

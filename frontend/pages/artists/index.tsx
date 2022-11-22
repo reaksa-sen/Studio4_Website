@@ -30,7 +30,7 @@ const Artists: NextPage = () => {
   // );
 
   return (
-    <div className="container mt-16 pb-6">
+    <div className="container mt-16 pb-6 md:mt-24">
       <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
 
       <Heading text={TITLE} />

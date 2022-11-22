@@ -11,6 +11,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
 import { calculateAge } from 'utils/date';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const items = [
   {
@@ -54,7 +55,7 @@ const ArtistsProfile: NextPage = () => {
         imageUrl={saveAttribute.image?.data?.attributes?.formats?.medium?.url}
       /> */}
 
-      <div className="container mt-20">
+      <div className="container mt-16 md:mt-24">
         {/* -- To prevent play icon placing below image */}
         {/* <NextImage
             alt={profile.attributes.fullname}
@@ -84,10 +85,21 @@ const ArtistsProfile: NextPage = () => {
                   {/* --- Email --- */}
                   <p className="whitespace-pre-line  pr-28 font-semibold">Email: {a.email}</p>
                   <div className="flex flex-row space-x-4 ">
-                    <Facebook className="cursor-pointer" />
-                    <Instagram className="cursor-pointer" />
-                    <Tiktok className="cursor-pointer" />
-                    <Youtube className="cursor-pointer" />
+                    <Link href={'https://www.facebook.com/OneWorldSoftware'}>
+                      <a rel="noreferrer" target="_blank">
+                        <Facebook className="cursor-pointer" />
+                      </a>
+                    </Link>
+                    <Link href={'https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j'}>
+                      <a rel="noreferrer" target="_blank">
+                        <Tiktok className="cursor-pointer" />
+                      </a>
+                    </Link>
+                    <Link href={'https://www.youtube.com/watch?v=t1zVoqL7E_k'}>
+                      <a rel="noreferrer" target="_blank">
+                        <Youtube className="cursor-pointer" />
+                      </a>
+                    </Link>
                   </div>
                 </div>
 

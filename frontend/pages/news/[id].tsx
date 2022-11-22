@@ -5,18 +5,19 @@ import released from '../../public/images/released.jpg';
 import { BiTimeFive } from 'react-icons/bi';
 import team from '../../public/images/3.jpg';
 import Header from 'components/Header';
+import { NewsCategoryList } from 'components/News/NewsCategoryList';
 
 const NewsList: NextPage = () => {
   return (
     <>
       <Header title={'News'} />
-      <div className="container mt-12 md:mt-20">
-        <Link href={''}>
-          <div className="mx-auto max-w-4xl pb-8 pt-8 md:p-4">
-            <p className="font-heading text-xl leading-relaxed text-white">
+      <div className="container mt-16 md:mt-24">
+        <div className="grid grid-cols-1 md:grid-cols-3">
+          <div className="col-span-2 py-4 md:p-4 md:py-8">
+            <h2 className="font-heading text-xl leading-relaxed text-white">
               «ជួបស៊យ វគ្គ៣» សម្ពោធចាក់បញ្ចាំងជាផ្លូវការ ជាមួយសាច់រឿងមិនធម្មតា សើចផ្អើលរោងកុន
-            </p>
-            <p className="flex items-center gap-x-1 pt-5 pb-2 font-semibold text-white">
+            </h2>
+            <p className="flex items-center gap-x-1.5 py-4 text-sm text-white">
               <BiTimeFive /> November 4, 2022
             </p>
             <Image
@@ -27,7 +28,7 @@ const NewsList: NextPage = () => {
               objectFit="cover"
               src={released}
             />
-            <p className="py-5 font-heading text-white">
+            <p className="py-5 font-sans !leading-relaxed text-white">
               ពេល​វេលាដ៏រីករាយនោះ ក៏មាន​ការចូលរួមពីសំណាក់តារា​ប្រុស​ស្រីជា​ច្រើននាក់
               ពិសេស​គឺតួអង្គក្នុងរឿង​នេះ​ផ្ទាល់រួមមាន លោក វុធ ថុង, កញ្ញា ឈិន មុន្នីនាថ, អ្នកនាង
               ប៊ីរីយ៉ា និង​តារា​ប្រុសស្រីជា​ច្រើនរូបទៀត។វគ្គ ៣ នេះ គឺការត្រឡប់មកវិញ
@@ -43,14 +44,17 @@ const NewsList: NextPage = () => {
               objectFit="cover"
               src={team}
             />
-            <p className="py-5 font-heading text-white">
+            <p className="py-5 font-sans !leading-relaxed text-white">
               ពេល​វេលាដ៏រីករាយនោះ ក៏មាន​ការចូលរួមពីសំណាក់តារា​ប្រុស​ស្រីជា​ច្រើននាក់
               ពិសេស​គឺតួអង្គក្នុងរឿង​នេះ​ផ្ទាល់រួមមាន លោក វុធ ថុង, កញ្ញា ឈិន មុន្នីនាថ, អ្នកនាង
               ប៊ីរីយ៉ា និង​តារា​ប្រុសស្រីជា​ច្រើនរូបទៀត។វគ្គ ៣ នេះ គឺការត្រឡប់មកវិញ
               របស់រឿង​ក្រោយចេញវគ្គ ២ កាលពី ៣ឆ្នាំមុន ពោលគឺឆ្នាំ ២០១៩។
             </p>
           </div>
-        </Link>
+          <div className="col-span-1 py-4 font-heading md:p-4 md:py-8">
+            <NewsCategoryList />
+          </div>
+        </div>
       </div>
     </>
   );

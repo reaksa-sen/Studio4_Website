@@ -13,6 +13,7 @@
     "@heroicons/react": "1.0.6",
     "@hookform/resolvers": "2.9.7",
     "@icons-pack/react-simple-icons": "5.4.0",
+    "@n8tb1t/use-scroll-position": "^2.0.3",
     "classnames": "2.3.1",
     "date-fns": "2.29.2",
     "next": "12.2.5",

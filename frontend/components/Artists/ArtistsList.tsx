@@ -66,7 +66,7 @@ export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
   return (
     <>
       <Link href={`/artists/${id}`}>
-        <div className="grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 lg:grid-cols-4">
           {/* <NextImage
             alt={fullname}
             className="transition duration-150 group-hover:scale-105"
@@ -77,24 +77,20 @@ export const ArtistsListItem: React.FC<ItemProps> = ({ id }) => {
             layout={'responsive'}
           /> */}
           {items.map((a, i) => (
-            <div key={i} className="group relative rounded-full p-3 px-5">
-              <>
-                <Image
-                  className="cursor-pointer rounded-full"
-                  src={a.img}
-                  alt={a.alt}
-                  height={1}
-                  width={1}
-                  layout="responsive"
-                  objectFit="cover"
-                />
-              </>
-              <div className="absolute top-0 h-full w-full cursor-pointer opacity-50 group-hover:bg-black"></div>
-              <div className="absolute top-1/2 left-1/2 z-10 hidden -translate-x-1/2 -translate-y-1/2 overflow-hidden text-white group-hover:block">
-                <div className="p-4 ">
-                  <div className="text-lg group-hover:underline">{a.fullname}</div>
-                  {/* <div className="text-sm">{a.roles}</div> */}
-                  {/* <div className="mt-4 text-sm">{}</div> */}
+            <div key={i} className="group relative overflow-hidden rounded-full ">
+              <div className="absolute z-10 h-full w-full cursor-pointer rounded-full opacity-50 transition duration-300 ease-in-out group-hover:scale-105 group-hover:bg-black"></div>
+              <Image
+                className="cursor-pointer rounded-full transition duration-300 ease-in-out group-hover:scale-105"
+                src={a.img}
+                alt={a.alt}
+                height={1}
+                width={1}
+                layout="responsive"
+                objectFit="cover"
+              />
+              <div className="absolute top-1/2 left-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 text-white group-hover:block">
+                <div className="cursor-pointer p-4 text-xl hover:text-primary-500 group-hover:underline">
+                  {a.fullname}
                 </div>
               </div>
             </div>

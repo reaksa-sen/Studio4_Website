@@ -7,10 +7,10 @@ import { NextPage } from 'next';
 
 const Movies: NextPage = () => {
   return (
-    <div className="container mt-16">
+    <div className="container mt-16 md:mt-24">
       <Header title={'Movies'} />
       <div className="pb-6">
-        <div className="">
+        <div>
           <Heading text={'Movies'} />
           <NewReleased />
         </div>

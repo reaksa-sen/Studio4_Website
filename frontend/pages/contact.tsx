@@ -16,7 +16,7 @@ const About: NextPage<Props> = () => {
   // const { data } = contact;
 
   return (
-    <div className="container mt-16">
+    <div className="container mt-16 md:mt-24">
       <Header title={'Contact'} siteUrl="/contact" />
       <Heading text={'Contact'} />
       <div className="grid gap-8 pb-6 md:grid-cols-2">

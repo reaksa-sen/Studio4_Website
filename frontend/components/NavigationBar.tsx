@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import MenuIcon from '@heroicons/react/outline/MenuIcon';
 import XIcon from '@heroicons/react/outline/XIcon';
 import classNames from 'classnames';
@@ -22,7 +23,7 @@ const NavLink: React.FC<NavLinkProps> = props => {
     <Link href={href}>
       <a
         className={classNames(
-          'flex items-center  px-3 py-2 text-lg font-semibold leading-normal hover:text-primary-500',
+          'flex items-center  px-3 py-2 font-sans text-lg leading-normal hover:text-primary-500',
           isActive ? 'text-primary-600' : 'text-white'
         )}
       >
@@ -43,7 +44,7 @@ const SmNavLink: React.FC<NavLinkProps> = props => {
         onClick={onClick}
         href={href}
         className={classNames(
-          'block rounded-md px-3 py-2 font-semibold',
+          'block rounded-md px-3 py-2',
           isActive ? 'text-primary-600' : 'text-white'
         )}
       >
@@ -65,22 +66,29 @@ const NavButton: React.FC<{ onClick: () => void; isNavOpen: boolean }> = ({
 
 const Navigator = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
+
+  useScrollPosition(
+    ({ currPos }) => {
+      if (currPos.y < -200) setIsTop(false);
+      else setIsTop(true);
+    },
+    [isTop]
+  );
 
   function handleNavBar() {
     setIsNavOpen(!isNavOpen);
   }
   return (
     <nav
-      className={classNames(
-        'fixed z-20 w-full',
-        isNavOpen
-          ? 'bg-black md:bg-transparent md:bg-gradient-to-b md:from-gray-800'
-          : 'bg-transparent bg-gradient-to-b from-gray-800'
-      )}
+      className={classNames('fixed z-50 w-full', {
+        'bg-gradient-to-b from-[#403f3e]': isTop,
+        'bg-black': !isTop || isNavOpen
+      })}
     >
       <div className="container px-4 py-4">
-        <div className=" flex justify-center">
-          <div className="hidden md:flex ">
+        <div className=" flex justify-center ">
+          <div className="hidden gap-x-3 md:flex ">
             <NavLink exact href="/about" name="About" />
             <NavLink href="/movies" name="Movies" />
             <NavLink href="/works" name="Works" />
