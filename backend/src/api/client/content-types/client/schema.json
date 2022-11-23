@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "partners",
+  "collectionName": "clients",
   "info": {
-    "singularName": "partner",
-    "pluralName": "partners",
-    "displayName": "Partner",
-    "description": ""
+    "singularName": "client",
+    "pluralName": "clients",
+    "displayName": "Clients"
   },
   "options": {
     "draftAndPublish": true
@@ -17,12 +16,12 @@
       "required": true
     },
     "image": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
       "allowedTypes": [
         "images"
-      ]
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     },
     "link": {
       "type": "string",

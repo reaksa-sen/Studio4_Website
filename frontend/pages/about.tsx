@@ -14,17 +14,17 @@ interface Props {
 
 const About: NextPage<Props> = ({ about }) => {
   const TITLE = 'About';
-  // const { data } = about;
+  const { data } = about;
 
   return (
     <div className="mt-16 md:mt-24">
       <Header title={TITLE} siteUrl="/about" />
       <Wrapper>
-        {/* <article
-          className="prose max-w-none pt-6"
+        <article
+          className="prose max-w-none pt-6 text-white"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
-        /> */}
-        <div className="text-white ">
+        />
+        {/* <div className="text-white ">
           <div>
             <p className="pb-5 text-xl font-bold">Studio Four</p>
             <p>
@@ -38,15 +38,15 @@ const About: NextPage<Props> = ({ about }) => {
             </p>
             <img className="w-full object-cover py-5" src="/images/team.jpg" alt="team" />
           </div>
-        </div>
+        </div> */}
       </Wrapper>
     </div>
   );
 };
 
-// export const getStaticProps: GetStaticProps<Props> = async () => {
-//   const about = await getAbout();
-//   return { props: { about }, revalidate: 60 };
-// };
+export const getStaticProps: GetStaticProps<Props> = async () => {
+  const about = await getAbout();
+  return { props: { about }, revalidate: 60 };
+};
 
 export default About;
