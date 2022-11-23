@@ -1,85 +1,69 @@
 /* eslint-disable @next/next/no-img-element */
 import { StaticImageData } from 'next/image';
 import classNames from 'classnames';
+import { ClientsResponse } from 'api/interface';
+import Link from 'next/link';
 
 interface Props {
-  src: StaticImageData | string;
-  alt?: string;
-  isInverted?: boolean;
-  className?: string;
-  link?: string;
+  clients: ClientsResponse;
 }
 
-const items = [
-  {
-    img: '/images/11.png',
-    name: 'client6',
-    link: 'https://advan-auto.com/'
-  },
-  {
-    img: '/images/10.png',
-    name: 'client7',
-    link: 'https://ldentertainmentkh.com/'
-  },
-  {
-    img: '/images/9.png',
-    name: 'client8',
-    link: 'https://news.sabay.com.kh/'
-  },
-  {
-    img: '/images/Mono.png',
-    name: 'client5',
-    link: 'https://oneworldsoftware.com/'
-  }
-];
+interface IClientItem {
+  name: string;
+  link?: string;
+  image?: string;
+  moreHeight?: boolean;
+  moreWidth?: boolean;
+  ordering: number;
+  isInverted?: boolean;
+  className?: string;
+}
 
-const PartnerItem: React.FC<Props> = ({ src, alt, className, isInverted, link }) => (
-  <div className="flex min-h-[100px] items-center">
-    <img
-      src={src as never}
-      alt={alt}
-      className={classNames(
-        'transition duration-150 ease-in-out hover:scale-105 ',
-        className,
-        isInverted ? 'invert' : 'gold-logo'
-      )}
-    />
-  </div>
-);
+export const ClientItem: React.FC<IClientItem> = props => {
+  const { name, link, moreHeight, moreWidth, image, isInverted, className } = props;
+  const imgHighClass = moreHeight ? 'gold-logo--high' : '';
+  const imgWidthClass = moreWidth ? 'gold-logo--wide' : '';
+  return (
+    <div className="flex min-h-[100px] items-center">
+      <Link href={link ?? ''}>
+        <a target="_blank">
+          <img
+            src={image}
+            alt={name}
+            className={classNames(
+              `transition duration-150 ease-in-out hover:scale-105 ${imgHighClass} ${imgWidthClass}`,
+              className,
+              isInverted ? 'invert' : 'gold-logo'
+            )}
+          />
+        </a>
+      </Link>
+    </div>
+  );
+};
 
-export const ClientItems: React.FC = () => {
+export const ClientItems: React.FC<Props> = ({ clients }) => {
+  console.log(clients.data);
+
   return (
     <>
       <div>
         <div className="mx-auto max-w-7xl">
-          <div>
-            <div className="flex flex-wrap items-center justify-center ">
-              <a href="https://advan-auto.com/" target="_blank" rel="noreferrer">
-                <PartnerItem src="/images/11.png" alt="client1" />
-              </a>
-              <a href="https://ldentertainmentkh.com/" target="_blank" rel="noreferrer">
-                <PartnerItem src="/images/10.png" alt="client2" />
-              </a>
-              <a href="https://news.sabay.com.kh/" target="_blank" rel="noreferrer">
-                <PartnerItem src="/images/9.png" alt="client3" />
-              </a>
-              <a href="https://oneworldsoftware.com/" target="_blank" rel="noreferrer">
-                <PartnerItem src="/images/Mono.png" alt="client4" className="gold-logo--wide" />
-              </a>
-            </div>
+          <div className="flex flex-wrap items-center justify-center ">
+            {clients.data.map((item, i) => (
+              <ClientItem
+                key={i}
+                name={item.attributes.name}
+                link={item.attributes.link}
+                image={item.attributes.image?.data?.attributes.url}
+                moreHeight={item.attributes.moreHeight ?? false}
+                moreWidth={item.attributes.moreWidth ?? false}
+                ordering={0}
+              />
+            ))}
           </div>
         </div>
       </div>
-      {/* <div>
-        {items.map((a, i) => (
-          <a key={i} href={a.link} target="_blank" rel="noreferrer">
-            <img
-              src={a.img}
-              alt={a.name}
-              className="inline-block h-24 w-auto cursor-pointer py-4 px-5" />
-          </a>
-        ))}
-      </div> */}
     </>
   );
 };

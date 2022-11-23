@@ -1,4 +1,4 @@
-import { getMembers } from 'api/strapiApi';
+import { getArtists } from 'api/strapiApi';
 import { ArtistsList } from 'components/Artists/ArtistsList';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';

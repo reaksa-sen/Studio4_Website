@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "clients",
+  "collectionName": "work_showecases",
   "info": {
-    "singularName": "client",
-    "pluralName": "clients",
-    "displayName": "Clients",
+    "singularName": "work-showecase",
+    "pluralName": "work-showecases",
+    "displayName": "WorkShowecase",
     "description": ""
   },
   "options": {
@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -27,12 +23,6 @@
     "link": {
       "type": "string",
       "required": true
-    },
-    "moreWidth": {
-      "type": "boolean"
-    },
-    "moreHeight": {
-      "type": "boolean"
     },
     "ordering": {
       "type": "integer",

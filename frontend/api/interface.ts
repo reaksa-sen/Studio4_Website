@@ -34,23 +34,6 @@ interface IContact {
   twitter_url: string;
 }
 
-interface IMember {
-  fullname: string;
-  image: { data: IAttribute<Image> };
-  // --
-  roles: string;
-  bio: string;
-  date_of_birth: string;
-  height: number;
-  movies: IResponse<IAttribute<IMovie>>;
-  facebook: string;
-  instagram: string;
-  youtube: string;
-  tiktok: string;
-  locale: string;
-  localizations: { data?: MemberAttribute[] };
-}
-
 interface IBlogCategory {
   name: string;
   // ----
@@ -82,21 +65,41 @@ interface IMovie {
   movie_categories?: IResponse<IAttribute<IGenre>>;
   release: string;
   duration: string;
-  artists?: MembersResponse;
+  artists?: ArtistsResponse;
 }
 
-interface IPartner {
+interface IClient {
   name: string;
-  image: IAttribute<Image>;
+  image: { data?: IAttribute<Image> };
   link?: string;
+  moreWidth: boolean;
+  moreHeight: boolean;
+  ordering: number;
+}
+
+interface IArtist {
+  fullname: string;
+  image: { data?: IAttribute<Image> };
+  // --
+  roles: string;
+  bio: string;
+  date_of_birth: string;
+  height: number;
+  movies: IResponse<IAttribute<IMovie>>;
+  facebook: string;
+  instagram: string;
+  youtube: string;
+  tiktok: string;
+  locale: string;
+  // localizations: { data?: ArtistAttribute[] };
 }
 
 export type AboutResponse = { data: IAttribute<IAbout> };
 export type ContactResponse = { data: IAttribute<IContact> };
 
-export type MemberAttribute = IAttribute<IMember>;
-export type MembersResponse = IResponse<MemberAttribute>;
-export type MemberResponse = { data: MemberAttribute; meta: Meta };
+export type ArtistAttribute = IAttribute<IArtist>;
+export type ArtistsResponse = IResponse<ArtistAttribute>;
+export type ArtistResponse = { data: ArtistAttribute; meta: Meta };
 
 export type BlogAttribute = IAttribute<IBlog>;
 export type BlogsResponse = IResponse<BlogAttribute>;
@@ -105,9 +108,9 @@ export type BlogResponse = { data: BlogAttribute; meta: Meta };
 export type BlogCategoryAttribute = IAttribute<IBlogCategory>;
 export type BlogCategoriesResponse = IResponse<BlogCategoryAttribute>;
 
-export type PartnerAttribute = IAttribute<IPartner>;
-export type PartnerResponse = { data: PartnerAttribute; meta: Meta };
-export type PartnersResponse = IResponse<PartnerAttribute>;
+export type ClientAttribute = IAttribute<IClient>;
+export type ClientsResponse = IResponse<ClientAttribute>;
+export type ClientResponse = { data: ClientAttribute; meta: Meta };
 
 export interface Meta {
   pagination: {

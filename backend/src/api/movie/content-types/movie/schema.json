@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "clients",
+  "collectionName": "movies",
   "info": {
-    "singularName": "client",
-    "pluralName": "clients",
-    "displayName": "Clients",
+    "singularName": "movie",
+    "pluralName": "movies",
+    "displayName": "Movies",
     "description": ""
   },
   "options": {
@@ -12,10 +12,6 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "name": {
-      "type": "string",
-      "required": true
-    },
     "image": {
       "type": "media",
       "multiple": false,
@@ -28,11 +24,13 @@
       "type": "string",
       "required": true
     },
-    "moreWidth": {
-      "type": "boolean"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "moreHeight": {
-      "type": "boolean"
+    "description": {
+      "type": "text",
+      "required": false
     },
     "ordering": {
       "type": "integer",

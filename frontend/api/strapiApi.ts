@@ -9,26 +9,20 @@ export function getContact(): Promise<I.ContactResponse> {
   return fetchAPI('/contact', {});
 }
 
-export function getMembers(pagination: I.Pagination): Promise<I.MembersResponse> {
+export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse> {
   return fetchAPI('/artists', {
     sort: ['id:desc'],
-    fields: ['fullname', 'roles'],
+    fields: ['fullname', 'roles', 'locale'],
     pagination,
     populate: {
-      localizations: {
-        fields: ['fullname', 'roles', 'locale']
-      },
       image: { fields: ['name', 'url', 'formats'] }
     }
   });
 }
 
-export function getMember(id: string): Promise<I.MemberResponse> {
-  return fetchAPI(`/members/${id}`, {
+export function getArtist(id: string): Promise<I.ArtistsResponse> {
+  return fetchAPI(`/artists/${id}`, {
     populate: {
-      localizations: {
-        fields: ['*']
-      },
       image: { fields: ['name', 'url', 'formats'] },
       movies: {
         fields: ['title'],
@@ -83,8 +77,8 @@ export const sendMessage = async (data: any) => {
   });
 };
 
-export function getPartners(): Promise<I.PartnersResponse> {
-  return fetchAPI('/partners', {
+export function getClients(): Promise<I.ClientsResponse> {
+  return fetchAPI('/Clients', {
     populate: '*'
   });
 }

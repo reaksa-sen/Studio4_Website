@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Facebook, Instagram, Tiktok, Youtube } from '@icons-pack/react-simple-icons';
-import { MemberResponse } from 'api/interface';
-import { getMember } from 'api/strapiApi';
+import { ArtistsResponse } from 'api/interface';
+import { getArtist } from 'api/strapiApi';
 import { LinkButton } from 'components/Button';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
@@ -12,6 +12,7 @@ import { calculateAge } from 'utils/date';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { te } from 'date-fns/locale';
 
 const items = [
   {
@@ -44,7 +45,8 @@ const items = [
   //   roles: 'actor'
   // }
 ];
-const ArtistsProfile: NextPage = () => {
+
+const ArtistsProfile: NextPage<{ artist: ArtistsResponse }> = ({ artist }) => {
   return (
     <>
       <Header title={'Artists'} />
@@ -56,35 +58,28 @@ const ArtistsProfile: NextPage = () => {
       /> */}
 
       <div className="container mt-16 md:mt-24">
-        {/* -- To prevent play icon placing below image */}
-        {/* <NextImage
-            alt={profile.attributes.fullname}
-            image={saveAttribute.image}
-            height={4}
-            width={3}
-            layout="responsive"
-            size="M"
-          /> */}
-        {items.map((a, i) => (
+        {artist.data.map((item, i) => (
           <>
             <div key={i} className="grid grid-cols-1 gap-3 md:grid-cols-6">
               <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
                 <img
                   className="h-56 w-56 cursor-pointer rounded-full object-cover"
-                  src={a.img}
-                  alt={a.alt}
+                  src={item.attributes.image?.data?.attributes.url}
+                  alt={item.attributes.fullname}
                 />
               </div>
               <div className="col-span-4 text-white md:p-5 md:pt-0">
-                <Heading text={a.fullname} />
+                <Heading text={item.attributes.fullname} />
                 <div className="flex flex-col gap-y-5">
                   {/* --- Date of Birth --- */}
-                  <span className=" font-semibold">Age: {a.Age}</span>
+                  <span className=" font-semibold">Age: {item.attributes.date_of_birth}</span>
                   {/* --- Height --- */}
-                  <span className="font-semibold">Height: {a.height} cm</span>
+                  <span className="font-semibold">Height: {item.attributes.height} cm</span>
+                  {/* --- roles ---*/}
+                  <span className="font-semibold">Role: {item.attributes.roles}</span>
                   {/* --- Email --- */}
-                  <p className="whitespace-pre-line  pr-28 font-semibold">Email: {a.email}</p>
-                  <div className="flex flex-row space-x-4 ">
+                  <p className="whitespace-pre-line  pr-28 font-semibold">Email: {}</p>
+                  {/* <div className="flex flex-row space-x-4 ">
                     <Link href={'https://www.facebook.com/OneWorldSoftware'}>
                       <a rel="noreferrer" target="_blank">
                         <Facebook className="cursor-pointer" />
@@ -100,13 +95,18 @@ const ArtistsProfile: NextPage = () => {
                         <Youtube className="cursor-pointer" />
                       </a>
                     </Link>
-                  </div>
+                    <Link href={'https://www.youtube.com/watch?v=t1zVoqL7E_k'}>
+                      <a rel="noreferrer" target="_blank">
+                        <Instagram className="cursor-pointer" />
+                      </a>
+                    </Link>
+                  </div> */}
                 </div>
 
                 <div className="mt-10 ">
                   <div className="w-full border-b-2 border-primary-500 pt-2"></div>
                   <div className="mt-5 text-white">
-                    <span>{a.description}</span>
+                    <span>{item.attributes.bio}</span>
                   </div>
                 </div>
               </div>
@@ -135,8 +135,8 @@ const ArtistsProfile: NextPage = () => {
               <LinkButton target="_blank" dense href={youtube}>
                 <Youtube />
               </LinkButton>
-            )} */}
-      {/* </div> */}
+            )}
+      </div> */}
 
       {/* {!!movies.data.length && <h1 className="py-3 text-2xl font-semibold"> Cast In </h1>}
           <ul role="list" className="grid gap-3 sm:grid-cols-2 md:grid-cols-2">
@@ -174,18 +174,14 @@ const ArtistsProfile: NextPage = () => {
 };
 export default ArtistsProfile;
 
-{
-  /* export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
-  const member = await getMember(params.id as string);
-  return { props: { member }, revalidate: 60 };
-}; */
-}
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const artist = await getArtist(params.id as string);
+  return { props: { artist }, revalidate: 60 };
+};
 
-{
-  /* // export const getStaticPaths: GetStaticPaths = async ({}) => {
-//   return {
-//     paths: [],
-//     fallback: 'blocking'
-//   };
-// }; */
-}
+export const getStaticPaths: GetStaticPaths = async ({}) => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  };
+};
