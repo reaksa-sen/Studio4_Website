@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "work_showecases",
+  "collectionName": "work_showcases",
   "info": {
-    "singularName": "work-showecase",
-    "pluralName": "work-showecases",
-    "displayName": "WorkShowecase",
+    "singularName": "work-showcase",
+    "pluralName": "work-showcases",
+    "displayName": "WorkShowcase",
     "description": ""
   },
   "options": {
@@ -25,8 +25,10 @@
       "required": true
     },
     "ordering": {
-      "type": "integer",
-      "required": true
+      "type": "integer"
+    },
+    "title": {
+      "type": "string"
     }
   }
 }

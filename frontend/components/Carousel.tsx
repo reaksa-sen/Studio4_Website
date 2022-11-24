@@ -64,7 +64,7 @@ export const Carousel: React.FC = () => {
           navigation
           // pagination
           slidesPerView={1}
-          // autoplay={{ delay: 5000, disableOnInteraction: false }}
+          autoplay={{ delay: 5000, disableOnInteraction: false }}
           modules={[Autoplay, Pagination, Navigation]}
         >
           {items.map((a, i) => (

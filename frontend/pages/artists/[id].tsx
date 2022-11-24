@@ -1,174 +1,82 @@
 /* eslint-disable @next/next/no-img-element */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { Facebook, Instagram, Tiktok, Youtube } from '@icons-pack/react-simple-icons';
-import { ArtistsResponse } from 'api/interface';
+import { ArtistResponse } from 'api/interface';
 import { getArtist } from 'api/strapiApi';
 import { LinkButton } from 'components/Button';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
-import NextImage from 'components/Image';
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
-import { calculateAge } from 'utils/date';
-import { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { te } from 'date-fns/locale';
 
-const items = [
-  {
-    img: '/images/1.webp',
-    alt: 'artists1',
-    fullname: 'Chhin Monineath',
-    roles: 'actor',
-    Age: '25',
-    height: '170',
-    email: 'chhin Monineath@gamil.com',
-    description:
-      'Chea Samnang: I was born in 1971, 4 years before Khmer Rouge came into power, in Sangkat Lek Pram, Phnom Penh, where my parents ran a pawnshop. It was my ill fate that I had to grow up in the darkest age of Cambodia, working in a child labour unit in Kampong Cham while being separated from my parents. In 1981, two years after the fall of Khmer Rouge, my father brought us back to Phnom Penh, where I started school. Life was very hard at that time, especially when there are nine children in the family. Thanks to my hard work, I was accepted at the military school, which opened the door for me to study medicine.'
-  }
-  // {
-  //   img: '/images/2.webp',
-  //   alt: 'artists2',
-  //   fullname: 'Ella',
-  //   roles: 'actor'
-  // },
-  // {
-  //   img: '/images/3.webp',
-  //   alt: 'artists3',
-  //   fullname: 'Ken Veasna',
-  //   roles: 'actor'
-  // },
-  // {
-  //   img: '/images/4.webp',
-  //   alt: 'artists4',
-  //   fullname: 'Heng Canetha',
-  //   roles: 'actor'
-  // }
-];
+const ArtistsProfile: NextPage<{ artist: ArtistResponse }> = ({ artist }) => {
+  const router = useRouter();
+  const { facebook = '', tiktok = '', instagram = '', youtube = '' } = artist.data.attributes || {};
 
-const ArtistsProfile: NextPage<{ artist: ArtistsResponse }> = ({ artist }) => {
   return (
     <>
-      <Header title={'Artists'} />
-      {/* <Header
-        title={profile.attributes.fullname}
+      <Header
+        title={artist.data.attributes.fullname}
         siteUrl={router.asPath}
-        description={(profile.attributes.bio || '').substring(160, 0)}
-        imageUrl={saveAttribute.image?.data?.attributes?.formats?.medium?.url}
-      /> */}
+        description={(artist.data.attributes.description || '').substring(160, 0)}
+        imageUrl={artist.data.attributes.image?.data?.attributes.url}
+      />
 
       <div className="container mt-16 md:mt-24">
-        {artist.data.map((item, i) => (
-          <>
-            <div key={i} className="grid grid-cols-1 gap-3 md:grid-cols-6">
-              <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
-                <img
-                  className="h-56 w-56 cursor-pointer rounded-full object-cover"
-                  src={item.attributes.image?.data?.attributes.url}
-                  alt={item.attributes.fullname}
-                />
-              </div>
-              <div className="col-span-4 text-white md:p-5 md:pt-0">
-                <Heading text={item.attributes.fullname} />
-                <div className="flex flex-col gap-y-5">
-                  {/* --- Date of Birth --- */}
-                  <span className=" font-semibold">Age: {item.attributes.date_of_birth}</span>
-                  {/* --- Height --- */}
-                  <span className="font-semibold">Height: {item.attributes.height} cm</span>
-                  {/* --- roles ---*/}
-                  <span className="font-semibold">Role: {item.attributes.roles}</span>
-                  {/* --- Email --- */}
-                  <p className="whitespace-pre-line  pr-28 font-semibold">Email: {}</p>
-                  {/* <div className="flex flex-row space-x-4 ">
-                    <Link href={'https://www.facebook.com/OneWorldSoftware'}>
-                      <a rel="noreferrer" target="_blank">
-                        <Facebook className="cursor-pointer" />
-                      </a>
-                    </Link>
-                    <Link href={'https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j'}>
-                      <a rel="noreferrer" target="_blank">
-                        <Tiktok className="cursor-pointer" />
-                      </a>
-                    </Link>
-                    <Link href={'https://www.youtube.com/watch?v=t1zVoqL7E_k'}>
-                      <a rel="noreferrer" target="_blank">
-                        <Youtube className="cursor-pointer" />
-                      </a>
-                    </Link>
-                    <Link href={'https://www.youtube.com/watch?v=t1zVoqL7E_k'}>
-                      <a rel="noreferrer" target="_blank">
-                        <Instagram className="cursor-pointer" />
-                      </a>
-                    </Link>
-                  </div> */}
-                </div>
-
-                <div className="mt-10 ">
-                  <div className="w-full border-b-2 border-primary-500 pt-2"></div>
-                  <div className="mt-5 text-white">
-                    <span>{item.attributes.bio}</span>
-                  </div>
-                </div>
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-6">
+          <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
+            <img
+              className="h-56 w-56 cursor-pointer rounded-full object-cover"
+              src={artist.data.attributes.image?.data?.attributes.url}
+              alt={artist.data.attributes.fullname}
+            />
+          </div>
+          <div className="col-span-4 text-white md:p-5 md:pt-0">
+            <Heading text={artist.data.attributes.fullname} />
+            <div className="flex flex-col gap-y-5">
+              {/* --- Date of Birth --- */}
+              <span className=" font-semibold">Age: {artist.data.attributes.age}</span>
+              {/* --- Height --- */}
+              <span className="font-semibold">Height: {artist.data.attributes.height} cm</span>
+              {/* --- roles ---*/}
+              <span className="font-semibold">Role: {artist.data.attributes.roles}</span>
+              {/* --- Email --- */}
+              <p className="whitespace-pre-line pr-28 font-semibold">
+                Email: {artist.data.attributes.email}
+              </p>
+              <div className="flex flex-row space-x-4 ">
+                {facebook && (
+                  <LinkButton target="_blank" dense href={facebook}>
+                    <Facebook />
+                  </LinkButton>
+                )}
+                {instagram && (
+                  <LinkButton target="_blank" dense href={instagram}>
+                    <Instagram />
+                  </LinkButton>
+                )}
+                {tiktok && (
+                  <LinkButton target="_blank" dense href={tiktok}>
+                    <Tiktok />
+                  </LinkButton>
+                )}
+                {youtube && (
+                  <LinkButton target="_blank" dense href={youtube}>
+                    <Youtube />
+                  </LinkButton>
+                )}
               </div>
             </div>
-          </>
-        ))}
+
+            <div className="mt-5 ">
+              <div className="w-full border-b-2 border-primary-500 pt-2"></div>
+              <div className="mt-5 text-white">
+                <span>{artist.data.attributes.description}</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-
-      {/* <div className="flex flex-row space-x-4 py-8">
-            {facebook && (
-              <LinkButton target="_blank" dense href={facebook}>
-                <Facebook />
-              </LinkButton>
-            )}
-            {instagram && (
-              <LinkButton target="_blank" dense href={instagram}>
-                <Instagram />
-              </LinkButton>
-            )}
-            {tiktok && (
-              <LinkButton target="_blank" dense href={tiktok}>
-                <Tiktok />
-              </LinkButton>
-            )}
-            {youtube && (
-              <LinkButton target="_blank" dense href={youtube}>
-                <Youtube />
-              </LinkButton>
-            )}
-      </div> */}
-
-      {/* {!!movies.data.length && <h1 className="py-3 text-2xl font-semibold"> Cast In </h1>}
-          <ul role="list" className="grid gap-3 sm:grid-cols-2 md:grid-cols-2">
-            {movies.data.map(x => (
-              <li key={x.attributes.title} className="">
-                <Link href={`/movies/${x.id}`}>
-                  <a className="group flex cursor-pointer flex-row">
-                    <div className="relative w-16 flex-shrink-0">
-                      <NextImage
-                        alt={x.attributes.title}
-                        image={x.attributes.poster}
-                        height={4}
-                        width={3}
-                        size="T"
-                        layout="responsive"
-                      />
-                    </div>
-
-                    <div className="ml-3 ">
-                      <p className="text-sm font-semibold text-black group-hover:text-yellow-600 group-hover:underline">
-                        {x.attributes.title}
-                      </p>
-                      <p className="text-sm text-gray-700 group-hover:text-yellow-600">
-                        View Detail
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              </li>
-            ))}
-          </ul> */}
-      {/* </div> */}
     </>
   );
 };
@@ -179,7 +87,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   return { props: { artist }, revalidate: 60 };
 };
 
-export const getStaticPaths: GetStaticPaths = async ({}) => {
+export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths: [],
     fallback: 'blocking'

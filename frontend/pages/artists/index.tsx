@@ -1,5 +1,6 @@
+import { ArtistsResponse } from 'api/interface';
 import { getArtists } from 'api/strapiApi';
-import { ArtistsList } from 'components/Artists/ArtistsList';
+import { ArtistList } from 'components/Artists/ArtistsList';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
 import { XInfiniteScroll } from 'components/InfiniteScroll';
@@ -10,24 +11,24 @@ import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
 import { useInfiniteQuery } from 'react-query';
 
-const Artists: NextPage = () => {
+const Page: NextPage = () => {
   const router = useRouter();
   const TITLE = 'Artists';
   const PAGE_SIZE = 20;
   const DESCRIPTION = 'Studio Four Team Members';
 
-  // const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
-  //   'infiniteMembers',
-  //   async ({ pageParam = 1 }) => getMembers({ page: pageParam, pageSize: PAGE_SIZE }),
-  //   {
-  //     getNextPageParam: (lastPage, pages) => {
-  //       const { page, pageSize, total } = lastPage.meta.pagination;
-  //       if (page * pageSize < total) {
-  //         return pages.length + 1;
-  //       }
-  //     }
-  //   }
-  // );
+  const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
+    'infiniteArtists',
+    async ({ pageParam = 1 }) => getArtists({ page: pageParam, pageSize: PAGE_SIZE }),
+    {
+      getNextPageParam: (lastPage, pages) => {
+        const { page, pageSize, total } = lastPage.meta.pagination;
+        if (page * pageSize < total) {
+          return pages.length + 1;
+        }
+      }
+    }
+  );
 
   return (
     <div className="container mt-16 pb-6 md:mt-24">
@@ -35,24 +36,23 @@ const Artists: NextPage = () => {
 
       <Heading text={TITLE} />
 
-      {/* {isLoading && <Spinner />}
+      {isLoading && <Spinner />}
 
-        {status === 'success' && (
-          <XInfiniteScroll
-            dataLength={data?.pages.length * PAGE_SIZE}
-            next={fetchNextPage}
-            hasMore={hasNextPage}
-          > */}
-      {/* {!data.pages[0].data.length && <NoResult />} */}
-      <ArtistsList />
+      {status === 'success' && (
+        <XInfiniteScroll
+          dataLength={data?.pages.length * PAGE_SIZE}
+          next={fetchNextPage}
+          hasMore={hasNextPage}
+        >
+          {!data.pages[0].data.length && <NoResult />}
 
-      {/* {data?.pages.map((page, i) => (
-              <MemberList key={`member-${i}`} res={page.data} />
-            ))} */}
-      {/* </XInfiniteScroll>
-        )} */}
+          {data?.pages.map((page, i) => (
+            <ArtistList key={`artists-${i}`} artists={page} />
+          ))}
+        </XInfiniteScroll>
+      )}
     </div>
   );
 };
 
-export default Artists;
+export default Page;

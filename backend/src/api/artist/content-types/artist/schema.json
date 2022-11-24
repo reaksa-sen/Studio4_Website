@@ -25,7 +25,7 @@
     "image": {
       "type": "media",
       "multiple": false,
-      "required": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
@@ -45,6 +45,12 @@
     "roles": {
       "type": "string",
       "required": true
+    },
+    "age": {
+      "type": "integer"
+    },
+    "email": {
+      "type": "email"
     }
   }
 }

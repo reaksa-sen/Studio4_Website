@@ -33,9 +33,7 @@ export const LinkButton: React.FC<NavButtonProps> = props => {
   const { children, dense, href, target } = props;
   return (
     <Link href={href} passHref>
-      <a target={target} className={baseClassName(dense)}>
-        {children}
-      </a>
+      <a target={target}>{children}</a>
     </Link>
   );
 };

@@ -1,4 +1,7 @@
-type IAttribute<T> = { id: number; attributes: T };
+type IAttribute<T> = {
+  id: number;
+  attributes: T;
+};
 type IResponse<T> = { data: T[]; meta: Meta };
 
 interface Image {
@@ -78,20 +81,26 @@ interface IClient {
 }
 
 interface IArtist {
+  description: string;
   fullname: string;
   image: { data?: IAttribute<Image> };
   // --
   roles: string;
-  bio: string;
-  date_of_birth: string;
+  age: string;
   height: number;
+  email: string;
   movies: IResponse<IAttribute<IMovie>>;
   facebook: string;
   instagram: string;
   youtube: string;
   tiktok: string;
-  locale: string;
-  // localizations: { data?: ArtistAttribute[] };
+}
+
+interface IWorkShowcase {
+  image: { data?: IAttribute<Image> };
+  link: string;
+  title: string;
+  ordering: number;
 }
 
 export type AboutResponse = { data: IAttribute<IAbout> };
@@ -101,16 +110,20 @@ export type ArtistAttribute = IAttribute<IArtist>;
 export type ArtistsResponse = IResponse<ArtistAttribute>;
 export type ArtistResponse = { data: ArtistAttribute; meta: Meta };
 
+export type WorkShowcaseAttribute = IAttribute<IWorkShowcase>;
+export type WorkShowcasesResponse = IResponse<WorkShowcaseAttribute>;
+export type WorkShowcaseResponse = { data: WorkShowcaseAttribute; meta: Meta };
+
+export type ClientAttribute = IAttribute<IClient>;
+export type ClientsResponse = IResponse<ClientAttribute>;
+export type ClientResponse = { data: ClientAttribute; meta: Meta };
+
 export type BlogAttribute = IAttribute<IBlog>;
 export type BlogsResponse = IResponse<BlogAttribute>;
 export type BlogResponse = { data: BlogAttribute; meta: Meta };
 
 export type BlogCategoryAttribute = IAttribute<IBlogCategory>;
 export type BlogCategoriesResponse = IResponse<BlogCategoryAttribute>;
-
-export type ClientAttribute = IAttribute<IClient>;
-export type ClientsResponse = IResponse<ClientAttribute>;
-export type ClientResponse = { data: ClientAttribute; meta: Meta };
 
 export interface Meta {
   pagination: {

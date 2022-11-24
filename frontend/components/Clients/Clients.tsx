@@ -43,8 +43,6 @@ export const ClientItem: React.FC<IClientItem> = props => {
 };
 
 export const ClientItems: React.FC<Props> = ({ clients }) => {
-  console.log(clients.data);
-
   return (
     <>
       <div>

@@ -1,5 +1,5 @@
 import * as I from 'api/interface';
-import { getArtists, getBlogs, getAbout, getContact, getClients } from 'api/strapiApi';
+import { getArtists, getAbout, getContact, getClients, getWorkShowcases } from 'api/strapiApi';
 import { Carousel } from 'components/Carousel';
 import Header from 'components/Header';
 import { GetStaticProps, NextPage } from 'next/types';
@@ -17,6 +17,7 @@ interface Props {
   contact: I.ContactResponse;
   clients: I.ClientsResponse;
   artists: I.ArtistsResponse;
+  workShowcases: I.WorkShowcasesResponse;
   // carousels: I.BlogsResponse;
 }
 
@@ -27,8 +28,8 @@ const Home: NextPage<Props> = props => {
 
       <Carousel />
       <HomeReleased />
-      <HomeWorkShowcase />
-      <HomeArtists />
+      <HomeWorkShowcase workShowcases={props.workShowcases} />
+      <HomeArtists artists={props.artists} />
       <HomeOurClients clients={props.clients} />
       <HomeNews />
       <HomeContact contact={props.contact} />
@@ -37,28 +38,21 @@ const Home: NextPage<Props> = props => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  let [about, contact, clients, artists] = await Promise.all([
-    // getBlogs({ page: 1, pageSize: 4 }, { categories: { name: 'News' } }),
-    // getBlogs({ page: 1, pageSize: 5 }, { categories: { name: 'Event' } }),
-    getArtists({ page: 1, pageSize: 10 }),
+  let [about, contact, clients, artists, workShowcases] = await Promise.all([
     getAbout(),
     getContact(),
-    getClients()
-    // getPartners(),
-    // getBlogs({ page: 1, pageSize: 3 }) // get blogs for slider
+    getClients(),
+    getArtists({ page: 1, pageSize: 4 }),
+    getWorkShowcases({ page: 1, pageSize: 8 })
   ]);
 
   return {
     props: {
-      // artists,
-      // blogs,
-      // events,
-      contact,
       about,
+      contact,
       clients,
-      artists
-
-      // carousels
+      artists,
+      workShowcases
     },
     revalidate: 60
   };

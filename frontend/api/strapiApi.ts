@@ -12,7 +12,7 @@ export function getContact(): Promise<I.ContactResponse> {
 export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse> {
   return fetchAPI('/artists', {
     sort: ['id:desc'],
-    fields: ['fullname', 'roles', 'locale'],
+    fields: ['fullname', 'roles'],
     pagination,
     populate: {
       image: { fields: ['name', 'url', 'formats'] }
@@ -24,12 +24,20 @@ export function getArtist(id: string): Promise<I.ArtistsResponse> {
   return fetchAPI(`/artists/${id}`, {
     populate: {
       image: { fields: ['name', 'url', 'formats'] },
-      movies: {
-        fields: ['title'],
-        populate: {
-          poster: { fields: ['name', 'url', 'formats'] }
-        }
+      fields: ['title'],
+      populate: {
+        poster: { fields: ['name', 'url', 'formats'] }
       }
+    }
+  });
+}
+
+export function getWorkShowcases(pagination: I.Pagination): Promise<I.WorkShowcasesResponse> {
+  return fetchAPI('/work-showcases', {
+    sort: ['id:desc'],
+    pagination,
+    populate: {
+      image: { fields: ['name', 'url', 'formats'] }
     }
   });
 }
