@@ -1,10 +1,10 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::member.member",
+  "key": "plugin_content_manager_configuration_content_types::api::artist.artist",
   "value": {
-    "uid": "api::member.member",
+    "uid": "api::artist.artist",
     "settings": {
-      "bulkable": false,
-      "filterable": false,
+      "bulkable": true,
+      "filterable": true,
       "searchable": true,
       "pageSize": 10,
       "mainField": "fullname",
@@ -34,20 +34,6 @@
           "sortable": true
         }
       },
-      "date_of_birth": {
-        "edit": {
-          "label": "Date_of_birth",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "date_of_birth",
-          "searchable": true,
-          "sortable": true
-        }
-      },
       "height": {
         "edit": {
           "label": "Height",
@@ -62,16 +48,16 @@
           "sortable": true
         }
       },
-      "bio": {
+      "description": {
         "edit": {
-          "label": "Bio",
+          "label": "Description",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "bio",
+          "label": "description",
           "searchable": true,
           "sortable": true
         }
@@ -160,6 +146,34 @@
           "sortable": true
         }
       },
+      "age": {
+        "edit": {
+          "label": "Age",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "age",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "email": {
+        "edit": {
+          "label": "Email",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "email",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -197,24 +211,18 @@
             "size": 6
           },
           {
-            "name": "roles",
+            "name": "email",
             "size": 6
           }
         ],
         [
           {
-            "name": "date_of_birth",
+            "name": "age",
             "size": 6
           },
           {
-            "name": "height",
+            "name": "roles",
             "size": 6
-          }
-        ],
-        [
-          {
-            "name": "bio",
-            "size": 12
           }
         ],
         [
@@ -225,26 +233,34 @@
         ],
         [
           {
-            "name": "facebook",
-            "size": 8
+            "name": "description",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "height",
+            "size": 6
+          },
+          {
+            "name": "youtube",
+            "size": 6
           }
         ],
         [
           {
             "name": "instagram",
-            "size": 8
-          }
-        ],
-        [
+            "size": 6
+          },
           {
             "name": "tiktok",
-            "size": 8
+            "size": 6
           }
         ],
         [
           {
-            "name": "youtube",
-            "size": 8
+            "name": "facebook",
+            "size": 6
           }
         ]
       ],

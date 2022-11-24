@@ -1,10 +1,10 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::partner.partner",
+  "key": "plugin_content_manager_configuration_content_types::plugin::upload.folder",
   "value": {
-    "uid": "api::partner.partner",
+    "uid": "plugin::upload.folder",
     "settings": {
-      "bulkable": false,
-      "filterable": false,
+      "bulkable": true,
+      "filterable": true,
       "searchable": true,
       "pageSize": 10,
       "mainField": "name",
@@ -22,7 +22,7 @@
       },
       "name": {
         "edit": {
-          "label": "Name",
+          "label": "name",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -34,30 +34,75 @@
           "sortable": true
         }
       },
-      "image": {
+      "pathId": {
         "edit": {
-          "label": "Image",
+          "label": "pathId",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "image",
+          "label": "pathId",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "parent": {
+        "edit": {
+          "label": "parent",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "parent",
+          "searchable": true,
+          "sortable": true
+        }
+      },
+      "children": {
+        "edit": {
+          "label": "children",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "children",
           "searchable": false,
           "sortable": false
         }
       },
-      "link": {
+      "files": {
         "edit": {
-          "label": "Link",
+          "label": "files",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true,
+          "mainField": "name"
+        },
+        "list": {
+          "label": "files",
+          "searchable": false,
+          "sortable": false
+        }
+      },
+      "path": {
+        "edit": {
+          "label": "path",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "link",
+          "label": "path",
           "searchable": true,
           "sortable": true
         }
@@ -92,30 +137,34 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "name",
+        "pathId",
+        "parent"
+      ],
+      "editRelations": [
+        "parent",
+        "children",
+        "files"
+      ],
       "edit": [
         [
           {
             "name": "name",
-            "size": 8
+            "size": 6
+          },
+          {
+            "name": "pathId",
+            "size": 4
           }
         ],
         [
           {
-            "name": "link",
-            "size": 8
-          }
-        ],
-        [
-          {
-            "name": "image",
-            "size": 8
+            "name": "path",
+            "size": 6
           }
         ]
-      ],
-      "editRelations": [],
-      "list": [
-        "image",
-        "name"
       ]
     }
   },

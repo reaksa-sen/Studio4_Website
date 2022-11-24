@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
                   ទាក់ទងយើង
                 </a>
               </Link>
-              <Link href={''}>
+              <Link href="/term-and-privacy">
                 <a
                   href=""
                   className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline"

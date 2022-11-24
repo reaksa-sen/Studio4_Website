@@ -1,7 +1,7 @@
 {
-  "key": "plugin_content_manager_configuration_content_types::api::about.about",
+  "key": "plugin_content_manager_configuration_content_types::api::term-and-privacy.term-and-privacy",
   "value": {
-    "uid": "api::about.about",
+    "uid": "api::term-and-privacy.term-and-privacy",
     "settings": {
       "bulkable": true,
       "filterable": true,
@@ -20,7 +20,7 @@
           "sortable": true
         }
       },
-      "content": {
+      "Content": {
         "edit": {
           "label": "Content",
           "description": "",
@@ -29,7 +29,7 @@
           "editable": true
         },
         "list": {
-          "label": "content",
+          "label": "Content",
           "searchable": false,
           "sortable": false
         }
@@ -64,19 +64,19 @@
       }
     },
     "layouts": {
-      "edit": [
-        [
-          {
-            "name": "content",
-            "size": 12
-          }
-        ]
-      ],
-      "editRelations": [],
       "list": [
         "id",
         "createdAt",
         "updatedAt"
+      ],
+      "editRelations": [],
+      "edit": [
+        [
+          {
+            "name": "Content",
+            "size": 12
+          }
+        ]
       ]
     }
   },

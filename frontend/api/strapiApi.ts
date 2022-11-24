@@ -5,6 +5,10 @@ export function getAbout(): Promise<I.AboutResponse> {
   return fetchAPI('/about', {});
 }
 
+export function getTermAndPrivacy(): Promise<I.TermAndPrivacyResponse> {
+  return fetchAPI('/term-and-privacy', {});
+}
+
 export function getContact(): Promise<I.ContactResponse> {
   return fetchAPI('/contact', {});
 }

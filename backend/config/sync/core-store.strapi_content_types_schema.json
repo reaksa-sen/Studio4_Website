@@ -1563,37 +1563,6 @@
           },
           "required": true
         },
-        "title": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
-          "type": "string",
-          "required": true
-        },
-        "description": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
-          "type": "text",
-          "required": true
-        },
-        "image": {
-          "allowedTypes": [
-            "images"
-          ],
-          "type": "media",
-          "multiple": false,
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "required": true
-        },
         "createdAt": {
           "type": "datetime"
         },
@@ -1668,37 +1637,6 @@
               }
             },
             "required": true
-          },
-          "title": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
-            "type": "string",
-            "required": true
-          },
-          "description": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
-            "type": "text",
-            "required": true
-          },
-          "image": {
-            "allowedTypes": [
-              "images"
-            ],
-            "type": "media",
-            "multiple": false,
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "required": true
           }
         },
         "kind": "singleType"
@@ -1712,76 +1650,59 @@
       "actions": {},
       "lifecycles": {}
     },
-    "api::blog.blog": {
+    "api::artist.artist": {
       "kind": "collectionType",
-      "collectionName": "blogs",
+      "collectionName": "artists",
       "info": {
-        "singularName": "blog",
-        "pluralName": "blogs",
-        "displayName": "Blog",
+        "singularName": "artist",
+        "pluralName": "artists",
+        "displayName": "Artists",
         "description": ""
       },
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "attributes": {
-        "title": {
+        "fullname": {
           "type": "string",
-          "required": true,
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
+          "required": true
         },
-        "content": {
-          "type": "richtext",
-          "required": true,
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
+        "height": {
+          "type": "integer"
+        },
+        "description": {
+          "type": "text"
         },
         "image": {
           "type": "media",
           "multiple": false,
           "required": true,
           "allowedTypes": [
-            "images",
-            "files",
-            "videos",
-            "audios"
-          ],
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          }
+            "images"
+          ]
         },
-        "slug": {
-          "type": "uid",
-          "required": true,
-          "targetField": "title"
+        "facebook": {
+          "type": "string"
         },
-        "description": {
-          "type": "text",
-          "required": true,
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
+        "instagram": {
+          "type": "string"
         },
-        "categories": {
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::blog-category.blog-category"
+        "tiktok": {
+          "type": "string"
+        },
+        "youtube": {
+          "type": "string"
+        },
+        "roles": {
+          "type": "string",
+          "required": true
+        },
+        "age": {
+          "type": "integer"
+        },
+        "email": {
+          "type": "email"
         },
         "createdAt": {
           "type": "datetime"
@@ -1814,140 +1735,112 @@
           "visible": false,
           "useJoinTable": false,
           "private": true
-        },
-        "localizations": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::blog.blog"
-        },
-        "locale": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "string"
         }
       },
       "__schema__": {
-        "collectionName": "blogs",
+        "collectionName": "artists",
         "info": {
-          "singularName": "blog",
-          "pluralName": "blogs",
-          "displayName": "Blog",
+          "singularName": "artist",
+          "pluralName": "artists",
+          "displayName": "Artists",
           "description": ""
         },
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {
-          "i18n": {
-            "localized": true
-          }
-        },
+        "pluginOptions": {},
         "attributes": {
-          "title": {
+          "fullname": {
             "type": "string",
-            "required": true,
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
+            "required": true
           },
-          "content": {
-            "type": "richtext",
-            "required": true,
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
+          "height": {
+            "type": "integer"
+          },
+          "description": {
+            "type": "text"
           },
           "image": {
             "type": "media",
             "multiple": false,
             "required": true,
             "allowedTypes": [
-              "images",
-              "files",
-              "videos",
-              "audios"
-            ],
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            }
+              "images"
+            ]
           },
-          "slug": {
-            "type": "uid",
-            "required": true,
-            "targetField": "title"
+          "facebook": {
+            "type": "string"
           },
-          "description": {
-            "type": "text",
-            "required": true,
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
+          "instagram": {
+            "type": "string"
           },
-          "categories": {
-            "type": "relation",
-            "relation": "oneToMany",
-            "target": "api::blog-category.blog-category"
+          "tiktok": {
+            "type": "string"
+          },
+          "youtube": {
+            "type": "string"
+          },
+          "roles": {
+            "type": "string",
+            "required": true
+          },
+          "age": {
+            "type": "integer"
+          },
+          "email": {
+            "type": "email"
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "blog",
+      "modelName": "artist",
       "connection": "default",
-      "uid": "api::blog.blog",
-      "apiName": "blog",
-      "globalId": "Blog",
+      "uid": "api::artist.artist",
+      "apiName": "artist",
+      "globalId": "Artist",
       "actions": {},
       "lifecycles": {}
     },
-    "api::blog-category.blog-category": {
+    "api::client.client": {
       "kind": "collectionType",
-      "collectionName": "blog_categories",
+      "collectionName": "clients",
       "info": {
-        "singularName": "blog-category",
-        "pluralName": "blog-categories",
-        "displayName": "Blog Category",
+        "singularName": "client",
+        "pluralName": "clients",
+        "displayName": "Clients",
         "description": ""
       },
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "attributes": {
         "name": {
           "type": "string",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
           "required": true
+        },
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "link": {
+          "type": "string",
+          "required": true
+        },
+        "moreWidth": {
+          "type": "boolean"
+        },
+        "moreHeight": {
+          "type": "boolean"
         },
         "ordering": {
           "type": "integer",
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          }
+          "required": true
         },
         "createdAt": {
           "type": "datetime"
@@ -1980,67 +1873,56 @@
           "visible": false,
           "useJoinTable": false,
           "private": true
-        },
-        "localizations": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::blog-category.blog-category"
-        },
-        "locale": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "string"
         }
       },
       "__schema__": {
-        "collectionName": "blog_categories",
+        "collectionName": "clients",
         "info": {
-          "singularName": "blog-category",
-          "pluralName": "blog-categories",
-          "displayName": "Blog Category",
+          "singularName": "client",
+          "pluralName": "clients",
+          "displayName": "Clients",
           "description": ""
         },
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {
-          "i18n": {
-            "localized": true
-          }
-        },
+        "pluginOptions": {},
         "attributes": {
           "name": {
             "type": "string",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
             "required": true
+          },
+          "image": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "link": {
+            "type": "string",
+            "required": true
+          },
+          "moreWidth": {
+            "type": "boolean"
+          },
+          "moreHeight": {
+            "type": "boolean"
           },
           "ordering": {
             "type": "integer",
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            }
+            "required": true
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "blog-category",
+      "modelName": "client",
       "connection": "default",
-      "uid": "api::blog-category.blog-category",
-      "apiName": "blog-category",
-      "globalId": "BlogCategory",
+      "uid": "api::client.client",
+      "apiName": "client",
+      "globalId": "Client",
       "actions": {},
       "lifecycles": {}
     },
@@ -2062,30 +1944,6 @@
         }
       },
       "attributes": {
-        "phone": {
-          "type": "string",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
-        },
-        "email": {
-          "type": "email",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
-        },
-        "telegram": {
-          "type": "string",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
-        },
         "address": {
           "type": "string",
           "pluginOptions": {
@@ -2102,45 +1960,69 @@
             }
           }
         },
-        "facebook_url": {
-          "type": "string",
+        "phone": {
           "pluginOptions": {
             "i18n": {
               "localized": true
             }
-          }
+          },
+          "type": "integer"
+        },
+        "email": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          },
+          "type": "email"
+        },
+        "facebook_url": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          },
+          "type": "string"
         },
         "youtube_url": {
-          "type": "string",
           "pluginOptions": {
             "i18n": {
               "localized": true
             }
-          }
+          },
+          "type": "string"
         },
         "instagram_url": {
-          "type": "string",
           "pluginOptions": {
             "i18n": {
               "localized": true
             }
-          }
+          },
+          "type": "string"
         },
         "tiktok_url": {
-          "type": "string",
           "pluginOptions": {
             "i18n": {
               "localized": true
             }
-          }
+          },
+          "type": "string"
         },
         "twitter_url": {
-          "type": "string",
           "pluginOptions": {
             "i18n": {
               "localized": true
             }
-          }
+          },
+          "type": "string"
+        },
+        "telegram_url": {
+          "pluginOptions": {
+            "i18n": {
+              "localized": true
+            }
+          },
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -2208,30 +2090,6 @@
           }
         },
         "attributes": {
-          "phone": {
-            "type": "string",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
-          },
-          "email": {
-            "type": "email",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
-          },
-          "telegram": {
-            "type": "string",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
-          },
           "address": {
             "type": "string",
             "pluginOptions": {
@@ -2248,45 +2106,69 @@
               }
             }
           },
-          "facebook_url": {
-            "type": "string",
+          "phone": {
             "pluginOptions": {
               "i18n": {
                 "localized": true
               }
-            }
+            },
+            "type": "integer"
+          },
+          "email": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            },
+            "type": "email"
+          },
+          "facebook_url": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            },
+            "type": "string"
           },
           "youtube_url": {
-            "type": "string",
             "pluginOptions": {
               "i18n": {
                 "localized": true
               }
-            }
+            },
+            "type": "string"
           },
           "instagram_url": {
-            "type": "string",
             "pluginOptions": {
               "i18n": {
                 "localized": true
               }
-            }
+            },
+            "type": "string"
           },
           "tiktok_url": {
-            "type": "string",
             "pluginOptions": {
               "i18n": {
                 "localized": true
               }
-            }
+            },
+            "type": "string"
           },
           "twitter_url": {
-            "type": "string",
             "pluginOptions": {
               "i18n": {
                 "localized": true
               }
-            }
+            },
+            "type": "string"
+          },
+          "telegram_url": {
+            "pluginOptions": {
+              "i18n": {
+                "localized": true
+              }
+            },
+            "type": "string"
           }
         },
         "kind": "singleType"
@@ -2300,287 +2182,13 @@
       "actions": {},
       "lifecycles": {}
     },
-    "api::member.member": {
+    "api::movie.movie": {
       "kind": "collectionType",
-      "collectionName": "members",
+      "collectionName": "movies",
       "info": {
-        "singularName": "member",
-        "pluralName": "members",
-        "displayName": "Member",
-        "description": ""
-      },
-      "options": {
-        "draftAndPublish": true
-      },
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "attributes": {
-        "fullname": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
-          "type": "string",
-          "required": true
-        },
-        "date_of_birth": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "date",
-          "required": false
-        },
-        "height": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "integer"
-        },
-        "bio": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
-          "type": "text",
-          "required": true
-        },
-        "image": {
-          "type": "media",
-          "multiple": false,
-          "required": true,
-          "allowedTypes": [
-            "images"
-          ],
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          }
-        },
-        "facebook": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "string"
-        },
-        "instagram": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "string"
-        },
-        "tiktok": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "string"
-        },
-        "youtube": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
-          "type": "string"
-        },
-        "roles": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
-          "type": "string",
-          "required": true
-        },
-        "createdAt": {
-          "type": "datetime"
-        },
-        "updatedAt": {
-          "type": "datetime"
-        },
-        "publishedAt": {
-          "type": "datetime",
-          "configurable": false,
-          "writable": true,
-          "visible": false
-        },
-        "createdBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "updatedBy": {
-          "type": "relation",
-          "relation": "oneToOne",
-          "target": "admin::user",
-          "configurable": false,
-          "writable": false,
-          "visible": false,
-          "useJoinTable": false,
-          "private": true
-        },
-        "localizations": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::member.member"
-        },
-        "locale": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "string"
-        }
-      },
-      "__schema__": {
-        "collectionName": "members",
-        "info": {
-          "singularName": "member",
-          "pluralName": "members",
-          "displayName": "Member",
-          "description": ""
-        },
-        "options": {
-          "draftAndPublish": true
-        },
-        "pluginOptions": {
-          "i18n": {
-            "localized": true
-          }
-        },
-        "attributes": {
-          "fullname": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
-            "type": "string",
-            "required": true
-          },
-          "date_of_birth": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "date",
-            "required": false
-          },
-          "height": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "integer"
-          },
-          "bio": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
-            "type": "text",
-            "required": true
-          },
-          "image": {
-            "type": "media",
-            "multiple": false,
-            "required": true,
-            "allowedTypes": [
-              "images"
-            ],
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            }
-          },
-          "facebook": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "string"
-          },
-          "instagram": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "string"
-          },
-          "tiktok": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "string"
-          },
-          "youtube": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
-            "type": "string"
-          },
-          "roles": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
-            "type": "string",
-            "required": true
-          }
-        },
-        "kind": "collectionType"
-      },
-      "modelType": "contentType",
-      "modelName": "member",
-      "connection": "default",
-      "uid": "api::member.member",
-      "apiName": "member",
-      "globalId": "Member",
-      "actions": {},
-      "lifecycles": {}
-    },
-    "api::partner.partner": {
-      "kind": "collectionType",
-      "collectionName": "partners",
-      "info": {
-        "singularName": "partner",
-        "pluralName": "partners",
-        "displayName": "Partner",
+        "singularName": "movie",
+        "pluralName": "movies",
+        "displayName": "Movies",
         "description": ""
       },
       "options": {
@@ -2588,10 +2196,6 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "name": {
-          "type": "string",
-          "required": true
-        },
         "image": {
           "type": "media",
           "multiple": false,
@@ -2604,6 +2208,18 @@
           "type": "string",
           "required": true
         },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "description": {
+          "type": "text",
+          "required": false
+        },
+        "ordering": {
+          "type": "integer",
+          "required": true
+        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2638,11 +2254,11 @@
         }
       },
       "__schema__": {
-        "collectionName": "partners",
+        "collectionName": "movies",
         "info": {
-          "singularName": "partner",
-          "pluralName": "partners",
-          "displayName": "Partner",
+          "singularName": "movie",
+          "pluralName": "movies",
+          "displayName": "Movies",
           "description": ""
         },
         "options": {
@@ -2650,10 +2266,6 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "name": {
-            "type": "string",
-            "required": true
-          },
           "image": {
             "type": "media",
             "multiple": false,
@@ -2665,16 +2277,424 @@
           "link": {
             "type": "string",
             "required": true
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "description": {
+            "type": "text",
+            "required": false
+          },
+          "ordering": {
+            "type": "integer",
+            "required": true
           }
         },
         "kind": "collectionType"
       },
       "modelType": "contentType",
-      "modelName": "partner",
+      "modelName": "movie",
       "connection": "default",
-      "uid": "api::partner.partner",
-      "apiName": "partner",
-      "globalId": "Partner",
+      "uid": "api::movie.movie",
+      "apiName": "movie",
+      "globalId": "Movie",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::new.new": {
+      "kind": "collectionType",
+      "collectionName": "news",
+      "info": {
+        "singularName": "new",
+        "pluralName": "news",
+        "displayName": "News"
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "image": {
+          "allowedTypes": [
+            "images"
+          ],
+          "type": "media",
+          "multiple": false,
+          "required": true
+        },
+        "title": {
+          "type": "string",
+          "required": true
+        },
+        "content": {
+          "type": "richtext",
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "news",
+        "info": {
+          "singularName": "new",
+          "pluralName": "news",
+          "displayName": "News"
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "image": {
+            "allowedTypes": [
+              "images"
+            ],
+            "type": "media",
+            "multiple": false,
+            "required": true
+          },
+          "title": {
+            "type": "string",
+            "required": true
+          },
+          "content": {
+            "type": "richtext",
+            "required": true
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "new",
+      "connection": "default",
+      "uid": "api::new.new",
+      "apiName": "new",
+      "globalId": "New",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::slider.slider": {
+      "kind": "collectionType",
+      "collectionName": "sliders",
+      "info": {
+        "singularName": "slider",
+        "pluralName": "sliders",
+        "displayName": "Slider",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "facebook_url": {
+          "type": "string"
+        },
+        "tiktok_url": {
+          "type": "string"
+        },
+        "youtube_url": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "sliders",
+        "info": {
+          "singularName": "slider",
+          "pluralName": "sliders",
+          "displayName": "Slider",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "image": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "facebook_url": {
+            "type": "string"
+          },
+          "tiktok_url": {
+            "type": "string"
+          },
+          "youtube_url": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "slider",
+      "connection": "default",
+      "uid": "api::slider.slider",
+      "apiName": "slider",
+      "globalId": "Slider",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::term-and-privacy.term-and-privacy": {
+      "kind": "singleType",
+      "collectionName": "term_and_privacies",
+      "info": {
+        "singularName": "term-and-privacy",
+        "pluralName": "term-and-privacies",
+        "displayName": "Term&Privacy",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "Content": {
+          "type": "richtext",
+          "required": true
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "term_and_privacies",
+        "info": {
+          "singularName": "term-and-privacy",
+          "pluralName": "term-and-privacies",
+          "displayName": "Term&Privacy",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "Content": {
+            "type": "richtext",
+            "required": true
+          }
+        },
+        "kind": "singleType"
+      },
+      "modelType": "contentType",
+      "modelName": "term-and-privacy",
+      "connection": "default",
+      "uid": "api::term-and-privacy.term-and-privacy",
+      "apiName": "term-and-privacy",
+      "globalId": "TermAndPrivacy",
+      "actions": {},
+      "lifecycles": {}
+    },
+    "api::work-showcase.work-showcase": {
+      "kind": "collectionType",
+      "collectionName": "work_showcases",
+      "info": {
+        "singularName": "work-showcase",
+        "pluralName": "work-showcases",
+        "displayName": "WorkShowcase",
+        "description": ""
+      },
+      "options": {
+        "draftAndPublish": true
+      },
+      "pluginOptions": {},
+      "attributes": {
+        "image": {
+          "type": "media",
+          "multiple": false,
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
+        },
+        "link": {
+          "type": "string",
+          "required": true
+        },
+        "ordering": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "publishedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "writable": true,
+          "visible": false
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "__schema__": {
+        "collectionName": "work_showcases",
+        "info": {
+          "singularName": "work-showcase",
+          "pluralName": "work-showcases",
+          "displayName": "WorkShowcase",
+          "description": ""
+        },
+        "options": {
+          "draftAndPublish": true
+        },
+        "pluginOptions": {},
+        "attributes": {
+          "image": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
+          },
+          "link": {
+            "type": "string",
+            "required": true
+          },
+          "ordering": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "work-showcase",
+      "connection": "default",
+      "uid": "api::work-showcase.work-showcase",
+      "apiName": "work-showcase",
+      "globalId": "WorkShowcase",
       "actions": {},
       "lifecycles": {}
     }

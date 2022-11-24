@@ -8,10 +8,7 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
+          "content"
         ]
       },
       "conditions": [
@@ -23,10 +20,7 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
+          "content"
         ]
       },
       "conditions": [
@@ -38,100 +32,7 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
-        ]
-      },
-      "conditions": [
-        "admin::is-creator"
-      ]
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
+          "content"
         ]
       },
       "conditions": [
@@ -143,16 +44,8 @@
       "subject": "api::contact.contact",
       "properties": {
         "fields": [
-          "phone",
-          "email",
-          "telegram",
           "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
+          "google_map_url"
         ]
       },
       "conditions": [
@@ -164,16 +57,8 @@
       "subject": "api::contact.contact",
       "properties": {
         "fields": [
-          "phone",
-          "email",
-          "telegram",
           "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
+          "google_map_url"
         ]
       },
       "conditions": [
@@ -185,16 +70,8 @@
       "subject": "api::contact.contact",
       "properties": {
         "fields": [
-          "phone",
-          "email",
-          "telegram",
           "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
+          "google_map_url"
         ]
       },
       "conditions": [

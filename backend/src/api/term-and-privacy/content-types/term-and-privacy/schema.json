@@ -4,7 +4,8 @@
   "info": {
     "singularName": "term-and-privacy",
     "pluralName": "term-and-privacies",
-    "displayName": "Term&Privacy"
+    "displayName": "Term&Privacy",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,7 +13,8 @@
   "pluginOptions": {},
   "attributes": {
     "Content": {
-      "type": "richtext"
+      "type": "richtext",
+      "required": true
     }
   }
 }

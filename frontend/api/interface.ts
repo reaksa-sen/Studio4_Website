@@ -1,7 +1,4 @@
-type IAttribute<T> = {
-  id: number;
-  attributes: T;
-};
+type IAttribute<T> = { id: number; attributes: T };
 type IResponse<T> = { data: T[]; meta: Meta };
 
 interface Image {
@@ -16,12 +13,10 @@ interface Image {
 }
 
 interface IAbout {
-  title: string;
-  description: string;
-  image: { data?: IAttribute<Image> };
   content: string;
-  locale: string;
-  localizations: { data?: IAttribute<IAbout>[] };
+}
+interface ITermAndPrivacy {
+  content: string;
 }
 
 interface IContact {
@@ -105,6 +100,7 @@ interface IWorkShowcase {
 
 export type AboutResponse = { data: IAttribute<IAbout> };
 export type ContactResponse = { data: IAttribute<IContact> };
+export type TermAndPrivacyResponse = { data: IAttribute<ITermAndPrivacy> };
 
 export type ArtistAttribute = IAttribute<IArtist>;
 export type ArtistsResponse = IResponse<ArtistAttribute>;

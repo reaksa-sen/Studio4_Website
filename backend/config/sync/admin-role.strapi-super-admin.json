@@ -8,14 +8,10 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
+          "content"
         ],
         "locales": [
-          "en",
-          "km"
+          "en"
         ]
       },
       "conditions": []
@@ -25,8 +21,7 @@
       "subject": "api::about.about",
       "properties": {
         "locales": [
-          "en",
-          "km"
+          "en"
         ]
       },
       "conditions": []
@@ -36,8 +31,7 @@
       "subject": "api::about.about",
       "properties": {
         "locales": [
-          "en",
-          "km"
+          "en"
         ]
       },
       "conditions": []
@@ -47,14 +41,10 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
+          "content"
         ],
         "locales": [
-          "en",
-          "km"
+          "en"
         ]
       },
       "conditions": []
@@ -64,390 +54,471 @@
       "subject": "api::about.about",
       "properties": {
         "fields": [
-          "content",
-          "title",
-          "description",
-          "image"
+          "content"
         ],
         "locales": [
-          "en",
-          "km"
+          "en"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.create",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::blog-category.blog-category",
-      "properties": {
-        "fields": [
-          "name",
-          "ordering"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::blog.blog",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::blog.blog",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::blog.blog",
-      "properties": {
-        "fields": [
-          "title",
-          "content",
-          "image",
-          "slug",
-          "description",
-          "categories"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::contact.contact",
-      "properties": {
-        "fields": [
-          "phone",
-          "email",
-          "telegram",
-          "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::contact.contact",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::contact.contact",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::contact.contact",
-      "properties": {
-        "fields": [
-          "phone",
-          "email",
-          "telegram",
-          "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::contact.contact",
-      "properties": {
-        "fields": [
-          "phone",
-          "email",
-          "telegram",
-          "address",
-          "google_map_url",
-          "facebook_url",
-          "youtube_url",
-          "instagram_url",
-          "tiktok_url",
-          "twitter_url"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::member.member",
+      "subject": "api::artist.artist",
       "properties": {
         "fields": [
           "fullname",
-          "date_of_birth",
           "height",
-          "bio",
+          "description",
           "image",
           "facebook",
           "instagram",
           "tiktok",
           "youtube",
-          "roles"
-        ],
-        "locales": [
-          "en",
-          "km"
+          "roles",
+          "age",
+          "email"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::member.member",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::member.member",
-      "properties": {
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.read",
-      "subject": "api::member.member",
-      "properties": {
-        "fields": [
-          "fullname",
-          "date_of_birth",
-          "height",
-          "bio",
-          "image",
-          "facebook",
-          "instagram",
-          "tiktok",
-          "youtube",
-          "roles"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.update",
-      "subject": "api::member.member",
-      "properties": {
-        "fields": [
-          "fullname",
-          "date_of_birth",
-          "height",
-          "bio",
-          "image",
-          "facebook",
-          "instagram",
-          "tiktok",
-          "youtube",
-          "roles"
-        ],
-        "locales": [
-          "en",
-          "km"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.create",
-      "subject": "api::partner.partner",
-      "properties": {
-        "fields": [
-          "name",
-          "image",
-          "link"
-        ]
-      },
-      "conditions": []
-    },
-    {
-      "action": "plugin::content-manager.explorer.delete",
-      "subject": "api::partner.partner",
+      "subject": "api::artist.artist",
       "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
-      "subject": "api::partner.partner",
+      "subject": "api::artist.artist",
       "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.read",
-      "subject": "api::partner.partner",
+      "subject": "api::artist.artist",
       "properties": {
         "fields": [
-          "name",
+          "fullname",
+          "height",
+          "description",
           "image",
-          "link"
+          "facebook",
+          "instagram",
+          "tiktok",
+          "youtube",
+          "roles",
+          "age",
+          "email"
         ]
       },
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.update",
-      "subject": "api::partner.partner",
+      "subject": "api::artist.artist",
+      "properties": {
+        "fields": [
+          "fullname",
+          "height",
+          "description",
+          "image",
+          "facebook",
+          "instagram",
+          "tiktok",
+          "youtube",
+          "roles",
+          "age",
+          "email"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::client.client",
       "properties": {
         "fields": [
           "name",
           "image",
-          "link"
+          "link",
+          "moreWidth",
+          "moreHeight",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::client.client",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::client.client",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::client.client",
+      "properties": {
+        "fields": [
+          "name",
+          "image",
+          "link",
+          "moreWidth",
+          "moreHeight",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::client.client",
+      "properties": {
+        "fields": [
+          "name",
+          "image",
+          "link",
+          "moreWidth",
+          "moreHeight",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "address",
+          "google_map_url",
+          "phone",
+          "email",
+          "facebook_url",
+          "youtube_url",
+          "instagram_url",
+          "tiktok_url",
+          "twitter_url",
+          "telegram_url"
+        ],
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::contact.contact",
+      "properties": {
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::contact.contact",
+      "properties": {
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "address",
+          "google_map_url",
+          "phone",
+          "email",
+          "facebook_url",
+          "youtube_url",
+          "instagram_url",
+          "tiktok_url",
+          "twitter_url",
+          "telegram_url"
+        ],
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::contact.contact",
+      "properties": {
+        "fields": [
+          "address",
+          "google_map_url",
+          "phone",
+          "email",
+          "facebook_url",
+          "youtube_url",
+          "instagram_url",
+          "tiktok_url",
+          "twitter_url",
+          "telegram_url"
+        ],
+        "locales": [
+          "en"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::movie.movie",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "title",
+          "description",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::movie.movie",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::movie.movie",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::movie.movie",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "title",
+          "description",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::movie.movie",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "title",
+          "description",
+          "ordering"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::new.new",
+      "properties": {
+        "fields": [
+          "image",
+          "title",
+          "content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::new.new",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::new.new",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::new.new",
+      "properties": {
+        "fields": [
+          "image",
+          "title",
+          "content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::new.new",
+      "properties": {
+        "fields": [
+          "image",
+          "title",
+          "content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::slider.slider",
+      "properties": {
+        "fields": [
+          "image",
+          "facebook_url",
+          "tiktok_url",
+          "youtube_url"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::slider.slider",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::slider.slider",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::slider.slider",
+      "properties": {
+        "fields": [
+          "image",
+          "facebook_url",
+          "tiktok_url",
+          "youtube_url"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::slider.slider",
+      "properties": {
+        "fields": [
+          "image",
+          "facebook_url",
+          "tiktok_url",
+          "youtube_url"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::term-and-privacy.term-and-privacy",
+      "properties": {
+        "fields": [
+          "Content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::term-and-privacy.term-and-privacy",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::term-and-privacy.term-and-privacy",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::term-and-privacy.term-and-privacy",
+      "properties": {
+        "fields": [
+          "Content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::term-and-privacy.term-and-privacy",
+      "properties": {
+        "fields": [
+          "Content"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.create",
+      "subject": "api::work-showcase.work-showcase",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "ordering",
+          "title"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.delete",
+      "subject": "api::work-showcase.work-showcase",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.publish",
+      "subject": "api::work-showcase.work-showcase",
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.read",
+      "subject": "api::work-showcase.work-showcase",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "ordering",
+          "title"
+        ]
+      },
+      "conditions": []
+    },
+    {
+      "action": "plugin::content-manager.explorer.update",
+      "subject": "api::work-showcase.work-showcase",
+      "properties": {
+        "fields": [
+          "image",
+          "link",
+          "ordering",
+          "title"
         ]
       },
       "conditions": []
