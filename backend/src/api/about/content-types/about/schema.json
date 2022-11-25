@@ -17,13 +17,17 @@
   },
   "attributes": {
     "content": {
-      "type": "richtext",
       "pluginOptions": {
         "i18n": {
-          "localized": true
+          "localized": false
         }
       },
-      "required": true
+      "type": "customField",
+      "options": {
+        "preset": "rich"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }

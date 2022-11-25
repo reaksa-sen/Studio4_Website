@@ -5,12 +5,20 @@ export function getAbout(): Promise<I.AboutResponse> {
   return fetchAPI('/about', {});
 }
 
+export function getContact(): Promise<I.ContactResponse> {
+  return fetchAPI('/contact', {});
+}
+
 export function getTermAndPrivacy(): Promise<I.TermAndPrivacyResponse> {
   return fetchAPI('/term-and-privacy', {});
 }
 
-export function getContact(): Promise<I.ContactResponse> {
-  return fetchAPI('/contact', {});
+export function getCarousel(): Promise<I.CarouselsResponse> {
+  return fetchAPI('/sliders', {
+    populate: {
+      image: { fields: ['name', 'url', 'formats'] }
+    }
+  });
 }
 
 export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse> {
@@ -38,6 +46,16 @@ export function getArtist(id: string): Promise<I.ArtistsResponse> {
 
 export function getWorkShowcases(pagination: I.Pagination): Promise<I.WorkShowcasesResponse> {
   return fetchAPI('/work-showcases', {
+    sort: ['id:desc'],
+    pagination,
+    populate: {
+      image: { fields: ['name', 'url', 'formats'] }
+    }
+  });
+}
+
+export function getMovies(pagination: I.Pagination): Promise<I.MoviesResponse> {
+  return fetchAPI('/movies', {
     sort: ['id:desc'],
     pagination,
     populate: {

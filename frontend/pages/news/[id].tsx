@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import Link from 'next/link';
 import Image from 'next/image';
 import released from '../../public/images/released.jpg';
 import { BiTimeFive } from 'react-icons/bi';

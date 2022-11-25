@@ -1,24 +1,16 @@
-import { ArtistsResponse } from 'api/interface';
-import { getArtists } from 'api/strapiApi';
-import { ArtistList } from 'components/Artists/ArtistsList';
-import Header from 'components/Header';
-import { Heading } from 'components/Heading';
+import { getMovies } from 'api/strapiApi';
 import { XInfiniteScroll } from 'components/InfiniteScroll';
 import { Spinner } from 'components/Loading/Spinner';
 import { NoResult } from 'components/NoResult';
-import { useRouter } from 'next/router';
-import { NextPage } from 'next/types';
 import { useInfiniteQuery } from 'react-query';
+import { MovieList } from './Movies';
 
-const Page: NextPage = () => {
-  const router = useRouter();
-  const TITLE = 'Artists';
-  const PAGE_SIZE = 8;
-  const DESCRIPTION = 'Studio Four Team Members';
+export const InfiniteMovieList: React.FC = () => {
+  const PAGE_SIZE = 12;
 
   const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
-    'infiniteArtists',
-    async ({ pageParam = 1 }) => getArtists({ page: pageParam, pageSize: PAGE_SIZE }),
+    'infiniteMovies',
+    async ({ pageParam = 1 }) => getMovies({ page: pageParam, pageSize: PAGE_SIZE }),
     {
       getNextPageParam: (lastPage, pages) => {
         const { page, pageSize, total } = lastPage.meta.pagination;
@@ -28,15 +20,9 @@ const Page: NextPage = () => {
       }
     }
   );
-
   return (
-    <div className="container mt-16 pb-6 md:mt-24">
-      <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
-
-      <Heading text={TITLE} />
-
+    <>
       {isLoading && <Spinner />}
-
       {status === 'success' && (
         <XInfiniteScroll
           dataLength={data?.pages.length * PAGE_SIZE}
@@ -46,12 +32,15 @@ const Page: NextPage = () => {
           {!data.pages[0].data.length && <NoResult />}
 
           {data?.pages.map((page, i) => (
-            <ArtistList key={`artists-${i}`} artists={page} />
+            <div key={i}>
+              <div className="w-full border-b-2 border-primary-500 pt-10"></div>
+              <div className="mt-4">
+                <MovieList movies={page} />
+              </div>
+            </div>
           ))}
         </XInfiniteScroll>
       )}
-    </div>
+    </>
   );
 };
-
-export default Page;

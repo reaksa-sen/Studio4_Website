@@ -11,15 +11,12 @@ interface Props {
 const TermAndPrivacy: NextPage<Props> = ({ termAndPrivacy }) => {
   const TITLE = 'Term & Privacy';
   const { data } = termAndPrivacy;
-
-  console.log(data);
-
   return (
     <div className="mt-16 md:mt-24">
       <Header title={TITLE} siteUrl="/Term & Privacy" />
       <Wrapper>
         <article
-          className="prose max-w-none pt-6 text-white"
+          className="prose max-w-none pt-6"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
         />
       </Wrapper>

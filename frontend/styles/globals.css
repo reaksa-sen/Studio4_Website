@@ -25,6 +25,10 @@ body {
   --swiper-navigation-color: #000 !important;
 }
 
+.swiper-pagination-bullet-active {
+  background-color: rgb(160, 17, 17) !important;
+}
+
 /* fonts */
 
 /* kh Jrung Thum */

@@ -1,11 +1,13 @@
 import * as I from 'api/interface';
 import {
-  getArtists,
   getAbout,
   getContact,
   getClients,
+  getArtists,
   getWorkShowcases,
-  getTermAndPrivacy
+  getTermAndPrivacy,
+  getCarousel,
+  getMovies
 } from 'api/strapiApi';
 import { Carousel } from 'components/Carousel';
 import Header from 'components/Header';
@@ -24,6 +26,8 @@ interface Props {
   artists: I.ArtistsResponse;
   workShowcases: I.WorkShowcasesResponse;
   termAndPrivacy: I.TermAndPrivacyResponse;
+  carousels: I.CarouselsResponse;
+  newReleased: I.MoviesResponse;
 }
 
 const Page: NextPage<Props> = props => {
@@ -31,8 +35,8 @@ const Page: NextPage<Props> = props => {
     <div>
       <Header title="Home" />
 
-      <Carousel />
-      <HomeReleased />
+      <Carousel carousel={props.carousels} />
+      <HomeReleased movie={props.newReleased.data[0]} />
       <HomeWorkShowcase workShowcases={props.workShowcases} />
       <HomeArtists artists={props.artists} />
       <HomeOurClients clients={props.clients} />
@@ -43,14 +47,17 @@ const Page: NextPage<Props> = props => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  let [about, contact, clients, artists, workShowcases, termAndPrivacy] = await Promise.all([
-    getAbout(),
-    getContact(),
-    getClients(),
-    getArtists({ page: 1, pageSize: 4 }),
-    getWorkShowcases({ page: 1, pageSize: 8 }),
-    getTermAndPrivacy()
-  ]);
+  let [about, contact, clients, artists, workShowcases, termAndPrivacy, carousels, newReleased] =
+    await Promise.all([
+      getAbout(),
+      getContact(),
+      getClients(),
+      getArtists({ page: 1, pageSize: 4 }),
+      getWorkShowcases({ page: 1, pageSize: 8 }),
+      getTermAndPrivacy(),
+      getCarousel(),
+      getMovies({ page: 1, pageSize: 1 })
+    ]);
 
   return {
     props: {
@@ -59,7 +66,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       clients,
       artists,
       workShowcases,
-      termAndPrivacy
+      termAndPrivacy,
+      carousels,
+      newReleased
     },
     revalidate: 60
   };

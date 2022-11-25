@@ -1,92 +1,59 @@
+import { Tile } from '@icons-pack/react-simple-icons';
+import { MovieAttribute, MoviesResponse } from 'api/interface';
 import { useVideoModalContext } from 'hooks/videoModalHook';
 import Image from 'next/image';
 import { IoPlayCircleSharp } from 'react-icons/io5';
+interface IMovie {
+  image: any;
+  title: string;
+  description: string;
+  link: string;
+}
 
-const items = [
-  {
-    img: '/images/released.jpg',
-    names: 'showcase2',
-    link: 'https://www.youtube.com/embed/0IPHcebt8AI',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/3.jpg',
-    names: 'showcase3',
-    link: 'https://www.youtube.com/embed/wWYL9zvxkhs',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/1.jpg',
-    names: 'showcase1',
-    link: 'https://www.youtube.com/embed/QYVfb2TFZiQ',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/4.jpg',
-    names: 'showcase4',
-    link: 'https://www.youtube.com/embed/uhzN2Jx6oj8',
-
-    title: 'រឿង ជួបស៊យ៣'
-  },
-
-  {
-    img: '/images/6.png',
-    names: 'showcase6',
-    link: 'https://www.youtube.com/embed/LZIcIQQF9Ls',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/5.jpg',
-    names: 'showcase5',
-    link: 'https://www.youtube.com/embed/9N-alyYE-YU',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/7.png',
-    names: 'showcase7',
-    link: 'https://www.youtube.com/embed/rDqnwSOJVcQ',
-    title: 'រឿង ជួបស៊យ៣'
-  },
-  {
-    img: '/images/8.png',
-    names: 'showcase8',
-    link: 'https://www.youtube.com/embed/BUufVIdXCm0',
-    title: 'រឿង ជួបស៊យ៣'
-  }
-];
-
-export const MoviesItems: React.FC = () => {
+const MovieItem: React.FC<IMovie> = ({ image, title, link }) => {
   const { onModalOpen } = useVideoModalContext();
 
   return (
-    <div>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
-        {items.map((a, i) => (
-          <li key={i} className="group cursor-pointer">
-            <div className="group cursor-pointer overflow-hidden">
-              <div className="relative cursor-pointer " onClick={() => onModalOpen(a.link)}>
-                <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-                  <IoPlayCircleSharp className="h-14 w-auto text-primary-500 group-hover:text-primary-600" />
-                </div>
-                <Image
-                  className="transition duration-300 group-hover:scale-105"
-                  src={a.img}
-                  alt={a.names}
-                  height={1.1}
-                  width={1.7}
-                  layout="responsive"
-                  objectFit="cover"
-                />
-              </div>
-              <div className="flex flex-col pt-3 pl-2">
-                <span className="font-heading text-lg text-white group-hover:text-primary-600 group-hover:underline md:text-base">
-                  {a.title}
-                </span>
-              </div>
+    <>
+      <li className="group cursor-pointer">
+        <div className="group cursor-pointer overflow-hidden">
+          <div className="relative cursor-pointer " onClick={() => onModalOpen(link)}>
+            <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
+              <IoPlayCircleSharp className="h-14 w-auto text-primary-500 group-hover:text-primary-600" />
             </div>
-          </li>
-        ))}
-      </div>
+            <Image
+              className="transition duration-300 group-hover:scale-105"
+              src={image}
+              alt={title}
+              height={1.1}
+              width={1.7}
+              layout="responsive"
+              objectFit="cover"
+            />
+          </div>
+          <div className="flex flex-col pt-3 pl-2">
+            <span className="font-heading text-lg text-white group-hover:text-primary-600 group-hover:underline md:text-base">
+              {title}
+            </span>
+          </div>
+        </div>
+      </li>
+    </>
+  );
+};
+
+export const MovieList: React.FC<{ movies: MoviesResponse }> = ({ movies }) => {
+  return (
+    <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
+      {movies.data?.map(x => (
+        <MovieItem
+          key={x.id}
+          image={x.attributes.image?.data?.attributes.url}
+          title={x.attributes.title}
+          description={x.attributes.description}
+          link={x.attributes.link}
+        />
+      ))}
     </div>
   );
 };

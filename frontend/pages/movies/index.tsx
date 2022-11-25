@@ -1,26 +1,30 @@
+/* eslint-disable react-hooks/rules-of-hooks */
+import { MovieAttribute, MoviesResponse } from 'api/interface';
+import { getMovies } from 'api/strapiApi';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
-import { MoviesItems } from 'components/Movies/Movies';
+import { InfiniteMovieList } from 'components/Movies/InfiniteMovielist';
 import { NewReleased } from 'components/NewReleased/NewReleased';
-import { Wrapper } from 'components/Wrapper';
-import { NextPage } from 'next';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
 
-const Movies: NextPage = () => {
+const page: NextPage<{ movie: MoviesResponse }> = ({ movie }) => {
+  const router = useRouter();
+  const TITLE = 'Movies';
+  const DESCRIPTION = 'Studio Four Team Members';
+
   return (
-    <div className="container mt-16 md:mt-24">
-      <Header title={'Movies'} />
-      <div className="pb-6">
-        <div>
-          <Heading text={'Movies'} />
-          <NewReleased />
-        </div>
-        <div className="w-full border-b-2 border-primary-500 pt-10"></div>
-        <div className="mt-4">
-          <MoviesItems />
-        </div>
-      </div>
+    <div className="container mt-16 pb-6 md:mt-24">
+      <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Heading text={TITLE} />
+      <NewReleased movie={movie.data[0]} />
+      <InfiniteMovieList />
     </div>
   );
 };
 
-export default Movies;
+export const getStaticProps: GetStaticProps = async ({}) => {
+  const movie = await getMovies({ page: 1, pageSize: 1 });
+  return { props: { movie }, revalidate: 60 };
+};
+export default page;

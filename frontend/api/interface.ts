@@ -19,6 +19,13 @@ interface ITermAndPrivacy {
   content: string;
 }
 
+interface ICarousel {
+  image: { data?: IAttribute<Image> };
+  facebook_url: string;
+  tiktok_url: string;
+  youtube_url: string;
+}
+
 interface IContact {
   phone: string;
   email: string;
@@ -50,20 +57,11 @@ interface IBlog {
   localizations: { data?: BlogAttribute[] };
 }
 
-interface IGenre {
-  name: string;
-}
-
 interface IMovie {
+  image: { data?: IAttribute<Image> };
   title: string;
   description: string;
-  trailerUrl: string;
-  poster: { data: IAttribute<Image> };
-  // --
-  movie_categories?: IResponse<IAttribute<IGenre>>;
-  release: string;
-  duration: string;
-  artists?: ArtistsResponse;
+  link: string;
 }
 
 interface IClient {
@@ -113,6 +111,14 @@ export type WorkShowcaseResponse = { data: WorkShowcaseAttribute; meta: Meta };
 export type ClientAttribute = IAttribute<IClient>;
 export type ClientsResponse = IResponse<ClientAttribute>;
 export type ClientResponse = { data: ClientAttribute; meta: Meta };
+
+export type CarouselAttribute = IAttribute<ICarousel>;
+export type CarouselsResponse = IResponse<CarouselAttribute>;
+export type CarouselResponse = { data: CarouselAttribute; meta: Meta };
+
+export type MovieAttribute = IAttribute<IMovie>;
+export type MoviesResponse = IResponse<MovieAttribute>;
+export type MovieResponse = { data: MovieAttribute; meta: Meta };
 
 export type BlogAttribute = IAttribute<IBlog>;
 export type BlogsResponse = IResponse<BlogAttribute>;
