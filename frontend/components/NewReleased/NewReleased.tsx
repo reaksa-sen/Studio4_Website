@@ -1,11 +1,7 @@
 import { useVideoModalContext } from 'hooks/videoModalHook';
 import { IoPlayCircleSharp } from 'react-icons/io5';
-import Image from 'next/image';
-import released from '../../public/images/released.jpg';
-import NextImage from 'components/Image';
-import Link from 'next/link';
 import { MovieAttribute } from 'api/interface';
-import { title } from 'process';
+import NextImage from 'components/Image';
 
 interface IMovie {
   image: any;

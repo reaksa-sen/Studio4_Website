@@ -12,7 +12,7 @@ import { NextPage } from 'next';
 
 const Page: NextPage = () => {
   const router = useRouter();
-  const PAGE_SIZE = 12;
+  const PAGE_SIZE = 8;
   const TITLE = 'Works';
   const DESCRIPTION = 'Studio Four Team Members';
 

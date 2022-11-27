@@ -39,6 +39,13 @@ interface IContact {
   twitter_url: string;
 }
 
+interface INews {
+  image: { data?: IAttribute<Image> };
+  title: string;
+  content: string;
+  createdAt: string;
+}
+
 interface IBlogCategory {
   name: string;
   // ----
@@ -119,6 +126,10 @@ export type CarouselResponse = { data: CarouselAttribute; meta: Meta };
 export type MovieAttribute = IAttribute<IMovie>;
 export type MoviesResponse = IResponse<MovieAttribute>;
 export type MovieResponse = { data: MovieAttribute; meta: Meta };
+
+export type NewsAttribute = IAttribute<INews>;
+export type NewsResponses = IResponse<NewsAttribute>;
+export type NewsResponse = { data: NewsAttribute; meta: Meta };
 
 export type BlogAttribute = IAttribute<IBlog>;
 export type BlogsResponse = IResponse<BlogAttribute>;

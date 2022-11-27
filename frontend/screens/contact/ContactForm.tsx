@@ -87,7 +87,7 @@ export const ContactForm: React.FC = () => {
       alert('Something went wrong!');
     } finally {
       setLoading(false);
-      reset({ captchaToken: '', email: '', fullName: '', message: '', phone: '' });
+      reset({ captchaToken: '', fullName: '', message: '', phone: '' });
     }
   }
 

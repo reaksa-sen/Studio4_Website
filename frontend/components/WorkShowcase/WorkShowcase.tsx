@@ -34,7 +34,7 @@ export const WorkShowcaseItem: React.FC<IWorkShowcaseItem> = ({ title, image, li
 
 export const WorkShowcase: React.FC<{ data: WorkShowcasesResponse }> = ({ data }) => {
   return (
-    <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
+    <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {data?.data.map((item, i) => (
         <WorkShowcaseItem
           key={item.id}

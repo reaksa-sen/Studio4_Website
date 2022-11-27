@@ -1,4 +1,4 @@
-import { BlogAttribute, BlogsResponse, WorkShowcasesResponse } from 'api/interface';
+import { WorkShowcasesResponse } from 'api/interface';
 import { Heading } from 'components/Heading';
 import { WorkShowcase } from 'components/WorkShowcase/WorkShowcase';
 

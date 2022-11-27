@@ -8,6 +8,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { IoLogoFacebook, IoLogoYoutube, IoLogoTiktok } from 'react-icons/io5';
 import Link from 'next/link';
+import NextImage from 'components/Image';
 
 interface ICarousel {
   image?: any;
@@ -22,17 +23,17 @@ const SliderContent: React.FC<ICarousel> = ({ facebook_url, tiktok_url, yuotube_
       <div className="flex flex-col gap-y-2 md:gap-y-4">
         <Link href={facebook_url}>
           <a target="_blank" rel="noreferrer">
-            <IoLogoFacebook className="h-6 w-auto cursor-pointer text-white md:h-8" />
+            <IoLogoFacebook className="h-5 w-auto cursor-pointer text-white hover:text-blue-600 sm:h-8" />
           </a>
         </Link>
         <Link href={yuotube_url}>
           <a target="_blank" rel="noreferrer">
-            <IoLogoYoutube className="h-6 w-auto cursor-pointer text-white md:h-8" />
+            <IoLogoYoutube className="h-5 w-auto cursor-pointer text-white hover:text-red-600 sm:h-8" />
           </a>
         </Link>
         <Link href={tiktok_url}>
           <a target="_blank" rel="noreferrer">
-            <IoLogoTiktok className="h-6 w-auto cursor-pointer text-white md:h-8" />
+            <IoLogoTiktok className="h-5 w-auto cursor-pointer text-white hover:text-gray-700 sm:h-8" />
           </a>
         </Link>
       </div>
@@ -63,15 +64,14 @@ export const Carousel: React.FC<{ carousel: CarouselsResponse }> = ({ carousel }
         >
           {carousel.data.map((item, i) => (
             <SwiperSlide key={i}>
-              <div className="aspect-w-1 aspect-h-1 relative md:aspect-w-16 md:aspect-h-7">
-                <Image
-                  sizes="L"
-                  alt={'slider'}
-                  priority
+              <div className=" aspect-w-16 aspect-h-9 relative lg:aspect-h-7">
+                <NextImage
+                  image={item.attributes.image}
+                  // size="L"
+                  alt={`image-${i}`}
+                  key={i}
                   layout="fill"
                   objectFit="cover"
-                  src={item.attributes.image?.data?.attributes.url}
-                  blurDataURL={item.attributes.image?.data?.attributes.url}
                   placeholder="blur"
                 />
                 <div className="h-full w-full bg-gray-900 opacity-20"></div>

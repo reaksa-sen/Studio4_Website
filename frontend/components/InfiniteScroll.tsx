@@ -1,14 +1,15 @@
 import InfiniteScroll, { Props } from 'react-infinite-scroll-component';
+import { Spinner } from './Loading/Spinner';
 
 type XProps = Pick<Props, 'children' | 'dataLength' | 'next' | 'hasMore'>;
 
-export const XInfiniteScroll: React.FC<XProps> = (props) => (
+export const XInfiniteScroll: React.FC<XProps> = props => (
   <InfiniteScroll
     style={{ overflow: 'hidden' }}
     dataLength={props.dataLength}
     next={props.next}
     hasMore={props.hasMore}
-    loader={<h4>Loading...</h4>}
+    loader={<Spinner />}
   >
     {props.children}
   </InfiniteScroll>

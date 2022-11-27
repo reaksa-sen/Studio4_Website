@@ -9,7 +9,11 @@ import { Heading } from 'components/Heading';
 import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
 
-const ArtistsProfile: NextPage<{ artist: ArtistResponse }> = ({ artist }) => {
+interface Props {
+  artist: ArtistResponse;
+}
+
+const ArtistsProfile: NextPage<Props> = ({ artist }) => {
   const router = useRouter();
   const { facebook = '', tiktok = '', instagram = '', youtube = '' } = artist.data.attributes || {};
 

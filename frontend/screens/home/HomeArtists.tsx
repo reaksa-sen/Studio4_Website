@@ -1,7 +1,6 @@
 import { ArtistsResponse } from 'api/interface';
 import { ArtistList } from 'components/Artists/ArtistsList';
 import { Heading } from 'components/Heading';
-import Link from 'next/link';
 
 export const HomeArtists: React.FC<{ artists: ArtistsResponse }> = ({ artists }) => {
   return (

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-import { StaticImageData } from 'next/image';
 import classNames from 'classnames';
 import { ClientsResponse } from 'api/interface';
 import Link from 'next/link';

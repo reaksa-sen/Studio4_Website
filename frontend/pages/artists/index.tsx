@@ -1,4 +1,3 @@
-import { ArtistsResponse } from 'api/interface';
 import { getArtists } from 'api/strapiApi';
 import { ArtistList } from 'components/Artists/ArtistsList';
 import Header from 'components/Header';
@@ -32,11 +31,8 @@ const Page: NextPage = () => {
   return (
     <div className="container mt-16 pb-6 md:mt-24">
       <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
-
       <Heading text={TITLE} />
-
       {isLoading && <Spinner />}
-
       {status === 'success' && (
         <XInfiniteScroll
           dataLength={data?.pages.length * PAGE_SIZE}

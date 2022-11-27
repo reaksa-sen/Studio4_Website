@@ -25,12 +25,14 @@ body {
   --swiper-navigation-color: #000 !important;
 }
 
-.swiper-pagination-bullet-active {
+.swiper-pagination-bullet {
   background-color: rgb(160, 17, 17) !important;
+  width: 30px !important;
+  height: 4px !important;
+  border-radius: 1rem !important;
 }
 
 /* fonts */
-
 /* kh Jrung Thum */
 
 @font-face {
@@ -49,7 +51,6 @@ body {
 }
 
 /* size client */
-
 .gold-logo--wide {
   max-width: 290px !important;
 }

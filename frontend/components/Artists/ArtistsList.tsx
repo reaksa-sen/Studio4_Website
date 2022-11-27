@@ -1,9 +1,7 @@
-import { ArtistAttribute, ArtistsResponse } from 'api/interface';
+import { ArtistsResponse } from 'api/interface';
 import Link from 'next/link';
 import React, { Fragment } from 'react';
 import NextImage from '../Image';
-import Image from 'next/image';
-import { getStrapiMedia } from 'api/media';
 
 interface ItemProps {
   id: number;
@@ -40,7 +38,7 @@ export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => 
 
 export const ArtistList: React.FC<{ artists: ArtistsResponse }> = ({ artists }) => {
   return (
-    <div className="grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
+    <div className="my-10 grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
       {artists.data.map((item, i) => (
         <Fragment key={i}>
           <ArtistListItem

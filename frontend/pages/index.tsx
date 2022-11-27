@@ -7,7 +7,8 @@ import {
   getWorkShowcases,
   getTermAndPrivacy,
   getCarousel,
-  getMovies
+  getMovies,
+  getNews
 } from 'api/strapiApi';
 import { Carousel } from 'components/Carousel';
 import Header from 'components/Header';
@@ -28,6 +29,7 @@ interface Props {
   termAndPrivacy: I.TermAndPrivacyResponse;
   carousels: I.CarouselsResponse;
   newReleased: I.MoviesResponse;
+  news: I.NewsResponses;
 }
 
 const Page: NextPage<Props> = props => {
@@ -40,24 +42,34 @@ const Page: NextPage<Props> = props => {
       <HomeWorkShowcase workShowcases={props.workShowcases} />
       <HomeArtists artists={props.artists} />
       <HomeOurClients clients={props.clients} />
-      <HomeNews />
+      <HomeNews news={props.news} />
       <HomeContact contact={props.contact} />
     </div>
   );
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  let [about, contact, clients, artists, workShowcases, termAndPrivacy, carousels, newReleased] =
-    await Promise.all([
-      getAbout(),
-      getContact(),
-      getClients(),
-      getArtists({ page: 1, pageSize: 4 }),
-      getWorkShowcases({ page: 1, pageSize: 8 }),
-      getTermAndPrivacy(),
-      getCarousel(),
-      getMovies({ page: 1, pageSize: 1 })
-    ]);
+  let [
+    about,
+    contact,
+    clients,
+    artists,
+    workShowcases,
+    termAndPrivacy,
+    carousels,
+    newReleased,
+    news
+  ] = await Promise.all([
+    getAbout(),
+    getContact(),
+    getClients(),
+    getArtists({ page: 1, pageSize: 4 }),
+    getWorkShowcases({ page: 1, pageSize: 8 }),
+    getTermAndPrivacy(),
+    getCarousel(),
+    getMovies({ page: 1, pageSize: 1 }),
+    getNews({ page: 1, pageSize: 8 })
+  ]);
 
   return {
     props: {
@@ -68,7 +80,8 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       workShowcases,
       termAndPrivacy,
       carousels,
-      newReleased
+      newReleased,
+      news
     },
     revalidate: 60
   };

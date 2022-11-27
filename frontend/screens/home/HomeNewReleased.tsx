@@ -1,4 +1,4 @@
-import { MovieAttribute, MovieResponse, MoviesResponse } from 'api/interface';
+import { MovieAttribute } from 'api/interface';
 import { Heading } from 'components/Heading';
 import { NewReleased } from 'components/NewReleased/NewReleased';
 

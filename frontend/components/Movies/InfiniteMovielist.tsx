@@ -6,20 +6,21 @@ import { useInfiniteQuery } from 'react-query';
 import { MovieList } from './Movies';
 
 export const InfiniteMovieList: React.FC = () => {
-  const PAGE_SIZE = 12;
+  const PAGE_SIZE = 8;
 
-  const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
-    'infiniteMovies',
-    async ({ pageParam = 1 }) => getMovies({ page: pageParam, pageSize: PAGE_SIZE }),
-    {
-      getNextPageParam: (lastPage, pages) => {
-        const { page, pageSize, total } = lastPage.meta.pagination;
-        if (page * pageSize < total) {
-          return pages.length + 1;
+  const { data, status, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
+    useInfiniteQuery(
+      'infiniteMovies',
+      async ({ pageParam = 1 }) => getMovies({ page: pageParam, pageSize: PAGE_SIZE }),
+      {
+        getNextPageParam: (lastPage, pages) => {
+          const { page, pageSize, total } = lastPage.meta.pagination;
+          if (page * pageSize < total) {
+            return pages.length + 1;
+          }
         }
       }
-    }
-  );
+    );
   return (
     <>
       {isLoading && <Spinner />}
@@ -30,10 +31,9 @@ export const InfiniteMovieList: React.FC = () => {
           hasMore={hasNextPage}
         >
           {!data.pages[0].data.length && <NoResult />}
-
+          <div className="w-full border-b-2 border-primary-500 pt-10"></div>
           {data?.pages.map((page, i) => (
             <div key={i}>
-              <div className="w-full border-b-2 border-primary-500 pt-10"></div>
               <div className="mt-4">
                 <MovieList movies={page} />
               </div>

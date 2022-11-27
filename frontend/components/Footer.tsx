@@ -51,21 +51,21 @@ const Footer: React.FC = () => {
                 {
                   <Link href="https://www.facebook.com/OneWorldSoftware">
                     <a rel="noreferrer" target="_blank">
-                      <Facebook className="cursor-pointer" size="32" />
+                      <Facebook className="cursor-pointer hover:text-blue-600" size="32" />
                     </a>
                   </Link>
                 }
                 {
                   <Link href="https://www.youtube.com/watch?v=t1zVoqL7E_k">
                     <a rel="noreferrer" target="_blank">
-                      <Youtube size="32" className="cursor-pointer" />
+                      <Youtube size="32" className="cursor-pointer hover:text-red-600" />
                     </a>
                   </Link>
                 }
                 {
                   <Link href="https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j">
                     <a rel="noreferrer" target="_blank">
-                      <Tiktok size="32" className="cursor-pointer" />
+                      <Tiktok size="32" className="cursor-pointer hover:text-gray-700" />
                     </a>
                   </Link>
                 }

@@ -1,5 +1,4 @@
-import { Tile } from '@icons-pack/react-simple-icons';
-import { MovieAttribute, MoviesResponse } from 'api/interface';
+import { MoviesResponse } from 'api/interface';
 import { useVideoModalContext } from 'hooks/videoModalHook';
 import Image from 'next/image';
 import { IoPlayCircleSharp } from 'react-icons/io5';

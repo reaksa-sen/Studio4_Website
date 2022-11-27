@@ -7,20 +7,20 @@ const regexPhone =
 
 const contactSchema = yup.object().shape({
   fullName: yup.string().label('Full name').required(),
-  email: yup.string().label('Email').email().required(),
+  // email: yup.string().label('Email').email().required(),
   phone: yup
     .string()
     .label('Phone')
     .required()
     .matches(regexPhone, { message: 'Incorrect Phone Format' }),
-  message: yup.string().label('Message').required(),
-  captchaToken: yup.string().required().label('Captcha Token')
+  message: yup.string().label('Message').required()
+  // captchaToken: yup.string().required().label('Captcha Token')
 });
 
 // export type ContactSchema = yup.InferType<typeof contactSchema>;
 export type ContactSchema = {
   fullName: string;
-  email: string;
+  // email: string;
   phone: string;
   message: string;
   captchaToken: string;

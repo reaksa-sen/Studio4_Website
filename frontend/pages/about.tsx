@@ -17,7 +17,7 @@ const About: NextPage<Props> = ({ about }) => {
       <Header title={TITLE} siteUrl="/about" />
       <Wrapper>
         <article
-          className=" prose max-w-none pt-6"
+          className=" prose max-w-none pt-6 text-white"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
         />
       </Wrapper>

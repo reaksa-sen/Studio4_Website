@@ -5,15 +5,33 @@ import { useState } from 'react';
 
 type ImgProps = Pick<
   ImageProps,
-  'width' | 'height' | 'className' | 'layout' | 'objectFit' | 'objectPosition' | 'alt'
+  | 'width'
+  | 'height'
+  | 'className'
+  | 'layout'
+  | 'objectFit'
+  | 'objectPosition'
+  | 'alt'
+  | 'placeholder'
 >;
 interface Props extends ImgProps {
   image: any;
   size?: 'T' | 'S' | 'M';
 }
 
-const Image: React.FC<Props> = (props) => {
-  const { alt, className, image, size, width, height, layout, objectFit, objectPosition } = props;
+const Image: React.FC<Props> = props => {
+  const {
+    alt,
+    className,
+    image,
+    size,
+    width,
+    height,
+    layout,
+    objectFit,
+    objectPosition,
+    placeholder
+  } = props;
   const { name = '' } = image?.data?.attributes || {};
 
   const [isReady, setIsReady] = useState(false);
@@ -41,6 +59,7 @@ const Image: React.FC<Props> = (props) => {
       // placeholder="blur"
       blurDataURL={getStrapiMedia(image, 'T')}
       onLoadingComplete={onLoadCallback}
+      placeholder={placeholder}
     />
   );
 };

@@ -1,11 +1,11 @@
 /* eslint-disable react-hooks/rules-of-hooks */
-import { MovieAttribute, MoviesResponse } from 'api/interface';
+import { MoviesResponse } from 'api/interface';
 import { getMovies } from 'api/strapiApi';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
 import { InfiniteMovieList } from 'components/Movies/InfiniteMovielist';
 import { NewReleased } from 'components/NewReleased/NewReleased';
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 
 const page: NextPage<{ movie: MoviesResponse }> = ({ movie }) => {

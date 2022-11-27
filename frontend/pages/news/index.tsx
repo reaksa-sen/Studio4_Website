@@ -1,24 +1,55 @@
+import { getNews } from 'api/strapiApi';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
+import { XInfiniteScroll } from 'components/InfiniteScroll';
+import { Spinner } from 'components/Loading/Spinner';
 import { NewsList } from 'components/News/NewsList';
-import { Wrapper } from 'components/Wrapper';
-import { NextPage } from 'next';
+import { useInfiniteQuery } from 'react-query';
+import { NoResult } from 'components/NoResult';
 import { useRouter } from 'next/router';
-import { title } from 'process';
+import { NextPage } from 'next';
 
-const News: NextPage = () => {
+const Page: NextPage = () => {
   const router = useRouter();
   const TITLE = 'News';
+  const PAGE_SIZE = 8;
   const DESCRIPTION = 'Studio Four Team Members';
+
+  const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
+    'infiniteNews',
+    async ({ pageParam = 1 }) => getNews({ page: pageParam, pageSize: PAGE_SIZE }),
+    {
+      getNextPageParam: (lastPage, pages) => {
+        const { page, pageSize, total } = lastPage.meta.pagination;
+        if (page * pageSize < total) {
+          return pages.length + 1;
+        }
+      }
+    }
+  );
+
   return (
-    <div className="mt-16 md:mt-24">
-      <Header title={TITLE} />
-      <div className="container pb-6">
-        <Heading text={'News'} />
-        <NewsList id={0} title={''} description={''} slug={''} image={undefined} />
-      </div>
+    <div className="container mt-16 pb-6 md:mt-24">
+      <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Heading text={TITLE} />
+
+      {isLoading && <Spinner />}
+
+      {status === 'success' && (
+        <XInfiniteScroll
+          dataLength={data?.pages.length * PAGE_SIZE}
+          next={fetchNextPage}
+          hasMore={hasNextPage}
+        >
+          {!data.pages[0].data.length && <NoResult />}
+
+          {data?.pages.map((page, i) => (
+            <NewsList key={`news-${i}`} news={page} />
+          ))}
+        </XInfiniteScroll>
+      )}
     </div>
   );
 };
 
-export default News;
+export default Page;

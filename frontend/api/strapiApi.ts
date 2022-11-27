@@ -32,7 +32,7 @@ export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse>
   });
 }
 
-export function getArtist(id: string): Promise<I.ArtistsResponse> {
+export function getArtist(id: string): Promise<I.ArtistResponse> {
   return fetchAPI(`/artists/${id}`, {
     populate: {
       image: { fields: ['name', 'url', 'formats'] },
@@ -64,36 +64,22 @@ export function getMovies(pagination: I.Pagination): Promise<I.MoviesResponse> {
   });
 }
 
-export function getBlogCategories(pagination: I.Pagination): Promise<I.BlogCategoriesResponse> {
-  return fetchAPI(`/blog-categories`, {
-    sort: ['id:desc'],
-    fields: ['name'],
-    pagination
-    // Do not populate blogs, use getBlogs instead
-  });
-}
-
-export function getBlogs(
-  pagination: I.Pagination,
-  filters?: Record<string, any>
-): Promise<I.BlogsResponse> {
-  return fetchAPI('/blogs', {
-    filters,
+export function getNews(pagination: I.Pagination): Promise<I.NewsResponses> {
+  return fetchAPI('/news', {
     pagination,
-    sort: ['id:desc'],
-    fields: ['title', 'description', 'slug', 'createdAt'],
     populate: {
-      localizations: {
-        fields: ['title', 'description', 'locale', 'createdAt', 'slug']
-      },
-      image: { fields: ['name', 'url', 'formats'] },
-      categories: { fields: ['name'] }
+      image: { fields: ['name', 'url', 'formats'] }
     }
   });
 }
 
-export function getBlog(id: string): Promise<I.BlogResponse> {
-  return fetchAPI(`/blogs/${id}`, { populate: '*' });
+export function getNew(id: string): Promise<I.NewsResponse> {
+  return fetchAPI(`/news/${id}`, {
+    fields: ['title', 'content', 'createdAt'],
+    populate: {
+      image: { fields: ['name', 'url', 'formats'] }
+    }
+  });
 }
 
 export const sendMessage = async (data: any) => {

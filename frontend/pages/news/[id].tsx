@@ -1,62 +1,72 @@
-import { NextPage } from 'next';
-import Image from 'next/image';
-import released from '../../public/images/released.jpg';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { BiTimeFive } from 'react-icons/bi';
-import team from '../../public/images/3.jpg';
 import Header from 'components/Header';
 import { NewsCategoryList } from 'components/News/NewsCategoryList';
+import { NewsResponse, NewsResponses } from 'api/interface';
+import { getNew, getNews } from 'api/strapiApi';
+import { useRouter } from 'next/router';
+import Image from 'next/image';
+import { dateFormat } from 'utils/date';
+interface Props {
+  data: NewsResponse;
+  news: NewsResponses;
+}
 
-const NewsList: NextPage = () => {
+const NewsList: NextPage<Props> = ({ data, news }) => {
+  const router = useRouter();
+
   return (
     <>
-      <Header title={'News'} />
+      <Header
+        title={data?.data.attributes.title}
+        siteUrl={router.asPath}
+        description={(data?.data.attributes.title || '').substring(160, 0)}
+        imageUrl={data?.data.attributes.image?.data?.attributes.url}
+      />
       <div className="container mt-16 md:mt-24">
         <div className="grid grid-cols-1 md:grid-cols-3">
           <div className="col-span-2 py-4 md:p-4 md:py-8">
             <h2 className="font-heading text-xl leading-relaxed text-white">
-              «ជួបស៊យ វគ្គ៣» សម្ពោធចាក់បញ្ចាំងជាផ្លូវការ ជាមួយសាច់រឿងមិនធម្មតា សើចផ្អើលរោងកុន
+              {data?.data.attributes.title}
             </h2>
             <p className="flex items-center gap-x-1.5 py-4 text-sm text-white">
-              <BiTimeFive /> November 4, 2022
+              <BiTimeFive />
+              <span>{dateFormat(data.data.attributes.createdAt, 'en-Us')}</span>
             </p>
             <Image
-              alt={'image'}
-              height={8}
+              alt={data?.data.attributes.title}
+              src={data?.data.attributes.image?.data?.attributes.url}
+              height={9}
               width={16}
-              layout="responsive"
-              objectFit="cover"
-              src={released}
+              layout={'responsive'}
             />
-            <p className="py-5 font-sans !leading-relaxed text-white">
-              ពេល​វេលាដ៏រីករាយនោះ ក៏មាន​ការចូលរួមពីសំណាក់តារា​ប្រុស​ស្រីជា​ច្រើននាក់
-              ពិសេស​គឺតួអង្គក្នុងរឿង​នេះ​ផ្ទាល់រួមមាន លោក វុធ ថុង, កញ្ញា ឈិន មុន្នីនាថ, អ្នកនាង
-              ប៊ីរីយ៉ា និង​តារា​ប្រុសស្រីជា​ច្រើនរូបទៀត។វគ្គ ៣ នេះ គឺការត្រឡប់មកវិញ
-              របស់រឿង​ក្រោយចេញវគ្គ ២ កាលពី ៣ឆ្នាំមុន ពោលគឺឆ្នាំ ២០១៩។ ដោយពេល​នេះ​ គឺ​ដល់ពេល កូនប្រុស
-              របស់នាយ ស៊យ គឺ នាយ ចង្រៃ បញ្ចេញឬទ្ធិម្ដងហើយ។ ម្យ៉ាងទៀតនោះ បើតាមការបញ្ជាក់ពីលោក លៀក
-              លីដា បាន​ឲ្យដឹង នាយ គ្រឿន បង្ហើបមកថានឹងមាន វគ្គ ៤ ជាបន្តទៀត។
-            </p>
-            <Image
-              alt={'image'}
-              height={8}
-              width={16}
-              layout="responsive"
-              objectFit="cover"
-              src={team}
+            <article
+              className=" prose max-w-none text-white"
+              dangerouslySetInnerHTML={{ __html: data?.data.attributes.content }}
             />
-            <p className="py-5 font-sans !leading-relaxed text-white">
-              ពេល​វេលាដ៏រីករាយនោះ ក៏មាន​ការចូលរួមពីសំណាក់តារា​ប្រុស​ស្រីជា​ច្រើននាក់
-              ពិសេស​គឺតួអង្គក្នុងរឿង​នេះ​ផ្ទាល់រួមមាន លោក វុធ ថុង, កញ្ញា ឈិន មុន្នីនាថ, អ្នកនាង
-              ប៊ីរីយ៉ា និង​តារា​ប្រុសស្រីជា​ច្រើនរូបទៀត។វគ្គ ៣ នេះ គឺការត្រឡប់មកវិញ
-              របស់រឿង​ក្រោយចេញវគ្គ ២ កាលពី ៣ឆ្នាំមុន ពោលគឺឆ្នាំ ២០១៩។
-            </p>
           </div>
           <div className="col-span-1 py-4 font-heading md:p-4 md:py-8">
-            <NewsCategoryList />
+            <NewsCategoryList news={news.data} />
           </div>
         </div>
       </div>
     </>
   );
+};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ params }) => {
+  let [data, news] = await Promise.all([
+    getNew(params.id as string),
+    getNews({ page: 1, pageSize: 8 })
+  ]);
+  return { props: { data, news }, revalidate: 60 };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [],
+    fallback: 'blocking'
+  };
 };
 
 export default NewsList;
