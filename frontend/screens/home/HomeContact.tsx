@@ -13,7 +13,7 @@ export const HomeContact: React.FC<Props> = ({ contact }) => {
   const { data } = contact;
 
   return (
-    <div>
+    <>
       <div className="container py-4 md:px-8">
         <Heading text={'Contact'} />
         <div className="flex flex-col justify-between gap-14 md:grid md:grid-cols-4 md:pr-8">
@@ -30,7 +30,7 @@ export const HomeContact: React.FC<Props> = ({ contact }) => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

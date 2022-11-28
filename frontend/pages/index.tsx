@@ -34,7 +34,7 @@ interface Props {
 
 const Page: NextPage<Props> = props => {
   return (
-    <div>
+    <>
       <Header title="Home" />
 
       <Carousel carousel={props.carousels} />
@@ -44,7 +44,7 @@ const Page: NextPage<Props> = props => {
       <HomeOurClients clients={props.clients} />
       <HomeNews news={props.news} />
       <HomeContact contact={props.contact} />
-    </div>
+    </>
   );
 };
 

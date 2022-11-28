@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
     <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
         <div className="text-base-100 flex flex-col items-center justify-between lg:flex-row">
-          <div className="flex flex-col  justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
+          <div className="flex flex-col justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
             <Link href="/">
               <img
                 src="/images/logo.png"
@@ -15,7 +15,7 @@ const Footer: React.FC = () => {
                 alt="Logo"
               />
             </Link>
-            <span className="hidden font-heading !leading-loose text-white md:block md:text-base">
+            <span className="hidden font-heading !leading-loose text-white md:block ">
               Studio4
               គឺជាបណ្ដុំនៃអ្នកអនុវត្តប្រព័ន្ធផ្សព្វផ្សាយដែលមានជំនាញវិជ្ជាជីវៈដែលត្រូបានបង្កើតនៅពាក់កណ្ដាលឆ្នាំ
               2014។ក្រុមនេះត្រូវបានបង្កើតឡើងដោយអ្នកជំនាញដែលមានបទពិសោធន៍សិក្សា
@@ -25,20 +25,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-2 md:gap-10 md:pr-8 lg:flex-row ">
             <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg text-white lg:flex-col lg:justify-start">
               <Link href="/about">
-                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
-                  អំពីយើង
-                </a>
+                <a className="cursor-pointer hover:text-primary-500 hover:underline">អំពីយើង</a>
               </Link>
               <Link href="/contact">
-                <a href="" className="cursor-pointer hover:text-primary-500 hover:underline">
-                  ទាក់ទងយើង
-                </a>
+                <a className="cursor-pointer hover:text-primary-500 hover:underline">ទាក់ទងយើង</a>
               </Link>
               <Link href="/term-and-privacy">
-                <a
-                  href=""
-                  className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline"
-                >
+                <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
                   Term & Privacy
                 </a>
               </Link>

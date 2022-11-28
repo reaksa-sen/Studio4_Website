@@ -21,7 +21,6 @@ export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => 
             image={image}
             width={1}
             height={1}
-            size={'M'}
             layout={'responsive'}
             objectFit="cover"
           />
@@ -39,14 +38,13 @@ export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => 
 export const ArtistList: React.FC<{ artists: ArtistsResponse }> = ({ artists }) => {
   return (
     <div className="my-10 grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
-      {artists.data.map((item, i) => (
-        <Fragment key={i}>
-          <ArtistListItem
-            id={item.id}
-            fullname={item.attributes.fullname}
-            image={item.attributes.image}
-          />
-        </Fragment>
+      {artists.data.map(item => (
+        <ArtistListItem
+          key={item.attributes.fullname}
+          id={item.id}
+          fullname={item.attributes.fullname}
+          image={item.attributes.image}
+        />
       ))}
     </div>
   );

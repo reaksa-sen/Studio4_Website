@@ -1,6 +1,6 @@
 import { NewsResponses } from 'api/interface';
-import Image from 'next/image';
 import Link from 'next/link';
+import NextImage from 'components/Image';
 
 interface Props {
   news: NewsResponses;
@@ -17,12 +17,12 @@ export const NewsItem: React.FC<INews> = ({ image, title, id }) => {
       <Link href={`/news/${id}`}>
         <div className="flex h-full cursor-pointer flex-col overflow-hidden">
           <div className="group cursor-pointer ">
-            <Image
+            <NextImage
               className="transition duration-300 group-hover:scale-105"
-              src={image}
+              image={image}
               width={1.2}
               height={1}
-              alt={'M'}
+              alt={title}
               layout={'responsive'}
               objectFit="cover"
             />
@@ -51,7 +51,7 @@ export const NewsList: React.FC<Props> = ({ news }) => {
           id={item.id}
           key={item.attributes.title}
           title={item.attributes.title}
-          image={item.attributes.image?.data?.attributes.url}
+          image={item.attributes.image}
         />
       ))}
     </div>

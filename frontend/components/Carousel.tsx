@@ -67,7 +67,7 @@ export const Carousel: React.FC<{ carousel: CarouselsResponse }> = ({ carousel }
               <div className=" aspect-w-16 aspect-h-9 relative lg:aspect-h-7">
                 <NextImage
                   image={item.attributes.image}
-                  // size="L"
+                  // size={'M'}
                   alt={`image-${i}`}
                   key={i}
                   layout="fill"

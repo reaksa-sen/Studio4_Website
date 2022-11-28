@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import NextImage from 'components/Image';
 import { CiYoutube } from 'react-icons/ci';
 import { useVideoModalContext } from 'hooks/videoModalHook';
@@ -7,13 +6,13 @@ import { WorkShowcasesResponse } from 'api/interface';
 interface Props {
   data: WorkShowcasesResponse;
 }
-interface IWorkShowcaseItem {
+interface IWorkShowcase {
   title: string;
   image: any;
   link: string;
 }
 
-export const WorkShowcaseItem: React.FC<IWorkShowcaseItem> = ({ title, image, link }) => {
+export const WorkShowcaseItem: React.FC<IWorkShowcase> = ({ title, image, link }) => {
   const { onModalOpen } = useVideoModalContext();
   return (
     <div key={title} className="relative cursor-pointer " onClick={() => onModalOpen(link)}>
@@ -38,7 +37,7 @@ export const WorkShowcaseItem: React.FC<IWorkShowcaseItem> = ({ title, image, li
 export const WorkShowcase: React.FC<Props> = ({ data }) => {
   return (
     <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
-      {data?.data.map((item, i) => (
+      {data?.data.map(item => (
         <WorkShowcaseItem
           key={item.id}
           title={item.attributes.title}

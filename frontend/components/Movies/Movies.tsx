@@ -1,7 +1,8 @@
 import { MoviesResponse } from 'api/interface';
 import { useVideoModalContext } from 'hooks/videoModalHook';
-import Image from 'next/image';
 import { IoPlayCircleSharp } from 'react-icons/io5';
+import Link from 'next/link';
+import NextImage from 'components/Image';
 
 interface Props {
   movies: MoviesResponse;
@@ -24,9 +25,9 @@ const MovieItem: React.FC<IMovie> = ({ image, title, link }) => {
             <div className="absolute top-1/2 left-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
               <IoPlayCircleSharp className="h-14 w-auto text-primary-500 group-hover:text-primary-600" />
             </div>
-            <Image
+            <NextImage
               className="transition duration-300 group-hover:scale-105"
-              src={image}
+              image={image}
               alt={title}
               height={1.1}
               width={1.7}
@@ -51,7 +52,7 @@ export const MovieList: React.FC<Props> = ({ movies }) => {
       {movies.data?.map(x => (
         <MovieItem
           key={x.id}
-          image={x.attributes.image?.data?.attributes.url}
+          image={x.attributes.image}
           title={x.attributes.title}
           description={x.attributes.description}
           link={x.attributes.link}

@@ -8,7 +8,7 @@ import { NewReleased } from 'components/NewReleased/NewReleased';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-const page: NextPage<{ movie: MoviesResponse }> = ({ movie }) => {
+const Page: NextPage<{ movie: MoviesResponse }> = ({ movie }) => {
   const router = useRouter();
   const TITLE = 'Movies';
   const DESCRIPTION = 'Studio Four Team Members';
@@ -27,4 +27,4 @@ export const getStaticProps: GetStaticProps = async ({}) => {
   const movie = await getMovies({ page: 1, pageSize: 1 });
   return { props: { movie }, revalidate: 60 };
 };
-export default page;
+export default Page;

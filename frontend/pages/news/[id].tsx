@@ -1,12 +1,13 @@
-import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
-import { BiTimeFive } from 'react-icons/bi';
-import Header from 'components/Header';
 import { NewsCategoryList } from 'components/News/NewsCategoryList';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { NewsResponse, NewsResponses } from 'api/interface';
 import { getNew, getNews } from 'api/strapiApi';
+import { BiTimeFive } from 'react-icons/bi';
+import NextImage from 'components/Image';
 import { useRouter } from 'next/router';
-import Image from 'next/image';
 import { dateFormat } from 'utils/date';
+import Header from 'components/Header';
+
 interface Props {
   data: NewsResponse;
   news: NewsResponses;
@@ -33,9 +34,9 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
               <BiTimeFive />
               <span>{dateFormat(data.data.attributes.createdAt, 'en-Us')}</span>
             </p>
-            <Image
+            <NextImage
               alt={data?.data.attributes.title}
-              src={data?.data.attributes.image?.data?.attributes.url}
+              image={data?.data.attributes.image}
               height={9}
               width={16}
               layout={'responsive'}
