@@ -29,7 +29,7 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
             <h2 className="font-heading text-xl leading-relaxed text-white">
               {data?.data.attributes.title}
             </h2>
-            <p className="flex items-center gap-x-1.5 py-4 text-sm text-white">
+            <p className="flex items-center gap-x-1.5 pb-2 pt-4 text-sm text-white">
               <BiTimeFive />
               <span>{dateFormat(data.data.attributes.createdAt, 'en-Us')}</span>
             </p>
