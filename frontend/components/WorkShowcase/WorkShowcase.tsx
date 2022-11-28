@@ -4,6 +4,9 @@ import { CiYoutube } from 'react-icons/ci';
 import { useVideoModalContext } from 'hooks/videoModalHook';
 import { WorkShowcasesResponse } from 'api/interface';
 
+interface Props {
+  data: WorkShowcasesResponse;
+}
 interface IWorkShowcaseItem {
   title: string;
   image: any;
@@ -32,7 +35,7 @@ export const WorkShowcaseItem: React.FC<IWorkShowcaseItem> = ({ title, image, li
   );
 };
 
-export const WorkShowcase: React.FC<{ data: WorkShowcasesResponse }> = ({ data }) => {
+export const WorkShowcase: React.FC<Props> = ({ data }) => {
   return (
     <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {data?.data.map((item, i) => (

@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
 import { Facebook, Instagram, Tiktok, Youtube } from '@icons-pack/react-simple-icons';
-import { ArtistResponse } from 'api/interface';
-import { getArtist } from 'api/strapiApi';
-import { LinkButton } from 'components/Button';
-import Header from 'components/Header';
-import { Heading } from 'components/Heading';
-import { useRouter } from 'next/router';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
+import { ArtistResponse } from 'api/interface';
+import { LinkButton } from 'components/Button';
+import { Heading } from 'components/Heading';
+import { getArtist } from 'api/strapiApi';
+import { useRouter } from 'next/router';
+import Header from 'components/Header';
 
 interface Props {
   artist: ArtistResponse;
@@ -51,22 +51,22 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
               <div className="flex flex-row space-x-4 ">
                 {facebook && (
                   <LinkButton target="_blank" dense href={facebook}>
-                    <Facebook />
+                    <Facebook className="hover:text-blue-600" />
                   </LinkButton>
                 )}
                 {instagram && (
                   <LinkButton target="_blank" dense href={instagram}>
-                    <Instagram />
+                    <Instagram className="hover:text-pink-600" />
                   </LinkButton>
                 )}
                 {tiktok && (
                   <LinkButton target="_blank" dense href={tiktok}>
-                    <Tiktok />
+                    <Tiktok className="hover:text-gray-700" />
                   </LinkButton>
                 )}
                 {youtube && (
                   <LinkButton target="_blank" dense href={youtube}>
-                    <Youtube />
+                    <Youtube className="hover:text-red-600" />
                   </LinkButton>
                 )}
               </div>

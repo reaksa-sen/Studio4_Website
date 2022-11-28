@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/rules-of-hooks */
 import { WorkShowcase } from 'components/WorkShowcase/WorkShowcase';
 import { XInfiniteScroll } from 'components/InfiniteScroll';
 import { Spinner } from 'components/Loading/Spinner';

@@ -1,8 +1,8 @@
+import { GetStaticProps, NextPage } from 'next/types';
+import { Wrapper } from 'components/Wrapper';
 import { AboutResponse } from 'api/interface';
 import { getAbout } from 'api/strapiApi';
 import Header from 'components/Header';
-import { Wrapper } from 'components/Wrapper';
-import { GetStaticProps, NextPage } from 'next/types';
 
 interface Props {
   about: AboutResponse;

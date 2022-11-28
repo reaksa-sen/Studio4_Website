@@ -1,8 +1,8 @@
 import { TermAndPrivacyResponse } from 'api/interface';
-import { getTermAndPrivacy } from 'api/strapiApi';
-import Header from 'components/Header';
-import { Wrapper } from 'components/Wrapper';
 import { GetStaticProps, NextPage } from 'next/types';
+import { getTermAndPrivacy } from 'api/strapiApi';
+import { Wrapper } from 'components/Wrapper';
+import Header from 'components/Header';
 
 interface Props {
   termAndPrivacy: TermAndPrivacyResponse;

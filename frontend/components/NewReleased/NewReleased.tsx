@@ -3,6 +3,9 @@ import { IoPlayCircleSharp } from 'react-icons/io5';
 import { MovieAttribute } from 'api/interface';
 import NextImage from 'components/Image';
 
+interface Props {
+  movie: MovieAttribute;
+}
 interface IMovie {
   image: any;
   title: string;
@@ -40,7 +43,7 @@ const NewReleasedItem: React.FC<IMovie> = ({ image, title, link, description }) 
   );
 };
 
-export const NewReleased: React.FC<{ movie: MovieAttribute }> = ({ movie }) => {
+export const NewReleased: React.FC<Props> = ({ movie }) => {
   return (
     <div>
       <div className=" grid grid-cols-1 gap-8 md:grid-cols-2  ">

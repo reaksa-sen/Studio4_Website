@@ -2,6 +2,10 @@ import { MoviesResponse } from 'api/interface';
 import { useVideoModalContext } from 'hooks/videoModalHook';
 import Image from 'next/image';
 import { IoPlayCircleSharp } from 'react-icons/io5';
+
+interface Props {
+  movies: MoviesResponse;
+}
 interface IMovie {
   image: any;
   title: string;
@@ -41,7 +45,7 @@ const MovieItem: React.FC<IMovie> = ({ image, title, link }) => {
   );
 };
 
-export const MovieList: React.FC<{ movies: MoviesResponse }> = ({ movies }) => {
+export const MovieList: React.FC<Props> = ({ movies }) => {
   return (
     <div className="grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {movies.data?.map(x => (

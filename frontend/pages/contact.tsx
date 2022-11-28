@@ -1,12 +1,10 @@
-import * as I from 'api/interface';
+import { ContactForm } from 'screens/contact/ContactForm';
+import { ContactAddress } from 'screens/contact/ContactAddress';
+import { GetStaticProps, NextPage } from 'next/types';
+import { Heading } from 'components/Heading';
 import { getContact } from 'api/strapiApi';
 import Header from 'components/Header';
-import { Wrapper } from 'components/Wrapper';
-import { GetStaticProps, NextPage } from 'next/types';
-import { ContactAddress } from 'screens/contact/ContactAddress';
-import { ContactForm } from 'screens/contact/ContactForm';
-import { title } from 'process';
-import { Heading } from 'components/Heading';
+import * as I from 'api/interface';
 
 interface Props {
   contact: I.ContactResponse;

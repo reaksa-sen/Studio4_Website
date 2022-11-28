@@ -1,13 +1,13 @@
-import { getArtists } from 'api/strapiApi';
-import { ArtistList } from 'components/Artists/ArtistsList';
-import Header from 'components/Header';
-import { Heading } from 'components/Heading';
 import { XInfiniteScroll } from 'components/InfiniteScroll';
+import { ArtistList } from 'components/Artists/ArtistsList';
 import { Spinner } from 'components/Loading/Spinner';
+import { useInfiniteQuery } from 'react-query';
 import { NoResult } from 'components/NoResult';
+import { Heading } from 'components/Heading';
+import { getArtists } from 'api/strapiApi';
+import Header from 'components/Header';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next/types';
-import { useInfiniteQuery } from 'react-query';
 
 const Page: NextPage = () => {
   const router = useRouter();

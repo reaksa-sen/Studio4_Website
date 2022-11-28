@@ -2,6 +2,9 @@ import { NewsResponses } from 'api/interface';
 import Image from 'next/image';
 import Link from 'next/link';
 
+interface Props {
+  news: NewsResponses;
+}
 interface INews {
   title: string;
   image: any;
@@ -40,7 +43,7 @@ export const NewsItem: React.FC<INews> = ({ image, title, id }) => {
   );
 };
 
-export const NewsList: React.FC<{ news: NewsResponses }> = ({ news }) => {
+export const NewsList: React.FC<Props> = ({ news }) => {
   return (
     <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {news.data.map(item => (
