@@ -24,6 +24,7 @@ export const WorkShowcaseItem: React.FC<IWorkShowcase> = ({ title, image, link }
           className="transition duration-300 group-hover:scale-105"
           image={image}
           alt={title}
+          size={'M'}
           height={1.1}
           width={1.7}
           layout="responsive"

@@ -29,16 +29,18 @@ const MovieItem: React.FC<IMovie> = ({ image, title, link }) => {
               className="transition duration-300 group-hover:scale-105"
               image={image}
               alt={title}
-              height={1.1}
+              size={'M'}
               width={1.7}
+              height={1.1}
               layout="responsive"
               objectFit="cover"
             />
-          </div>
-          <div className="flex flex-col pt-3 pl-2">
-            <span className="font-heading text-lg text-white group-hover:text-primary-600 group-hover:underline md:text-base">
-              {title}
-            </span>
+
+            <div className="flex flex-col pt-3 pl-2">
+              <span className="font-heading text-lg text-white group-hover:text-primary-600 group-hover:underline md:text-base">
+                {title}
+              </span>
+            </div>
           </div>
         </div>
       </li>

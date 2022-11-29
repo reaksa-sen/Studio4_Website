@@ -29,6 +29,7 @@ export const ContactAddress: React.FC<Props> = ({ contact }) => {
       <div>
         {/* <ContactHead title="Our Office" /> */}
         <iframe
+          title="studio-4-address-location"
           className="h-72 w-full"
           src={google_map_url}
           style={{ border: 0 }}

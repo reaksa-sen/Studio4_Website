@@ -26,6 +26,7 @@ const NewReleasedItem: React.FC<IMovie> = ({ image, title, link, description }) 
             className="transition duration-300 group-hover:scale-105"
             image={image}
             alt={title}
+            size={'M'}
             height={9.5}
             width={15}
             layout="responsive"

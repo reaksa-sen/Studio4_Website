@@ -18,6 +18,7 @@ const NewsCategoryItem: React.FC<INews> = ({ image, title, id }) => {
           <NextImage
             alt={title}
             image={image}
+            size={'S'}
             width="16"
             height="9"
             layout="responsive"

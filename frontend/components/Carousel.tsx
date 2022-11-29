@@ -25,17 +25,17 @@ const SliderContent: React.FC<ICarousel> = ({ facebook_url, tiktok_url, yuotube_
     <div className="absolute top-1/2 right-5 z-10 -translate-x-1/2 -translate-y-1/2">
       <div className="flex flex-col gap-y-2 md:gap-y-4">
         <Link href={facebook_url}>
-          <a target="_blank" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" aria-label="view more on facebook">
             <IoLogoFacebook className="h-5 w-auto cursor-pointer text-white hover:text-blue-600 sm:h-8" />
           </a>
         </Link>
         <Link href={yuotube_url}>
-          <a target="_blank" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" aria-label="view more on youtube">
             <IoLogoYoutube className="h-5 w-auto cursor-pointer text-white hover:text-red-600 sm:h-8" />
           </a>
         </Link>
         <Link href={tiktok_url}>
-          <a target="_blank" rel="noreferrer">
+          <a target="_blank" rel="noreferrer" aria-label="view more on tiktok">
             <IoLogoTiktok className="h-5 w-auto cursor-pointer text-white hover:text-gray-700 sm:h-8" />
           </a>
         </Link>

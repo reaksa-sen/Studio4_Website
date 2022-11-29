@@ -66,6 +66,7 @@ export function getMovies(pagination: I.Pagination): Promise<I.MoviesResponse> {
 
 export function getNews(pagination: I.Pagination): Promise<I.NewsResponses> {
   return fetchAPI('/news', {
+    sort: ['id:desc'],
     pagination,
     populate: {
       image: { fields: ['name', 'url', 'formats'] }

@@ -43,21 +43,21 @@ const Footer: React.FC = () => {
               <div className="mt-5 flex justify-center space-x-5 text-white ">
                 {
                   <Link href="https://www.facebook.com/OneWorldSoftware">
-                    <a rel="noreferrer" target="_blank">
+                    <a rel="noreferrer" target="_blank" aria-label="view more on facebook">
                       <Facebook className="cursor-pointer hover:text-blue-600" size="32" />
                     </a>
                   </Link>
                 }
                 {
                   <Link href="https://www.youtube.com/watch?v=t1zVoqL7E_k">
-                    <a rel="noreferrer" target="_blank">
+                    <a rel="noreferrer" target="_blank" aria-label="view more on youtube">
                       <Youtube size="32" className="cursor-pointer hover:text-red-600" />
                     </a>
                   </Link>
                 }
                 {
                   <Link href="https://www.tiktok.com/@ldentertantment.official?_t=8WDcOcSQj8j">
-                    <a rel="noreferrer" target="_blank">
+                    <a rel="noreferrer" target="_blank" aria-label="view more on tiktok">
                       <Tiktok size="32" className="cursor-pointer hover:text-gray-700" />
                     </a>
                   </Link>

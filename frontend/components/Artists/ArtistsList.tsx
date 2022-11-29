@@ -22,6 +22,7 @@ export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => 
             className="cursor-pointer rounded-full transition duration-300 ease-in-out group-hover:scale-105"
             alt={fullname}
             image={image}
+            size={'M'}
             width={1}
             height={1}
             layout={'responsive'}

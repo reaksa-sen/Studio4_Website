@@ -42,7 +42,7 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
               layout={'responsive'}
             />
             <article
-              className=" prose max-w-none text-white"
+              className="prose max-w-none pt-4 text-white prose-p:pt-2 prose-img:pt-2 md:prose-lg"
               dangerouslySetInnerHTML={{ __html: data?.data.attributes.content }}
             />
           </div>

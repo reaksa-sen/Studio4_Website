@@ -12,7 +12,7 @@ import { NextPage } from 'next/types';
 const Page: NextPage = () => {
   const router = useRouter();
   const TITLE = 'Artists';
-  const PAGE_SIZE = 8;
+  const PAGE_SIZE = 12;
   const DESCRIPTION = 'Studio Four Team Members';
 
   const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(

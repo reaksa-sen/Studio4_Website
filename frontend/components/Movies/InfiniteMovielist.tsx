@@ -6,7 +6,7 @@ import { useInfiniteQuery } from 'react-query';
 import { MovieList } from './Movies';
 
 export const InfiniteMovieList: React.FC = () => {
-  const PAGE_SIZE = 8;
+  const PAGE_SIZE = 12;
 
   const { data, status, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
     useInfiniteQuery(

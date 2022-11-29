@@ -22,6 +22,7 @@ const NavLink: React.FC<NavLinkProps> = props => {
   return (
     <Link href={href}>
       <a
+        aria-label={`click here to view ${name}`}
         className={classNames(
           'flex items-center  px-3 py-2 font-sans text-lg leading-normal hover:text-primary-500',
           isActive ? 'text-primary-600' : 'text-white'
@@ -41,6 +42,7 @@ const SmNavLink: React.FC<NavLinkProps> = props => {
   return (
     <Link href={href}>
       <a
+        aria-label={`click here to view ${name}`}
         onClick={onClick}
         href={href}
         className={classNames(
