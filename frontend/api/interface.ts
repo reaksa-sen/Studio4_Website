@@ -25,7 +25,6 @@ interface ICarousel {
   tiktok_url: string;
   youtube_url: string;
 }
-
 interface IContact {
   phone: string;
   email: string;
@@ -38,32 +37,12 @@ interface IContact {
   tiktok_url: string;
   twitter_url: string;
 }
-
 interface INews {
   image: { data?: IAttribute<Image> };
   title: string;
   content: string;
   createdAt: string;
 }
-
-interface IBlogCategory {
-  name: string;
-  // ----
-  blogs: BlogsResponse;
-}
-
-interface IBlog {
-  title: string;
-  description: string;
-  slug: string;
-  image?: { data?: IAttribute<Image> };
-  // ----
-  content: string;
-  createdAt: string;
-  locale: string;
-  localizations: { data?: BlogAttribute[] };
-}
-
 interface IMovie {
   image: { data?: IAttribute<Image> };
   title: string;
@@ -79,7 +58,6 @@ interface IClient {
   moreHeight: boolean;
   ordering: number;
 }
-
 interface IArtist {
   description: string;
   fullname: string;
@@ -130,13 +108,6 @@ export type MovieResponse = { data: MovieAttribute; meta: Meta };
 export type NewsAttribute = IAttribute<INews>;
 export type NewsResponses = IResponse<NewsAttribute>;
 export type NewsResponse = { data: NewsAttribute; meta: Meta };
-
-export type BlogAttribute = IAttribute<IBlog>;
-export type BlogsResponse = IResponse<BlogAttribute>;
-export type BlogResponse = { data: BlogAttribute; meta: Meta };
-
-export type BlogCategoryAttribute = IAttribute<IBlogCategory>;
-export type BlogCategoriesResponse = IResponse<BlogCategoryAttribute>;
 
 export interface Meta {
   pagination: {

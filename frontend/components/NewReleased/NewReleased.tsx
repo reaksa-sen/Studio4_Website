@@ -46,7 +46,7 @@ const NewReleasedItem: React.FC<IMovie> = ({ image, title, link, description }) 
 export const NewReleased: React.FC<Props> = ({ movie }) => {
   return (
     <div>
-      <div className=" grid grid-cols-1 gap-8 md:grid-cols-2  ">
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <NewReleasedItem
           key={movie.attributes.title}
           image={movie.attributes.image}

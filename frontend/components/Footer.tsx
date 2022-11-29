@@ -6,8 +6,8 @@ const Footer: React.FC = () => {
   return (
     <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
-        <div className="text-base-100 flex flex-col items-center justify-between lg:flex-row">
-          <div className="flex flex-col justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
+        <div className="flex flex-col items-center justify-between lg:flex-row">
+          <div className="flex flex-col items-center gap-y-4 pb-8 pt-2 md:pt-0 md:text-left lg:w-2/4 lg:items-start ">
             <Link href="/">
               <img
                 src="/images/logo.png"

@@ -8,7 +8,11 @@ import { NewReleased } from 'components/NewReleased/NewReleased';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-const Page: NextPage<{ movie: MoviesResponse }> = ({ movie }) => {
+interface Props {
+  movie: MoviesResponse;
+}
+
+const Page: NextPage<Props> = ({ movie }) => {
   const router = useRouter();
   const TITLE = 'Movies';
   const DESCRIPTION = 'Studio Four Team Members';

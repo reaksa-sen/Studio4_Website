@@ -10,6 +10,9 @@ import { IoLogoFacebook, IoLogoYoutube, IoLogoTiktok } from 'react-icons/io5';
 import Link from 'next/link';
 import NextImage from 'components/Image';
 
+interface Props {
+  carousel: CarouselsResponse;
+}
 interface ICarousel {
   image?: any;
   facebook_url: string;
@@ -41,7 +44,7 @@ const SliderContent: React.FC<ICarousel> = ({ facebook_url, tiktok_url, yuotube_
   );
 };
 
-export const Carousel: React.FC<{ carousel: CarouselsResponse }> = ({ carousel }) => {
+export const Carousel: React.FC<Props> = ({ carousel }) => {
   return (
     <>
       <div className="relative">
@@ -67,7 +70,6 @@ export const Carousel: React.FC<{ carousel: CarouselsResponse }> = ({ carousel }
               <div className=" aspect-w-16 aspect-h-9 relative lg:aspect-h-7">
                 <NextImage
                   image={item.attributes.image}
-                  // size={'M'}
                   alt={`image-${i}`}
                   key={i}
                   layout="fill"
