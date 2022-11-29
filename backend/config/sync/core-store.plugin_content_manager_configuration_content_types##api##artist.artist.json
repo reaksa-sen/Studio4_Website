@@ -204,6 +204,10 @@
       }
     },
     "layouts": {
+      "list": [
+        "image",
+        "fullname"
+      ],
       "edit": [
         [
           {
@@ -263,11 +267,6 @@
             "size": 6
           }
         ]
-      ],
-      "editRelations": [],
-      "list": [
-        "image",
-        "fullname"
       ]
     }
   },

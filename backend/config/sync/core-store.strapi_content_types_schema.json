@@ -518,7 +518,8 @@
           "type": "string",
           "minLength": 1,
           "configurable": false,
-          "required": true
+          "required": true,
+          "unique": true
         },
         "description": {
           "type": "string",
@@ -531,10 +532,11 @@
           "type": "enumeration",
           "enum": [
             "read-only",
-            "full-access"
+            "full-access",
+            "custom"
           ],
           "configurable": false,
-          "required": false,
+          "required": true,
           "default": "read-only"
         },
         "accessKey": {
@@ -542,6 +544,29 @@
           "minLength": 1,
           "configurable": false,
           "required": true
+        },
+        "lastUsedAt": {
+          "type": "datetime",
+          "configurable": false,
+          "required": false
+        },
+        "permissions": {
+          "type": "relation",
+          "target": "admin::api-token-permission",
+          "relation": "oneToMany",
+          "mappedBy": "token",
+          "configurable": false,
+          "required": false
+        },
+        "expiresAt": {
+          "type": "datetime",
+          "configurable": false,
+          "required": false
+        },
+        "lifespan": {
+          "type": "biginteger",
+          "configurable": false,
+          "required": false
         },
         "createdAt": {
           "type": "datetime"
@@ -594,7 +619,8 @@
             "type": "string",
             "minLength": 1,
             "configurable": false,
-            "required": true
+            "required": true,
+            "unique": true
           },
           "description": {
             "type": "string",
@@ -607,10 +633,11 @@
             "type": "enumeration",
             "enum": [
               "read-only",
-              "full-access"
+              "full-access",
+              "custom"
             ],
             "configurable": false,
-            "required": false,
+            "required": true,
             "default": "read-only"
           },
           "accessKey": {
@@ -618,6 +645,29 @@
             "minLength": 1,
             "configurable": false,
             "required": true
+          },
+          "lastUsedAt": {
+            "type": "datetime",
+            "configurable": false,
+            "required": false
+          },
+          "permissions": {
+            "type": "relation",
+            "target": "admin::api-token-permission",
+            "relation": "oneToMany",
+            "mappedBy": "token",
+            "configurable": false,
+            "required": false
+          },
+          "expiresAt": {
+            "type": "datetime",
+            "configurable": false,
+            "required": false
+          },
+          "lifespan": {
+            "type": "biginteger",
+            "configurable": false,
+            "required": false
           }
         },
         "kind": "collectionType"
@@ -628,6 +678,108 @@
       "uid": "admin::api-token",
       "plugin": "admin",
       "globalId": "AdminApiToken"
+    },
+    "admin::api-token-permission": {
+      "collectionName": "strapi_api_token_permissions",
+      "info": {
+        "name": "API Token Permission",
+        "description": "",
+        "singularName": "api-token-permission",
+        "pluralName": "api-token-permissions",
+        "displayName": "API Token Permission"
+      },
+      "options": {},
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      },
+      "attributes": {
+        "action": {
+          "type": "string",
+          "minLength": 1,
+          "configurable": false,
+          "required": true
+        },
+        "token": {
+          "configurable": false,
+          "type": "relation",
+          "relation": "manyToOne",
+          "inversedBy": "permissions",
+          "target": "admin::api-token"
+        },
+        "createdAt": {
+          "type": "datetime"
+        },
+        "updatedAt": {
+          "type": "datetime"
+        },
+        "createdBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        },
+        "updatedBy": {
+          "type": "relation",
+          "relation": "oneToOne",
+          "target": "admin::user",
+          "configurable": false,
+          "writable": false,
+          "visible": false,
+          "useJoinTable": false,
+          "private": true
+        }
+      },
+      "kind": "collectionType",
+      "__schema__": {
+        "collectionName": "strapi_api_token_permissions",
+        "info": {
+          "name": "API Token Permission",
+          "description": "",
+          "singularName": "api-token-permission",
+          "pluralName": "api-token-permissions",
+          "displayName": "API Token Permission"
+        },
+        "options": {},
+        "pluginOptions": {
+          "content-manager": {
+            "visible": false
+          },
+          "content-type-builder": {
+            "visible": false
+          }
+        },
+        "attributes": {
+          "action": {
+            "type": "string",
+            "minLength": 1,
+            "configurable": false,
+            "required": true
+          },
+          "token": {
+            "configurable": false,
+            "type": "relation",
+            "relation": "manyToOne",
+            "inversedBy": "permissions",
+            "target": "admin::api-token"
+          }
+        },
+        "kind": "collectionType"
+      },
+      "modelType": "contentType",
+      "modelName": "api-token-permission",
+      "connection": "default",
+      "uid": "admin::api-token-permission",
+      "plugin": "admin",
+      "globalId": "AdminApiTokenPermission"
     },
     "plugin::upload.file": {
       "collectionName": "files",
@@ -1555,13 +1707,17 @@
       },
       "attributes": {
         "content": {
-          "type": "richtext",
           "pluginOptions": {
             "i18n": {
-              "localized": true
+              "localized": false
             }
           },
-          "required": true
+          "type": "richtext",
+          "options": {
+            "preset": "rich"
+          },
+          "required": false,
+          "customField": "plugin::ckeditor.CKEditor"
         },
         "createdAt": {
           "type": "datetime"
@@ -1630,13 +1786,17 @@
         },
         "attributes": {
           "content": {
-            "type": "richtext",
             "pluginOptions": {
               "i18n": {
-                "localized": true
+                "localized": false
               }
             },
-            "required": true
+            "type": "customField",
+            "options": {
+              "preset": "rich"
+            },
+            "required": false,
+            "customField": "plugin::ckeditor.CKEditor"
           }
         },
         "kind": "singleType"
@@ -1938,90 +2098,46 @@
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "attributes": {
         "address": {
           "type": "string",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
+          "pluginOptions": {}
         },
         "google_map_url": {
           "type": "text",
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          }
+          "pluginOptions": {}
         },
         "phone": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "integer"
         },
         "email": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "email"
         },
         "facebook_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "youtube_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "instagram_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "tiktok_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "twitter_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "telegram_url": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": true
-            }
-          },
+          "pluginOptions": {},
           "type": "string"
         },
         "createdAt": {
@@ -2055,22 +2171,6 @@
           "visible": false,
           "useJoinTable": false,
           "private": true
-        },
-        "localizations": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::contact.contact"
-        },
-        "locale": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "string"
         }
       },
       "__schema__": {
@@ -2084,90 +2184,46 @@
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {
-          "i18n": {
-            "localized": true
-          }
-        },
+        "pluginOptions": {},
         "attributes": {
           "address": {
             "type": "string",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
+            "pluginOptions": {}
           },
           "google_map_url": {
             "type": "text",
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            }
+            "pluginOptions": {}
           },
           "phone": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "integer"
           },
           "email": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "email"
           },
           "facebook_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           },
           "youtube_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           },
           "instagram_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           },
           "tiktok_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           },
           "twitter_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           },
           "telegram_url": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": true
-              }
-            },
+            "pluginOptions": {},
             "type": "string"
           }
         },
@@ -2308,7 +2364,8 @@
       "info": {
         "singularName": "new",
         "pluralName": "news",
-        "displayName": "News"
+        "displayName": "News",
+        "description": ""
       },
       "options": {
         "draftAndPublish": true
@@ -2316,12 +2373,12 @@
       "pluginOptions": {},
       "attributes": {
         "image": {
-          "allowedTypes": [
-            "images"
-          ],
           "type": "media",
           "multiple": false,
-          "required": true
+          "required": true,
+          "allowedTypes": [
+            "images"
+          ]
         },
         "title": {
           "type": "string",
@@ -2329,7 +2386,10 @@
         },
         "content": {
           "type": "richtext",
-          "required": true
+          "options": {
+            "preset": "rich"
+          },
+          "customField": "plugin::ckeditor.CKEditor"
         },
         "createdAt": {
           "type": "datetime"
@@ -2369,7 +2429,8 @@
         "info": {
           "singularName": "new",
           "pluralName": "news",
-          "displayName": "News"
+          "displayName": "News",
+          "description": ""
         },
         "options": {
           "draftAndPublish": true
@@ -2377,20 +2438,23 @@
         "pluginOptions": {},
         "attributes": {
           "image": {
-            "allowedTypes": [
-              "images"
-            ],
             "type": "media",
             "multiple": false,
-            "required": true
+            "required": true,
+            "allowedTypes": [
+              "images"
+            ]
           },
           "title": {
             "type": "string",
             "required": true
           },
           "content": {
-            "type": "richtext",
-            "required": true
+            "type": "customField",
+            "options": {
+              "preset": "rich"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
           }
         },
         "kind": "collectionType"
@@ -2524,9 +2588,12 @@
       },
       "pluginOptions": {},
       "attributes": {
-        "Content": {
+        "content": {
           "type": "richtext",
-          "required": true
+          "options": {
+            "preset": "rich"
+          },
+          "customField": "plugin::ckeditor.CKEditor"
         },
         "createdAt": {
           "type": "datetime"
@@ -2574,9 +2641,12 @@
         },
         "pluginOptions": {},
         "attributes": {
-          "Content": {
-            "type": "richtext",
-            "required": true
+          "content": {
+            "type": "customField",
+            "options": {
+              "preset": "rich"
+            },
+            "customField": "plugin::ckeditor.CKEditor"
           }
         },
         "kind": "singleType"

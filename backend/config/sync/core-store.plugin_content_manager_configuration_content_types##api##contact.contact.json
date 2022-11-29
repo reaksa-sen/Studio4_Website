@@ -190,6 +190,12 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "phone",
+        "email",
+        "facebook_url"
+      ],
       "edit": [
         [
           {
@@ -243,13 +249,6 @@
             "size": 6
           }
         ]
-      ],
-      "editRelations": [],
-      "list": [
-        "id",
-        "phone",
-        "email",
-        "facebook_url"
       ]
     }
   },

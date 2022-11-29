@@ -7,9 +7,7 @@
       "action": "plugin::content-manager.explorer.create",
       "subject": "api::about.about",
       "properties": {
-        "fields": [
-          "content"
-        ]
+        "fields": []
       },
       "conditions": []
     },
@@ -17,9 +15,7 @@
       "action": "plugin::content-manager.explorer.read",
       "subject": "api::about.about",
       "properties": {
-        "fields": [
-          "content"
-        ]
+        "fields": []
       },
       "conditions": []
     },
@@ -27,9 +23,7 @@
       "action": "plugin::content-manager.explorer.update",
       "subject": "api::about.about",
       "properties": {
-        "fields": [
-          "content"
-        ]
+        "fields": []
       },
       "conditions": []
     },

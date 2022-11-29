@@ -183,9 +183,6 @@
         "email",
         "confirmed"
       ],
-      "editRelations": [
-        "role"
-      ],
       "edit": [
         [
           {
@@ -211,6 +208,10 @@
           {
             "name": "blocked",
             "size": 4
+          },
+          {
+            "name": "role",
+            "size": 6
           }
         ]
       ]

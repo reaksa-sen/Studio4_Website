@@ -120,6 +120,11 @@
       }
     },
     "layouts": {
+      "list": [
+        "image",
+        "title",
+        "ordering"
+      ],
       "edit": [
         [
           {
@@ -149,12 +154,6 @@
             "size": 8
           }
         ]
-      ],
-      "editRelations": [],
-      "list": [
-        "image",
-        "title",
-        "ordering"
       ]
     }
   },

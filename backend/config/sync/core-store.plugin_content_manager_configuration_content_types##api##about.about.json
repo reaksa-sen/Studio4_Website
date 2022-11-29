@@ -22,7 +22,7 @@
       },
       "content": {
         "edit": {
-          "label": "Content",
+          "label": "content",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -64,6 +64,11 @@
       }
     },
     "layouts": {
+      "list": [
+        "id",
+        "createdAt",
+        "updatedAt"
+      ],
       "edit": [
         [
           {
@@ -71,12 +76,6 @@
             "size": 12
           }
         ]
-      ],
-      "editRelations": [],
-      "list": [
-        "id",
-        "createdAt",
-        "updatedAt"
       ]
     }
   },

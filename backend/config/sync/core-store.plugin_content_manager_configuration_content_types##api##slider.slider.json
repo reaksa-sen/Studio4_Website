@@ -7,7 +7,7 @@
       "filterable": true,
       "searchable": true,
       "pageSize": 10,
-      "mainField": "facebook_url",
+      "mainField": "id",
       "defaultSortBy": "facebook_url",
       "defaultSortOrder": "ASC"
     },
@@ -22,7 +22,7 @@
       },
       "image": {
         "edit": {
-          "label": "image",
+          "label": "Image",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -36,7 +36,7 @@
       },
       "facebook_url": {
         "edit": {
-          "label": "facebook_url",
+          "label": "Facebook_url",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -50,7 +50,7 @@
       },
       "tiktok_url": {
         "edit": {
-          "label": "tiktok_url",
+          "label": "Tiktok_url",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -64,7 +64,7 @@
       },
       "youtube_url": {
         "edit": {
-          "label": "youtube_url",
+          "label": "Youtube_url",
           "description": "",
           "placeholder": "",
           "visible": true,
@@ -108,18 +108,22 @@
     "layouts": {
       "list": [
         "id",
-        "image",
-        "facebook_url",
-        "tiktok_url"
+        "image"
       ],
       "edit": [
         [
           {
             "name": "image",
+            "size": 12
+          }
+        ],
+        [
+          {
+            "name": "facebook_url",
             "size": 6
           },
           {
-            "name": "facebook_url",
+            "name": "youtube_url",
             "size": 6
           }
         ],
@@ -127,14 +131,9 @@
           {
             "name": "tiktok_url",
             "size": 6
-          },
-          {
-            "name": "youtube_url",
-            "size": 6
           }
         ]
-      ],
-      "editRelations": []
+      ]
     }
   },
   "type": "object",

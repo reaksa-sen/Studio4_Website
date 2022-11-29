@@ -206,9 +206,6 @@
           "tiktok_url",
           "twitter_url",
           "telegram_url"
-        ],
-        "locales": [
-          "en"
         ]
       },
       "conditions": []
@@ -216,21 +213,13 @@
     {
       "action": "plugin::content-manager.explorer.delete",
       "subject": "api::contact.contact",
-      "properties": {
-        "locales": [
-          "en"
-        ]
-      },
+      "properties": {},
       "conditions": []
     },
     {
       "action": "plugin::content-manager.explorer.publish",
       "subject": "api::contact.contact",
-      "properties": {
-        "locales": [
-          "en"
-        ]
-      },
+      "properties": {},
       "conditions": []
     },
     {
@@ -248,9 +237,6 @@
           "tiktok_url",
           "twitter_url",
           "telegram_url"
-        ],
-        "locales": [
-          "en"
         ]
       },
       "conditions": []
@@ -270,9 +256,6 @@
           "tiktok_url",
           "twitter_url",
           "telegram_url"
-        ],
-        "locales": [
-          "en"
         ]
       },
       "conditions": []
@@ -435,7 +418,7 @@
       "subject": "api::term-and-privacy.term-and-privacy",
       "properties": {
         "fields": [
-          "Content"
+          "content"
         ]
       },
       "conditions": []
@@ -457,7 +440,7 @@
       "subject": "api::term-and-privacy.term-and-privacy",
       "properties": {
         "fields": [
-          "Content"
+          "content"
         ]
       },
       "conditions": []
@@ -467,7 +450,7 @@
       "subject": "api::term-and-privacy.term-and-privacy",
       "properties": {
         "fields": [
-          "Content"
+          "content"
         ]
       },
       "conditions": []
@@ -521,6 +504,12 @@
           "title"
         ]
       },
+      "conditions": []
+    },
+    {
+      "action": "admin::api-tokens.access",
+      "subject": null,
+      "properties": {},
       "conditions": []
     },
     {
@@ -537,6 +526,12 @@
     },
     {
       "action": "admin::api-tokens.read",
+      "subject": null,
+      "properties": {},
+      "conditions": []
+    },
+    {
+      "action": "admin::api-tokens.regenerate",
       "subject": null,
       "properties": {},
       "conditions": []

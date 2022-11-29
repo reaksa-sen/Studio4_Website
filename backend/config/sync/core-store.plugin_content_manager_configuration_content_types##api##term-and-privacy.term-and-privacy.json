@@ -20,16 +20,16 @@
           "sortable": true
         }
       },
-      "Content": {
+      "content": {
         "edit": {
-          "label": "Content",
+          "label": "content",
           "description": "",
           "placeholder": "",
           "visible": true,
           "editable": true
         },
         "list": {
-          "label": "Content",
+          "label": "content",
           "searchable": false,
           "sortable": false
         }
@@ -69,11 +69,10 @@
         "createdAt",
         "updatedAt"
       ],
-      "editRelations": [],
       "edit": [
         [
           {
-            "name": "Content",
+            "name": "content",
             "size": 12
           }
         ]
