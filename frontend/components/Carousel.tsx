@@ -3,42 +3,59 @@
 import 'swiper/css';
 import 'swiper/css/pagination';
 import { CarouselsResponse } from 'api/interface';
-import Image from 'next/image';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { IoLogoFacebook, IoLogoYoutube, IoLogoTiktok } from 'react-icons/io5';
-import Link from 'next/link';
+import { Facebook, Instagram, Tiktok, Twitter, Youtube } from '@icons-pack/react-simple-icons';
 import NextImage from 'components/Image';
+import { getContact } from 'api/strapiApi';
+import { useQuery } from 'react-query';
+import { LinkButton } from './Button';
 
 interface Props {
   carousel: CarouselsResponse;
 }
-interface ICarousel {
-  image?: any;
-  facebook_url: string;
-  tiktok_url: string;
-  yuotube_url: string;
-}
 
-const SliderContent: React.FC<ICarousel> = ({ facebook_url, tiktok_url, yuotube_url }) => {
+const SocialContact: React.FC = () => {
+  const { data } = useQuery('footer', () => getContact(), {
+    retry: false,
+    refetchOnWindowFocus: false,
+    staleTime: 30000
+  });
+  const {
+    facebook_url = '',
+    youtube_url = '',
+    tiktok_url = '',
+    instagram_url = '',
+    twitter_url = ''
+  } = data?.data?.attributes || {};
   return (
     <div className="absolute top-1/2 right-5 z-10 -translate-x-1/2 -translate-y-1/2">
-      <div className="flex flex-col gap-y-2 md:gap-y-4">
-        <Link href={facebook_url}>
-          <a target="_blank" rel="noreferrer" aria-label="view more on facebook">
-            <IoLogoFacebook className="h-5 w-auto cursor-pointer text-white hover:text-blue-600 sm:h-8" />
-          </a>
-        </Link>
-        <Link href={yuotube_url}>
-          <a target="_blank" rel="noreferrer" aria-label="view more on youtube">
-            <IoLogoYoutube className="h-5 w-auto cursor-pointer text-white hover:text-red-600 sm:h-8" />
-          </a>
-        </Link>
-        <Link href={tiktok_url}>
-          <a target="_blank" rel="noreferrer" aria-label="view more on tiktok">
-            <IoLogoTiktok className="h-5 w-auto cursor-pointer text-white hover:text-gray-700 sm:h-8" />
-          </a>
-        </Link>
+      <div className="flex flex-col gap-y-2 text-white md:gap-y-4">
+        {facebook_url && (
+          <LinkButton target="_blank" href={facebook_url}>
+            <Facebook className="h-5 w-auto hover:text-blue-600 sm:h-8" />
+          </LinkButton>
+        )}
+        {youtube_url && (
+          <LinkButton target="_blank" href={youtube_url}>
+            <Youtube className="h-5 w-auto hover:text-red-600 sm:h-8" />
+          </LinkButton>
+        )}
+        {tiktok_url && (
+          <LinkButton target="_blank" href={tiktok_url}>
+            <Tiktok className="h-5 w-auto hover:text-gray-700 sm:h-8" />
+          </LinkButton>
+        )}
+        {instagram_url && (
+          <LinkButton target="_blank" href={instagram_url}>
+            <Instagram className="h-5 w-auto hover:text-pink-600 sm:h-8" />
+          </LinkButton>
+        )}
+        {twitter_url && (
+          <LinkButton target="_blank" href={twitter_url}>
+            <Twitter className="h-5 w-auto text-white hover:text-sky-500 sm:h-8" />
+          </LinkButton>
+        )}
       </div>
     </div>
   );
@@ -48,15 +65,7 @@ export const Carousel: React.FC<Props> = ({ carousel }) => {
   return (
     <>
       <div className="relative">
-        {carousel.data.map((item, i) => (
-          <div key={i}>
-            <SliderContent
-              facebook_url={item.attributes.facebook_url}
-              tiktok_url={item.attributes.tiktok_url}
-              yuotube_url={item.attributes.youtube_url}
-            />
-          </div>
-        ))}
+        <SocialContact />
         <Swiper
           loop
           navigation

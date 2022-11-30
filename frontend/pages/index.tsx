@@ -1,15 +1,23 @@
-import * as I from 'api/interface';
 import {
   getAbout,
   getContact,
   getClients,
   getArtists,
   getWorkShowcases,
-  getTermAndPrivacy,
   getCarousel,
   getMovies,
   getNews
 } from 'api/strapiApi';
+import {
+  AboutResponse,
+  ArtistsResponse,
+  CarouselsResponse,
+  ClientsResponse,
+  ContactResponse,
+  MoviesResponse,
+  NewsResponses,
+  WorkShowcasesResponse
+} from 'api/interface';
 import { Carousel } from 'components/Carousel';
 import Header from 'components/Header';
 import { GetStaticProps, NextPage } from 'next/types';
@@ -21,15 +29,14 @@ import { HomeNews } from 'screens/home/HomeNews';
 import { HomeContact } from 'screens/home/HomeContact';
 
 interface Props {
-  about: I.AboutResponse;
-  contact: I.ContactResponse;
-  clients: I.ClientsResponse;
-  artists: I.ArtistsResponse;
-  workShowcases: I.WorkShowcasesResponse;
-  termAndPrivacy: I.TermAndPrivacyResponse;
-  carousels: I.CarouselsResponse;
-  newReleased: I.MoviesResponse;
-  news: I.NewsResponses;
+  about: AboutResponse;
+  contact: ContactResponse;
+  clients: ClientsResponse;
+  artists: ArtistsResponse;
+  workShowcases: WorkShowcasesResponse;
+  carousels: CarouselsResponse;
+  newReleased: MoviesResponse;
+  news: NewsResponses;
 }
 
 const Page: NextPage<Props> = props => {
@@ -49,27 +56,17 @@ const Page: NextPage<Props> = props => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
-  let [
-    about,
-    contact,
-    clients,
-    artists,
-    workShowcases,
-    termAndPrivacy,
-    carousels,
-    newReleased,
-    news
-  ] = await Promise.all([
-    getAbout(),
-    getContact(),
-    getClients(),
-    getArtists({ page: 1, pageSize: 4 }),
-    getWorkShowcases({ page: 1, pageSize: 8 }),
-    getTermAndPrivacy(),
-    getCarousel(),
-    getMovies({ page: 1, pageSize: 1 }),
-    getNews({ page: 1, pageSize: 8 })
-  ]);
+  let [about, contact, clients, artists, workShowcases, carousels, newReleased, news] =
+    await Promise.all([
+      getAbout(),
+      getContact(),
+      getClients(),
+      getArtists({ page: 1, pageSize: 4 }),
+      getWorkShowcases({ page: 1, pageSize: 8 }),
+      getCarousel(),
+      getMovies({ page: 1, pageSize: 1 }),
+      getNews({ page: 1, pageSize: 8 })
+    ]);
 
   return {
     props: {
@@ -78,7 +75,6 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
       clients,
       artists,
       workShowcases,
-      termAndPrivacy,
       carousels,
       newReleased,
       news

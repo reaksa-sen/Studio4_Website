@@ -8,6 +8,7 @@ import { useInfiniteQuery } from 'react-query';
 import { NoResult } from 'components/NoResult';
 import { useRouter } from 'next/router';
 import { NextPage } from 'next';
+import { useEffect } from 'react';
 
 const Page: NextPage = () => {
   const router = useRouter();

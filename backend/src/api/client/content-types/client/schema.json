@@ -14,7 +14,7 @@
   "attributes": {
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "image": {
       "type": "media",
@@ -36,7 +36,7 @@
     },
     "ordering": {
       "type": "integer",
-      "required": true
+      "required": false
     }
   }
 }

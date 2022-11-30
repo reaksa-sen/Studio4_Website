@@ -34,7 +34,7 @@
     },
     "ordering": {
       "type": "integer",
-      "required": true
+      "required": false
     }
   }
 }

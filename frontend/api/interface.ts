@@ -21,9 +21,6 @@ interface ITermAndPrivacy {
 
 interface ICarousel {
   image: { data?: IAttribute<Image> };
-  facebook_url: string;
-  tiktok_url: string;
-  youtube_url: string;
 }
 interface IContact {
   phone: string;
@@ -59,19 +56,18 @@ interface IClient {
   ordering: number;
 }
 interface IArtist {
-  description: string;
-  fullname: string;
   image: { data?: IAttribute<Image> };
-  // --
+  fullname: string;
   roles: string;
   age: string;
+  description: string;
   height: number;
   email: string;
-  movies: IResponse<IAttribute<IMovie>>;
   facebook: string;
   instagram: string;
   youtube: string;
   tiktok: string;
+  twitter: string;
 }
 
 interface IWorkShowcase {

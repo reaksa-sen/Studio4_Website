@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Facebook, Instagram, Tiktok, Youtube } from '@icons-pack/react-simple-icons';
+import { Facebook, Instagram, Tiktok, Youtube, Twitter } from '@icons-pack/react-simple-icons';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next/types';
 import { ArtistResponse } from 'api/interface';
 import { LinkButton } from 'components/Button';
@@ -15,7 +15,21 @@ interface Props {
 
 const ArtistsProfile: NextPage<Props> = ({ artist }) => {
   const router = useRouter();
-  const { facebook = '', tiktok = '', instagram = '', youtube = '' } = artist.data.attributes || {};
+  const {
+    facebook = '',
+    tiktok = '',
+    instagram = '',
+    youtube = '',
+    twitter = ''
+  } = artist.data.attributes || {};
+
+  const {
+    age = '',
+    height = '',
+    roles = '',
+    email = '',
+    description = ''
+  } = artist.data.attributes || {};
 
   return (
     <>
@@ -38,46 +52,49 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
           <div className="col-span-4 text-white md:p-5 md:pt-0">
             <Heading text={artist.data.attributes.fullname} />
             <div className="flex flex-col gap-y-5">
-              {/* --- Date of Birth --- */}
-              <span className=" font-semibold">Age: {artist.data.attributes.age}</span>
-              {/* --- Height --- */}
-              <span className="font-semibold">Height: {artist.data.attributes.height} cm</span>
-              {/* --- roles ---*/}
-              <span className="font-semibold">Role: {artist.data.attributes.roles}</span>
-              {/* --- Email --- */}
-              <p className="whitespace-pre-line pr-28 font-semibold">
-                Email: {artist.data.attributes.email}
-              </p>
-              <div className="flex flex-row space-x-4 ">
+              {age && <span className="font-semibold">Age: {age}</span>}
+              {height && <span className="font-semibold">Height: {height} cm</span>}
+              {roles && <span className="font-semibold">Role: {roles}</span>}
+              {email && <span className="font-semibold">Email: {email}</span>}
+              <div className="flex flex-row space-x-4">
                 {facebook && (
-                  <LinkButton target="_blank" dense href={facebook}>
+                  <LinkButton target="_blank" href={facebook}>
                     <Facebook className="hover:text-blue-600" />
                   </LinkButton>
                 )}
-                {instagram && (
-                  <LinkButton target="_blank" dense href={instagram}>
-                    <Instagram className="hover:text-pink-600" />
+                {youtube && (
+                  <LinkButton target="_blank" href={youtube}>
+                    <Youtube className="hover:text-red-600" />
                   </LinkButton>
                 )}
                 {tiktok && (
-                  <LinkButton target="_blank" dense href={tiktok}>
+                  <LinkButton target="_blank" href={tiktok}>
                     <Tiktok className="hover:text-gray-700" />
                   </LinkButton>
                 )}
-                {youtube && (
-                  <LinkButton target="_blank" dense href={youtube}>
-                    <Youtube className="hover:text-red-600" />
+                {instagram && (
+                  <LinkButton target="_blank" href={instagram}>
+                    <Instagram className="hover:text-pink-600" />
+                  </LinkButton>
+                )}
+                {twitter && (
+                  <LinkButton target="_blank" dense href={twitter}>
+                    <Twitter className="hover:text-sky-500" />
                   </LinkButton>
                 )}
               </div>
             </div>
 
-            <div className="mt-5 ">
-              <div className="w-full border-b-2 border-primary-500 pt-2"></div>
-              <div className="mt-5 text-white">
-                <span>{artist.data.attributes.description}</span>
+            {description && (
+              <div className="mt-5 ">
+                <>
+                  <div className="w-full border-b-2 border-primary-500 pt-2"></div>
+                  <div className="mt-5 text-white">
+                    <span>{description}</span>
+                  </div>
+                </>
               </div>
-            </div>
+            )}
           </div>
         </div>
       </div>
