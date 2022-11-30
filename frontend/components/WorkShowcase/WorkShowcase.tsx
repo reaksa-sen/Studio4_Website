@@ -37,7 +37,7 @@ export const WorkShowcaseItem: React.FC<IWorkShowcase> = ({ title, image, link }
 
 export const WorkShowcase: React.FC<Props> = ({ data }) => {
   return (
-    <div className="my-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
+    <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
       {data?.data.map(item => (
         <WorkShowcaseItem
           key={item.id}

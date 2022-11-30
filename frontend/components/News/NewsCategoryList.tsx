@@ -13,7 +13,7 @@ interface INews {
 const NewsCategoryItem: React.FC<INews> = ({ image, title, id }) => {
   return (
     <>
-      <li className="grid grid-cols-3 gap-2 py-3">
+      <div className="grid grid-cols-3 gap-2 py-3">
         <div className="col-span-1 cursor-pointer">
           <NextImage
             alt={title}
@@ -32,14 +32,14 @@ const NewsCategoryItem: React.FC<INews> = ({ image, title, id }) => {
             </a>
           </Link>
         </div>
-      </li>
+      </div>
     </>
   );
 };
 
 export const NewsCategoryList: React.FC<Props> = ({ news }) => {
   return (
-    <ul className="divide-y divide-primary-600">
+    <div className="divide-y divide-primary-600">
       <div className=" pb-2 font-sans text-lg uppercase text-white">lists news</div>
       {news.map(item => (
         <NewsCategoryItem
@@ -49,6 +49,6 @@ export const NewsCategoryList: React.FC<Props> = ({ news }) => {
           id={item.id}
         />
       ))}
-    </ul>
+    </div>
   );
 };

@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
                   </LinkButton>
                 )}
                 {twitter_url && (
-                  <LinkButton target="_blank" dense href={twitter_url}>
+                  <LinkButton target="_blank" href={twitter_url}>
                     <Twitter className="hover:text-sky-500" size="32" />
                   </LinkButton>
                 )}

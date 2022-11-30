@@ -20,15 +20,12 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
     tiktok = '',
     instagram = '',
     youtube = '',
-    twitter = ''
-  } = artist.data.attributes || {};
-
-  const {
-    age = '',
+    twitter = '',
+    description = '',
     height = '',
     roles = '',
     email = '',
-    description = ''
+    age = ''
   } = artist.data.attributes || {};
 
   return (
@@ -78,7 +75,7 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
                   </LinkButton>
                 )}
                 {twitter && (
-                  <LinkButton target="_blank" dense href={twitter}>
+                  <LinkButton target="_blank" href={twitter}>
                     <Twitter className="hover:text-sky-500" />
                   </LinkButton>
                 )}

@@ -41,7 +41,7 @@ export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => 
 
 export const ArtistList: React.FC<Props> = ({ artists }) => {
   return (
-    <div className="my-10 grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
+    <div className="mb-10 grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
       {artists.data.map(item => (
         <ArtistListItem
           key={item.attributes.fullname}

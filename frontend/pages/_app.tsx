@@ -8,33 +8,30 @@ import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
-import { LanguageModalProvider } from 'hooks/LanguageModalContext';
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
   return (
     <div className="flex min-h-screen flex-col justify-between bg-black">
-      <LanguageModalProvider>
-        <header className="relative">
-          <NavigationBar />
-        </header>
-        <QueryClientProvider client={queryClient}>
-          <Hydrate state={pageProps.dehydratedState}>
-            <VideoModalProvider>
-              <NextNProgress
-                height={3}
-                color="#E71414"
-                showOnShallow={false}
-                options={{ showSpinner: false }}
-              />
-              <div className="flex-grow">
-                <Component {...pageProps} />
-              </div>
-            </VideoModalProvider>
-            <Footer />
-          </Hydrate>
-        </QueryClientProvider>
-      </LanguageModalProvider>
+      <header className="relative">
+        <NavigationBar />
+      </header>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <VideoModalProvider>
+            <NextNProgress
+              height={3}
+              color="#E71414"
+              showOnShallow={false}
+              options={{ showSpinner: false }}
+            />
+            <div className="flex-grow">
+              <Component {...pageProps} />
+            </div>
+          </VideoModalProvider>
+          <Footer />
+        </Hydrate>
+      </QueryClientProvider>
     </div>
   );
 }

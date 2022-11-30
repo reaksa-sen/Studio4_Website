@@ -38,6 +38,7 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
               alt={data?.data.attributes.title}
               image={data?.data.attributes.image}
               height={9}
+              size={'M'}
               width={16}
               layout={'responsive'}
             />
