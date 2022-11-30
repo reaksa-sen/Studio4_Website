@@ -22,7 +22,7 @@ import { Carousel } from 'components/Carousel';
 import Header from 'components/Header';
 import { GetStaticProps, NextPage } from 'next/types';
 import { HomeWorkShowcase } from 'screens/home/HomeWorkShowcase';
-import { HomeReleased } from 'screens/home/HomeNewReleased';
+import { HomeNewReleased } from 'screens/home/HomeNewReleased';
 import { HomeArtists } from 'screens/home/HomeArtists';
 import { HomeOurClients } from 'screens/home/HomeOurClients';
 import { HomeNews } from 'screens/home/HomeNews';
@@ -45,8 +45,8 @@ const Page: NextPage<Props> = props => {
       <Header title="Home" />
 
       <Carousel carousel={props.carousels} />
-      <HomeReleased movie={props.newReleased.data[0]} />
-      <HomeWorkShowcase workShowcases={props.workShowcases} />
+      <HomeNewReleased movie={props.newReleased.data[0]} />
+      <HomeWorkShowcase data={props.workShowcases} />
       <HomeArtists artists={props.artists} />
       <HomeOurClients clients={props.clients} />
       <HomeNews news={props.news} />
@@ -69,16 +69,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
     ]);
 
   return {
-    props: {
-      about,
-      contact,
-      clients,
-      artists,
-      workShowcases,
-      carousels,
-      newReleased,
-      news
-    },
+    props: { about, contact, clients, artists, workShowcases, carousels, newReleased, news },
     revalidate: 60
   };
 };
