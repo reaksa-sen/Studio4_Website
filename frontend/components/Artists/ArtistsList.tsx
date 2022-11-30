@@ -6,13 +6,13 @@ import NextImage from '../Image';
 interface Props {
   artists: ArtistsResponse;
 }
-interface ItemProps {
+interface IArtistListItem {
   id: number;
   fullname: string;
   image: any;
 }
 
-export const ArtistListItem: React.FC<ItemProps> = ({ id, fullname, image }) => {
+export const ArtistListItem: React.FC<IArtistListItem> = ({ id, fullname, image }) => {
   return (
     <>
       <Link href={`/artists/${id}`}>

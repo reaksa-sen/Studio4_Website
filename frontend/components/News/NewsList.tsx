@@ -13,33 +13,27 @@ interface INews {
 
 export const NewsItem: React.FC<INews> = ({ image, title, id }) => {
   return (
-    <>
-      <Link href={`/news/${id}`}>
-        <div className="flex h-full cursor-pointer flex-col overflow-hidden">
-          <div className="group cursor-pointer ">
-            <NextImage
-              className="transition duration-300 group-hover:scale-105"
-              image={image}
-              width={1.2}
-              height={1}
-              alt={title}
-              layout={'responsive'}
-              objectFit="cover"
-            />
+    <Link href={`/news/${id}`}>
+      <div className="flex h-full cursor-pointer flex-col">
+        <div className="group">
+          <NextImage
+            className="transition duration-300 group-hover:scale-105"
+            image={image}
+            width={1.2}
+            height={1}
+            alt={title}
+            layout={'responsive'}
+            objectFit="cover"
+          />
 
-            <div className="flex flex-1 flex-col  bg-[#1E1E1E] p-3 hover:bg-stone-800">
-              <div className="mt-2 block">
-                <div>
-                  <p className="font-heading text-lg leading-loose text-gray-200 line-clamp-3">
-                    {title}
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-1 flex-col  bg-[#1E1E1E] p-3 group-hover:bg-stone-800">
+            <p className="mt-2 font-heading text-lg leading-loose text-gray-200 line-clamp-3">
+              {title}
+            </p>
           </div>
         </div>
-      </Link>
-    </>
+      </div>
+    </Link>
   );
 };
 

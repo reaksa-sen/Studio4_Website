@@ -5,18 +5,6 @@ import Link from 'next/link';
 import { useQuery } from 'react-query';
 import { LinkButton } from './Button';
 
-const item = [
-  {
-    name: 'អំពីយើង'
-  },
-  {
-    name: 'ទាក់ទងយើង'
-  },
-  {
-    name: 'បណ្តាញសង្គមរបស់ពួកយើង'
-  }
-];
-
 const Footer: React.FC = () => {
   const { data } = useQuery('footer', () => getContact(), {
     retry: false,
@@ -49,7 +37,7 @@ const Footer: React.FC = () => {
               និងការអនុវត្តជាក់ស្ដែងរួមទាំងជំនាញដូចជាផលិតភាពយន្ត និងឯកសារ
             </span>
           </div>
-          <div className="flex flex-col gap-2 md:gap-10 md:pr-8 lg:flex-row ">
+          <div className="flex flex-col gap-2 md:gap-10 lg:flex-row ">
             <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg text-white lg:flex-col lg:justify-start">
               <Link href="/about">
                 <a className="cursor-pointer hover:text-primary-500 hover:underline">អំពីយើង</a>
