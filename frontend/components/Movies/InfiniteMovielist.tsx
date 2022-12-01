@@ -31,7 +31,7 @@ export const InfiniteMovieList: React.FC = () => {
           hasMore={hasNextPage}
         >
           {!data.pages[0].data.length && <NoResult />}
-          <div className="w-full border-b-2 border-primary-500 pt-10"></div>
+          <div className="w-full border-b-2 border-primary-500 pt-8"></div>
           {data?.pages.map((page, i) => (
             <div key={i}>
               <div className="mt-4">
