@@ -10,7 +10,7 @@ interface INews {
   image: any;
   id?: number;
 }
-const NewsCategoryItem: React.FC<INews> = ({ image, title, id }) => {
+const LatestNewsItem: React.FC<INews> = ({ image, title, id }) => {
   return (
     <div className="grid grid-cols-3 gap-2 py-3">
       <div className="col-span-1 cursor-pointer">
@@ -35,12 +35,12 @@ const NewsCategoryItem: React.FC<INews> = ({ image, title, id }) => {
   );
 };
 
-export const NewsCategoryList: React.FC<Props> = ({ news }) => {
+export const LatestNewsList: React.FC<Props> = ({ news }) => {
   return (
     <div className="divide-y divide-primary-600">
-      <div className="pb-2 font-sans text-lg uppercase text-white">lists news</div>
+      <div className="pb-2 font-sans text-lg uppercase text-white">latest news</div>
       {news.map(item => (
-        <NewsCategoryItem
+        <LatestNewsItem
           key={item.attributes.title}
           image={item.attributes.image}
           title={item.attributes.title}

@@ -1,4 +1,4 @@
-import { NewsCategoryList } from 'components/News/NewsCategoryList';
+import { LatestNewsList } from 'components/News/NewsCategoryList';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { NewsResponse, NewsResponses } from 'api/interface';
 import { getNew, getNews } from 'api/strapiApi';
@@ -48,7 +48,7 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
             />
           </div>
           <div className="col-span-1 py-4 font-heading md:p-4 md:py-8">
-            <NewsCategoryList news={news.data} />
+            <LatestNewsList news={news.data} />
           </div>
         </div>
       </div>
