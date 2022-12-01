@@ -1,5 +1,5 @@
 import { Heading } from 'components/Heading';
-import { ClientItems } from 'components/Clients/Clients';
+import { ClientList } from 'components/Clients/Clients';
 import { ClientsResponse } from 'api/interface';
 
 export const HomeOurClients: React.FC<{ clients: ClientsResponse }> = ({ clients }) => {
@@ -8,7 +8,7 @@ export const HomeOurClients: React.FC<{ clients: ClientsResponse }> = ({ clients
       <div className="container py-4 md:px-8">
         <Heading text={'Our Clients'} />
         <div className="block text-center">
-          <ClientItems clients={clients} />
+          <ClientList clients={clients} />
         </div>
       </div>
     </div>

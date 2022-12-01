@@ -30,11 +30,8 @@ const Footer: React.FC = () => {
                 alt="Logo"
               />
             </Link>
-            <span className="hidden font-heading !leading-loose text-white md:block ">
-              Studio4
-              គឺជាបណ្ដុំនៃអ្នកអនុវត្តប្រព័ន្ធផ្សព្វផ្សាយដែលមានជំនាញវិជ្ជាជីវៈដែលត្រូបានបង្កើតនៅពាក់កណ្ដាលឆ្នាំ
-              2014។ក្រុមនេះត្រូវបានបង្កើតឡើងដោយអ្នកជំនាញដែលមានបទពិសោធន៍សិក្សា
-              និងការអនុវត្តជាក់ស្ដែងរួមទាំងជំនាញដូចជាផលិតភាពយន្ត និងឯកសារ
+            <span className="hidden font-heading !leading-loose text-white md:block">
+              {data?.data.attributes.slogan}
             </span>
           </div>
           <div className="flex flex-col gap-2 md:gap-10 lg:flex-row ">
@@ -46,7 +43,7 @@ const Footer: React.FC = () => {
                 <a className="cursor-pointer hover:text-primary-500 hover:underline">ទាក់ទងយើង</a>
               </Link>
               <Link href="/term-and-privacy">
-                <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
+                <a className="cursor-pointer hover:text-primary-500 hover:underline">
                   Term & Privacy
                 </a>
               </Link>

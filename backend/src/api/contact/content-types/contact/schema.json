@@ -51,6 +51,9 @@
     "telegram_url": {
       "pluginOptions": {},
       "type": "string"
+    },
+    "slogan": {
+      "type": "string"
     }
   }
 }

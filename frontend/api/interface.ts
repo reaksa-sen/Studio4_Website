@@ -33,6 +33,7 @@ interface IContact {
   instagram_url: string;
   tiktok_url: string;
   twitter_url: string;
+  slogan: string;
 }
 interface INews {
   image: { data?: IAttribute<Image> };

@@ -13,7 +13,7 @@ interface IClientItem {
   image?: string;
   moreHeight?: boolean;
   moreWidth?: boolean;
-  ordering: number;
+  ordering?: number;
   isInverted?: boolean;
   className?: string;
 }
@@ -41,26 +41,19 @@ export const ClientItem: React.FC<IClientItem> = props => {
   );
 };
 
-export const ClientItems: React.FC<Props> = ({ clients }) => {
+export const ClientList: React.FC<Props> = ({ clients }) => {
   return (
-    <>
-      <div>
-        <div className="mx-auto max-w-7xl">
-          <div className="flex flex-wrap items-center justify-center ">
-            {clients.data.map((item, i) => (
-              <ClientItem
-                key={i}
-                name={item.attributes.name}
-                link={item.attributes.link}
-                image={item.attributes.image?.data?.attributes.url}
-                moreHeight={item.attributes.moreHeight ?? false}
-                moreWidth={item.attributes.moreWidth ?? false}
-                ordering={0}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center">
+      {clients.data.map(item => (
+        <ClientItem
+          key={item.attributes.name}
+          name={item.attributes.name}
+          link={item.attributes.link}
+          image={item.attributes.image?.data?.attributes.url}
+          moreHeight={item.attributes.moreHeight ?? false}
+          moreWidth={item.attributes.moreWidth ?? false}
+        />
+      ))}
+    </div>
   );
 };
