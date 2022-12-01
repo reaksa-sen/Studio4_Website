@@ -1,5 +1,4 @@
 import { MoviesResponse } from 'api/interface';
-import { useVideoModalContext } from 'hooks/videoModalHook';
 import { IoPlayCircleSharp } from 'react-icons/io5';
 import { VideoPlayer } from 'components/Video/VideoPlayer';
 
