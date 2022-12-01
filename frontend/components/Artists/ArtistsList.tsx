@@ -29,7 +29,7 @@ export const ArtistListItem: React.FC<IArtistListItem> = ({ id, fullname, image 
             objectFit="cover"
           />
           <div className="absolute top-1/2 left-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 text-white group-hover:block">
-            <div className="cursor-pointer p-4 text-xl hover:text-primary-500 group-hover:underline">
+            <div className="cursor-pointer p-4 text-center text-xl hover:text-primary-500 group-hover:underline">
               {fullname}
             </div>
           </div>
