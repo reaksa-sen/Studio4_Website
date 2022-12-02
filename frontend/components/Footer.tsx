@@ -1,12 +1,17 @@
 /* eslint-disable @next/next/no-img-element */
 import { Facebook, Instagram, Tiktok, Twitter, Youtube } from '@icons-pack/react-simple-icons';
-import { getContact } from 'api/strapiApi';
+import { getAbout, getContact } from 'api/strapiApi';
 import Link from 'next/link';
 import { useQuery } from 'react-query';
 import { LinkButton } from './Button';
 
 const Footer: React.FC = () => {
   const { data } = useQuery('footer', () => getContact(), {
+    retry: false,
+    refetchOnWindowFocus: false,
+    staleTime: 30000
+  });
+  const { data: slogan } = useQuery('about', () => getAbout(), {
     retry: false,
     refetchOnWindowFocus: false,
     staleTime: 30000
@@ -31,7 +36,7 @@ const Footer: React.FC = () => {
               />
             </Link>
             <span className="hidden font-heading !leading-loose text-white md:block">
-              {data?.data.attributes.slogan}
+              {slogan?.data.attributes.slogan}
             </span>
           </div>
           <div className="flex flex-col gap-2 md:gap-10 lg:flex-row ">

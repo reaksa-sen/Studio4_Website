@@ -28,6 +28,14 @@
       },
       "required": false,
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "slogan": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
     }
   }
 }
