@@ -118,7 +118,7 @@ const Navigator = () => {
           )}
           id="mobile-menu"
         >
-          <div className="grid-cols grid grid-cols-2 px-2 pt-2 pb-3">
+          <div className="grid grid-cols-2 px-2 pt-2 pb-3">
             <SmNavLink href="/about" name="About" onClick={handleNavBar} />
             <SmNavLink href="/movies" name="Movies" onClick={handleNavBar} />
             <SmNavLink href="/works" name="Works" onClick={handleNavBar} />

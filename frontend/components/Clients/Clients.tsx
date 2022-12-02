@@ -18,7 +18,7 @@ interface IClientItem {
   className?: string;
 }
 
-export const ClientItem: React.FC<IClientItem> = props => {
+const ClientItem: React.FC<IClientItem> = props => {
   const { name, link, moreHeight, moreWidth, image, isInverted, className } = props;
   const imgHighClass = moreHeight ? 'gold-logo--high' : '';
   const imgWidthClass = moreWidth ? 'gold-logo--wide' : '';
