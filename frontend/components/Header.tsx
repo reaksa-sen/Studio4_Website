@@ -48,7 +48,7 @@ const Header: React.FC<Props> = ({ title, description, imageUrl, siteUrl }) => {
         <meta name="twitter:title" content={`${title} - ${defaultTitle}`} />
         <meta name="twitter:description" content={defaultDescription} />
         <meta name="twitter:image" content={defaultImageUrl} />
-        <meta name="theme-color" content="#F8931D" />
+        <meta name="theme-color" content="#E71414" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5" />
         <meta name="googlebot" content="index,follow" />
         {/* <meta name="facebook-domain-verification" content={`${FB_DOMAIN_APP_ID}`} /> */}
