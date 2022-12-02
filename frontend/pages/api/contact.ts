@@ -34,7 +34,6 @@ export default async function send(req: NextApiRequest, res: NextApiResponse) {
     to: 'reaksasen804@gmail.com',
     subject: `Contact from ${body.fullName}`,
     html: `<br>${body.message}
-  
     <br><b>Name:</b> ${body.fullName}
     <br><b>Phone Number:</b> ${body.phone}`
   };

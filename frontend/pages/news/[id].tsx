@@ -25,12 +25,10 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
         imageUrl={data?.data.attributes.image?.data?.attributes.url}
       />
       <div className="container mt-16 md:mt-24">
-        <div className="grid grid-cols-1 md:grid-cols-3">
-          <div className="col-span-2 py-4 md:p-4 md:py-8">
-            <h2 className="font-heading text-xl leading-relaxed text-white">
-              {data?.data.attributes.title}
-            </h2>
-            <p className="flex items-center gap-x-1.5 pb-2 pt-4 text-sm text-white">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+          <div className="col-span-2 py-4 text-white md:py-8">
+            <h2 className="font-heading text-xl leading-relaxed">{data?.data.attributes.title}</h2>
+            <p className="flex items-center gap-x-1.5 pb-2 pt-4 text-sm">
               <BiTimeFive />
               <span>{dateFormat(data.data.attributes.createdAt, 'en-Us')}</span>
             </p>
@@ -47,7 +45,7 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
               dangerouslySetInnerHTML={{ __html: data?.data.attributes.content }}
             />
           </div>
-          <div className="col-span-1 py-4 font-heading md:p-4 md:py-8">
+          <div className="col-span-1 py-4 font-heading md:py-8">
             <LatestNewsList news={news.data} />
           </div>
         </div>

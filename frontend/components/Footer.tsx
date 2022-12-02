@@ -22,11 +22,11 @@ const Footer: React.FC = () => {
     <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
         <div className="flex flex-col items-center justify-between lg:flex-row">
-          <div className="flex flex-col items-center gap-y-4 pb-8 pt-2 md:pt-0 md:text-left lg:w-2/4 lg:items-start ">
+          <div className="flex flex-col items-center gap-y-4 pb-8 pt-2 md:pt-0 lg:w-2/4 lg:items-start ">
             <Link href="/">
               <img
                 src="/images/logo.png"
-                className="z-10 h-auto w-20 cursor-pointer md:w-32"
+                className="h-auto w-20 cursor-pointer md:w-32"
                 alt="Logo"
               />
             </Link>
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
               {slogan?.data.attributes.slogan}
             </span>
           </div>
-          <div className="flex flex-col gap-2 md:gap-10 lg:flex-row ">
-            <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg text-white lg:flex-col lg:justify-start">
+          <div className="flex flex-col gap-2 text-white md:gap-10 lg:flex-row">
+            <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg  lg:flex-col lg:justify-start">
               <Link href="/about">
                 <a className="cursor-pointer hover:text-primary-500 hover:underline">អំពីយើង</a>
               </Link>
@@ -49,10 +49,8 @@ const Footer: React.FC = () => {
               </Link>
             </div>
             <div className="mt-2 flex flex-col lg:mt-0">
-              <p className="whitespace-pre text-center font-heading text-lg text-white">
-                បណ្តាញសង្គមរបស់ពួកយើង
-              </p>
-              <div className="mt-5 flex justify-center space-x-5 text-white ">
+              <p className="text-center font-heading text-lg">បណ្តាញសង្គមរបស់ពួកយើង</p>
+              <div className="mt-5 flex justify-center space-x-5">
                 {facebook_url && (
                   <LinkButton target="_blank" href={facebook_url || ''}>
                     <Facebook className="hover:text-blue-600" size="32" />

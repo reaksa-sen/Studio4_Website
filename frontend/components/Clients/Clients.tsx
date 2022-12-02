@@ -23,8 +23,8 @@ export const ClientItem: React.FC<IClientItem> = props => {
   const imgHighClass = moreHeight ? 'gold-logo--high' : '';
   const imgWidthClass = moreWidth ? 'gold-logo--wide' : '';
   return (
-    <div className="flex min-h-[100px] items-center">
-      <Link href={link ?? ''}>
+    <div className="flex items-center">
+      <Link href={link || ''}>
         <a target="_blank">
           <img
             src={image}
@@ -43,7 +43,7 @@ export const ClientItem: React.FC<IClientItem> = props => {
 
 export const ClientList: React.FC<Props> = ({ clients }) => {
   return (
-    <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center">
+    <div className="flex flex-wrap items-center justify-center">
       {clients.data.map(item => (
         <ClientItem
           key={item.attributes.name}
