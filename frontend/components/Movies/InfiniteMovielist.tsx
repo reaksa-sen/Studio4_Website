@@ -8,19 +8,18 @@ import { MovieList } from './Movies';
 export const InfiniteMovieList: React.FC = () => {
   const PAGE_SIZE = 12;
 
-  const { data, status, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } =
-    useInfiniteQuery(
-      'infiniteMovies',
-      async ({ pageParam = 1 }) => getMovies({ page: pageParam, pageSize: PAGE_SIZE }),
-      {
-        getNextPageParam: (lastPage, pages) => {
-          const { page, pageSize, total } = lastPage.meta.pagination;
-          if (page * pageSize < total) {
-            return pages.length + 1;
-          }
+  const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
+    'infiniteMovies',
+    async ({ pageParam = 1 }) => getMovies({ page: pageParam, pageSize: PAGE_SIZE }),
+    {
+      getNextPageParam: (lastPage, pages) => {
+        const { page, pageSize, total } = lastPage.meta.pagination;
+        if (page * pageSize < total) {
+          return pages.length + 1;
         }
       }
-    );
+    }
+  );
   return (
     <>
       {isLoading && <Spinner />}

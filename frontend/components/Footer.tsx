@@ -16,13 +16,8 @@ const Footer: React.FC = () => {
     refetchOnWindowFocus: false,
     staleTime: 30000
   });
-  const {
-    facebook_url = '',
-    youtube_url = '',
-    tiktok_url = '',
-    instagram_url = '',
-    twitter_url = ''
-  } = data?.data?.attributes || {};
+  const { facebook_url, youtube_url, tiktok_url, instagram_url, twitter_url } =
+    data?.data?.attributes || {};
   return (
     <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
@@ -59,27 +54,27 @@ const Footer: React.FC = () => {
               </p>
               <div className="mt-5 flex justify-center space-x-5 text-white ">
                 {facebook_url && (
-                  <LinkButton target="_blank" href={facebook_url}>
+                  <LinkButton target="_blank" href={facebook_url || ''}>
                     <Facebook className="hover:text-blue-600" size="32" />
                   </LinkButton>
                 )}
                 {youtube_url && (
-                  <LinkButton target="_blank" href={youtube_url}>
+                  <LinkButton target="_blank" href={youtube_url || ''}>
                     <Youtube className="hover:text-red-600" size="32" />
                   </LinkButton>
                 )}
                 {tiktok_url && (
-                  <LinkButton target="_blank" href={tiktok_url}>
+                  <LinkButton target="_blank" href={tiktok_url || ''}>
                     <Tiktok className="hover:text-gray-700" size="32" />
                   </LinkButton>
                 )}
                 {instagram_url && (
-                  <LinkButton target="_blank" href={instagram_url}>
+                  <LinkButton target="_blank" href={instagram_url || ''}>
                     <Instagram className="hover:text-pink-600" size="32" />
                   </LinkButton>
                 )}
                 {twitter_url && (
-                  <LinkButton target="_blank" href={twitter_url}>
+                  <LinkButton target="_blank" href={twitter_url || ''}>
                     <Twitter className="hover:text-sky-500" size="32" />
                   </LinkButton>
                 )}

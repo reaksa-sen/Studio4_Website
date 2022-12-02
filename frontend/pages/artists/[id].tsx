@@ -15,18 +15,8 @@ interface Props {
 
 const ArtistsProfile: NextPage<Props> = ({ artist }) => {
   const router = useRouter();
-  const {
-    facebook = '',
-    tiktok = '',
-    instagram = '',
-    youtube = '',
-    twitter = '',
-    description = '',
-    height = '',
-    roles = '',
-    email = '',
-    age = ''
-  } = artist.data.attributes || {};
+  const { facebook, tiktok, instagram, youtube, twitter, description, height, roles, email, age } =
+    artist.data.attributes;
 
   return (
     <>
@@ -48,34 +38,34 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
           </div>
           <div className="col-span-4 text-white md:p-5 md:pt-0">
             <Heading text={artist.data.attributes.fullname} />
-            <div className="flex flex-col gap-y-5">
-              {age && <span className="font-semibold">Age: {age}</span>}
-              {height && <span className="font-semibold">Height: {height} cm</span>}
-              {roles && <span className="font-semibold">Role: {roles}</span>}
-              {email && <span className="font-semibold">Email: {email}</span>}
+            <div className="flex flex-col gap-y-4">
+              {age && <span className="font-semibold">Age: {age || ''}</span>}
+              {height && <span className="font-semibold">Height: {height || ''} cm</span>}
+              {roles && <span className="font-semibold">Role: {roles || ''}</span>}
+              {email && <span className="font-semibold">Email: {email || ''}</span>}
               <div className="flex flex-row space-x-4">
                 {facebook && (
-                  <LinkButton target="_blank" href={facebook}>
+                  <LinkButton target="_blank" href={facebook || ''}>
                     <Facebook className="hover:text-blue-600" />
                   </LinkButton>
                 )}
                 {youtube && (
-                  <LinkButton target="_blank" href={youtube}>
+                  <LinkButton target="_blank" href={youtube || ''}>
                     <Youtube className="hover:text-red-600" />
                   </LinkButton>
                 )}
                 {tiktok && (
-                  <LinkButton target="_blank" href={tiktok}>
+                  <LinkButton target="_blank" href={tiktok || ''}>
                     <Tiktok className="hover:text-gray-700" />
                   </LinkButton>
                 )}
                 {instagram && (
-                  <LinkButton target="_blank" href={instagram}>
+                  <LinkButton target="_blank" href={instagram || ''}>
                     <Instagram className="hover:text-pink-600" />
                   </LinkButton>
                 )}
                 {twitter && (
-                  <LinkButton target="_blank" href={twitter}>
+                  <LinkButton target="_blank" href={twitter || ''}>
                     <Twitter className="hover:text-sky-500" />
                   </LinkButton>
                 )}
@@ -84,12 +74,8 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
 
             {description && (
               <div className="mt-5 ">
-                <>
-                  <div className="w-full border-b-2 border-primary-500 pt-2"></div>
-                  <div className="mt-5 text-white">
-                    <span>{description}</span>
-                  </div>
-                </>
+                <div className="mb-5 w-full border-b-2 border-primary-500 pt-2" />
+                <span>{description}</span>
               </div>
             )}
           </div>
