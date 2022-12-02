@@ -25,7 +25,7 @@ const NavLink: React.FC<NavLinkProps> = props => {
         aria-label={`click here to view ${name}`}
         className={classNames(
           'flex items-center  px-3 py-2 font-sans text-lg leading-normal hover:text-primary-500',
-          isActive ? 'text-primary-600' : 'text-white'
+          isActive ? 'text-primary-500' : 'text-white'
         )}
       >
         {name}
@@ -47,7 +47,7 @@ const SmNavLink: React.FC<NavLinkProps> = props => {
         href={href}
         className={classNames(
           'block rounded-md px-3 py-2',
-          isActive ? 'text-primary-600' : 'text-white'
+          isActive ? 'text-primary-500' : 'text-white'
         )}
       >
         {name}
@@ -113,7 +113,7 @@ const Navigator = () => {
         </div>
         <div
           className={classNames(
-            'container border-b border-primary-600 pl-4 lg:hidden',
+            'container border-b border-primary-500 pl-4 lg:hidden',
             isNavOpen ? '' : 'hidden'
           )}
           id="mobile-menu"

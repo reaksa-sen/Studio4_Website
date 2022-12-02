@@ -15,7 +15,7 @@ export const Heading: React.FC<HeadingProps> = ({ text, link }) => {
       {link && (
         <Link href={link}>
           <a className=" flex items-center gap-x-1 font-semibold text-white hover:text-primary-500">
-            More <IoPlaySkipForwardSharp className="h-5 w-auto text-primary-600" />
+            More <IoPlaySkipForwardSharp className="h-5 w-auto text-primary-500" />
           </a>
         </Link>
       )}

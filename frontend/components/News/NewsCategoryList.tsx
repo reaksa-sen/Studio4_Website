@@ -37,7 +37,7 @@ const LatestNewsItem: React.FC<INews> = ({ image, title, id }) => {
 
 export const LatestNewsList: React.FC<Props> = ({ news }) => {
   return (
-    <div className="divide-y divide-primary-600">
+    <div className="divide-y divide-primary-500">
       <div className="pb-2 font-sans text-lg uppercase text-white">latest news</div>
       {news.map(item => (
         <LatestNewsItem
