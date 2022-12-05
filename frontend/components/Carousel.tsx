@@ -27,7 +27,7 @@ const SocialContact: React.FC = () => {
 
   return (
     <div className="absolute top-1/2 right-5 z-10 -translate-x-1/2 -translate-y-1/2">
-      <div className="flex flex-col gap-y-2 text-white md:gap-y-4">
+      <div className="mt-10 flex flex-col gap-y-2 text-white sm:mt-0 md:gap-y-4">
         {facebook_url && (
           <LinkButton target="_blank" href={facebook_url || ''}>
             <Facebook className="h-5 w-auto hover:text-blue-600 sm:h-8" />
@@ -60,34 +60,32 @@ const SocialContact: React.FC = () => {
 
 export const Carousel: React.FC<Props> = ({ carousel }) => {
   return (
-    <>
-      <div className="relative">
-        <SocialContact />
-        <Swiper
-          loop
-          navigation
-          pagination
-          slidesPerView={1}
-          autoplay={{ delay: 5000, disableOnInteraction: false }}
-          modules={[Autoplay, Pagination, Navigation]}
-        >
-          {carousel.data.map((item, i) => (
-            <SwiperSlide key={i}>
-              <div className="aspect-w-16 aspect-h-9 relative lg:aspect-h-7">
-                <NextImage
-                  image={item.attributes.image}
-                  alt={`image-${i}`}
-                  key={i}
-                  layout="fill"
-                  objectFit="cover"
-                  placeholder="blur"
-                />
-                <div className="h-full w-full bg-gray-900 opacity-20" />
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    </>
+    <div className="relative">
+      <SocialContact />
+      <Swiper
+        loop
+        navigation
+        pagination
+        slidesPerView={1}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        modules={[Autoplay, Pagination, Navigation]}
+      >
+        {carousel.data.map((item, i) => (
+          <SwiperSlide key={i}>
+            <div className="aspect-w-16 aspect-h-9 relative lg:aspect-h-7">
+              <NextImage
+                image={item.attributes.image}
+                alt={`image-${i}`}
+                key={i}
+                layout="fill"
+                objectFit="cover"
+                placeholder="blur"
+              />
+              <div className="h-full w-full bg-gray-900 opacity-40" />
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };

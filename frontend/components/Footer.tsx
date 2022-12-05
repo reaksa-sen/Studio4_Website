@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2 text-white md:gap-10 lg:flex-row">
-            <div className="flex flex-wrap gap-y-9 gap-x-5 font-heading text-lg  lg:flex-col lg:justify-start">
+            <div className="flex  flex-col items-center gap-y-5 gap-x-5 font-heading text-lg md:gap-y-9 lg:items-start">
               <Link href="/about">
                 <a className="cursor-pointer hover:text-primary-500 hover:underline">អំពីយើង</a>
               </Link>

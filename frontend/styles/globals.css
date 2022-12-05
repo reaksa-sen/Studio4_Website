@@ -52,7 +52,7 @@ body {
 
 /* size client */
 .gold-logo--wide {
-  max-width: 290px !important;
+  max-width: 240px !important;
 }
 
 .gold-logo--high {
@@ -61,9 +61,9 @@ body {
 
 .gold-logo {
   width: auto;
-  max-width: 185px;
-  margin: 10px 23px;
+  max-width: 150px;
+  margin: 10px 20px;
   vertical-align: middle;
   height: auto;
-  max-height: 180px;
+  max-height: 150px;
 }

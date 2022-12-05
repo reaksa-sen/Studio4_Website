@@ -12,11 +12,11 @@ const TermAndPrivacy: NextPage<Props> = ({ termAndPrivacy }) => {
   const TITLE = 'Term & Privacy';
   const { data } = termAndPrivacy;
   return (
-    <div className="mt-16 md:mt-24">
+    <div className="mt-16 md:mt-20">
       <Header title={TITLE} siteUrl="/Term & Privacy" />
       <Wrapper>
         <article
-          className="prose max-w-none pt-6 text-white"
+          className="prose max-w-none text-white"
           dangerouslySetInnerHTML={{ __html: data.attributes.content }}
         />
       </Wrapper>

@@ -9,7 +9,7 @@ interface Props {
 }
 
 const Contact: NextPage<Props> = ({ contact }) => (
-  <div className="mt-16">
+  <div className="mt-8 md:mt-16">
     <Header title={'Contact'} siteUrl="/contact" />
     <ContactSection contact={contact} />
   </div>

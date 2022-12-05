@@ -3,7 +3,7 @@ import { MoviesResponse } from 'api/interface';
 import { getMovies } from 'api/strapiApi';
 import Header from 'components/Header';
 import { Heading } from 'components/Heading';
-import { InfiniteMovieList } from 'components/Movies/InfiniteMovielist';
+import { InfiniteMovieList } from 'screens/movies/InfiniteMovielist';
 import { NewReleased } from 'components/NewReleased/NewReleased';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';

@@ -3,7 +3,7 @@ import { XInfiniteScroll } from 'components/InfiniteScroll';
 import { Spinner } from 'components/Loading/Spinner';
 import { NoResult } from 'components/NoResult';
 import { useInfiniteQuery } from 'react-query';
-import { MovieList } from './Movies';
+import { MovieList } from '../../components/Movies/Movies';
 
 export const InfiniteMovieList: React.FC = () => {
   const PAGE_SIZE = 12;
