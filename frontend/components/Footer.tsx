@@ -30,26 +30,32 @@ const Footer: React.FC = () => {
                 alt="Logo"
               />
             </Link>
-            <span className="hidden font-heading !leading-loose text-white md:block">
+            <span className="hidden break-all font-heading !leading-loose text-white md:block">
               {slogan?.data.attributes.slogan}
             </span>
           </div>
           <div className="flex flex-col gap-2 text-white md:gap-10 lg:flex-row">
             <div className="flex  flex-col items-center gap-y-5 gap-x-5 font-heading text-lg md:gap-y-9 lg:items-start">
               <Link href="/about">
-                <a className="cursor-pointer hover:text-primary-500 hover:underline">អំពីយើង</a>
+                <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
+                  អំពីយើង
+                </a>
               </Link>
               <Link href="/contact">
-                <a className="cursor-pointer hover:text-primary-500 hover:underline">ទាក់ទងយើង</a>
+                <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
+                  ទាក់ទងយើង
+                </a>
               </Link>
               <Link href="/term-and-privacy">
-                <a className="cursor-pointer hover:text-primary-500 hover:underline">
+                <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
                   Term & Privacy
                 </a>
               </Link>
             </div>
             <div className="mt-2 flex flex-col lg:mt-0">
-              <p className="text-center font-heading text-lg">បណ្តាញសង្គមរបស់ពួកយើង</p>
+              <p className="whitespace-pre text-center font-heading text-lg">
+                បណ្តាញសង្គមរបស់ពួកយើង
+              </p>
               <div className="mt-5 flex justify-center space-x-5">
                 {facebook_url && (
                   <LinkButton target="_blank" href={facebook_url || ''}>

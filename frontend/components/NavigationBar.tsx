@@ -72,7 +72,7 @@ const Navigator = () => {
 
   useScrollPosition(
     ({ currPos }) => {
-      if (currPos.y < -100) setIsTop(false);
+      if (currPos.y < -50) setIsTop(false);
       else setIsTop(true);
     },
     [isTop]
@@ -84,7 +84,7 @@ const Navigator = () => {
   return (
     <nav
       className={classNames('fixed z-50 w-full', {
-        'bg-gradient-to-b from-[#434240] md:bg-none': isTop,
+        'md:bg-transparent': isTop,
         'bg-black bg-none': !isTop || isNavOpen
       })}
     >

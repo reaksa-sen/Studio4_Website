@@ -20,7 +20,7 @@ export const NewReleased: React.FC<Props> = ({ movie }) => {
       />
       <div className="p-2 text-center text-white md:text-left lg:max-w-sm">
         <h2 className="mb-4 font-heading text-lg lg:text-2xl">{title}</h2>
-        <p className="font-sans text-sm !leading-relaxed lg:text-base lg:!leading-8">
+        <p className="break-all font-sans text-sm !leading-relaxed lg:text-base lg:!leading-8">
           {description}
         </p>
       </div>
