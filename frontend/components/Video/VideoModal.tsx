@@ -36,7 +36,7 @@ export const VideoModal: React.FC<Props> = ({ open, src, setOpen }) => {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="container h-full w-full max-w-5xl outline-none">
-                <div className="absolute -top-11 right-2 lg:-right-4">
+                <div className="absolute -top-11 right-4">
                   <button
                     type="button"
                     className="text-white outline-none"
