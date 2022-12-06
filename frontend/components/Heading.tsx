@@ -9,12 +9,12 @@ export const Heading: React.FC<HeadingProps> = ({ text, link }) => {
   return (
     <div className="my-4 flex items-center justify-between pb-2">
       <div>
-        <h1 className="text-lg font-extrabold text-white md:text-xl">{text}</h1>
+        <h1 className="font-heading text-lg text-white md:text-xl">{text}</h1>
         <div className="w-16 border-b-4 border-primary-500 pt-2"></div>
       </div>
       {link && (
         <Link href={link}>
-          <a className=" flex items-center gap-x-1 font-semibold text-white hover:text-primary-500">
+          <a className=" flex items-center gap-x-1 font-heading text-white hover:text-primary-500">
             More <IoPlaySkipForwardSharp className="h-5 w-auto text-primary-500" />
           </a>
         </Link>

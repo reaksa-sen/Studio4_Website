@@ -141,7 +141,7 @@ export const ContactForm: React.FC = () => {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-fit bg-primary-600 px-10 py-3 font-semibold text-white hover:bg-primary-700 active:bg-primary-600 disabled:bg-primary-400"
+          className="w-fit bg-primary-500 px-10 py-3 font-heading text-white hover:bg-primary-700 active:bg-primary-600 disabled:bg-primary-400"
         >
           {isLoading ? (
             <div className="flex flex-row items-start gap-x-2">

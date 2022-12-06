@@ -72,7 +72,7 @@ const Navigator = () => {
 
   useScrollPosition(
     ({ currPos }) => {
-      if (currPos.y < -200) setIsTop(false);
+      if (currPos.y < -100) setIsTop(false);
       else setIsTop(true);
     },
     [isTop]
