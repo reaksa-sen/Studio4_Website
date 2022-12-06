@@ -39,10 +39,10 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
           <div className="col-span-4 text-white md:p-5 md:pt-0">
             <Heading text={artist.data.attributes.fullname} />
             <div className="flex flex-col gap-y-4">
-              {age && <span className="font-semibold">Age: {age || ''}</span>}
-              {height && <span className="font-semibold">Height: {height || ''} cm</span>}
-              {roles && <span className="font-semibold">Role: {roles || ''}</span>}
-              {email && <span className="font-semibold">Email: {email || ''}</span>}
+              {age && <span className="font-sans">Age: {age || ''}</span>}
+              {height && <span className="font-sans">Height: {height || ''} cm</span>}
+              {roles && <span className="font-sans">Role: {roles || ''}</span>}
+              {email && <span className="font-sans">Email: {email || ''}</span>}
               <div className="flex flex-row space-x-4">
                 {facebook && (
                   <LinkButton target="_blank" href={facebook || ''}>
@@ -74,7 +74,7 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
 
             {description && (
               <div className="mt-5 ">
-                <div className="mb-5 w-full border-b-2 border-primary-500 pt-2" />
+                <div className="mb-5 w-full border-b-2 border-primary-500 pt-2 font-sans" />
                 <span>{description}</span>
               </div>
             )}
