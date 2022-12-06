@@ -15,7 +15,7 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['open sans', 'Khmer CN Battambang', ...defaultTheme.fontFamily.sans],
+      sans: ['Khmer CN Battambang', 'open sans', ...defaultTheme.fontFamily.sans],
       heading: ['Kh Jrung Thom', ...defaultTheme.fontFamily.sans],
     },
     extend: {

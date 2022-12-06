@@ -84,8 +84,8 @@ const Navigator = () => {
   return (
     <nav
       className={classNames('fixed z-50 w-full', {
-        'md:bg-transparent': isTop,
-        'bg-black': !isTop || isNavOpen
+        'bg-gradient-to-b from-[#434240] md:bg-none': isTop,
+        'bg-black bg-none': !isTop || isNavOpen
       })}
     >
       <div className="container px-4 py-4">

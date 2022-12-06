@@ -61,6 +61,7 @@ const SocialContact: React.FC = () => {
 export const Carousel: React.FC<Props> = ({ carousel }) => {
   return (
     <div className="relative">
+      <div className="absolute z-10 w-full bg-gradient-to-b from-[#434240] py-12" />
       <SocialContact />
       <Swiper
         loop
@@ -81,7 +82,7 @@ export const Carousel: React.FC<Props> = ({ carousel }) => {
                 objectFit="cover"
                 placeholder="blur"
               />
-              <div className="h-full w-full bg-gray-900 opacity-40" />
+              <div className="h-full w-full bg-gray-900 opacity-20" />
             </div>
           </SwiperSlide>
         ))}

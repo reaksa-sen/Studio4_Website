@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap'); */
 
 @tailwind base;
 @tailwind components;
@@ -33,11 +33,35 @@ body {
 }
 
 /* fonts */
+/* open sans */
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans/OpenSans-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans/OpenSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url('/fonts/OpenSans/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-display: swap;
+}
+
+
 /* kh Jrung Thum */
 
 @font-face {
   font-family: 'Kh Jrung Thom';
-  src: url('/fonts/Kh Jrung Thom/Kh Jrung Thom Kh Jrung Thom.ttf') format('ttf');
+  src: url('/fonts/Kh-Jrung-Thom/Kh-Jrung-Thom.woff2') format('woff2');
   font-weight: 700;
   font-display: swap;
 }
@@ -45,7 +69,7 @@ body {
 /* Khmer CN Battambang */
 @font-face {
   font-family: 'Khmer CN Battambang';
-  src: url('/fonts/Khmer CN Battambang/Khmer CN Battambang.ttf') format('ttf');
+  src: url('/fonts/Khmer-CN-Battambang/Khmer-CN-Battambang.woff2') format('woff2');
   font-weight: 300;
   font-display: swap;
 }
