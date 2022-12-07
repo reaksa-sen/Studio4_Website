@@ -1,5 +1,5 @@
 export const Spinner: React.FC<{ className?: string }> = ({ className }) => (
-  <div className={`flex ${className || 'h-[60vh]'}`}>
+  <div className={`flex ${className || 'h-[30vh]'}`}>
     <div className="m-auto">
       <div role="status">
         <svg
