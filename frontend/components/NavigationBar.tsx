@@ -113,7 +113,7 @@ const Navigator = () => {
         </div>
         <div
           className={classNames(
-            'container border-b border-primary-500 pl-4 lg:hidden',
+            'container border-b border-primary-500 pl-4 md:hidden',
             isNavOpen ? '' : 'hidden'
           )}
           id="mobile-menu"
