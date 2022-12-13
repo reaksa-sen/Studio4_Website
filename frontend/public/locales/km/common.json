@@ -1,0 +1,24 @@
+{
+  "navigation-bar": [
+    {"name": "អំពីយើង", "link": "/about"},
+    {"name": "ភាពយន្ត", "link": "/movies"},
+    {"name": "ធ្វើការ", "link": "/works"},
+    {"name": "ព័ត៌មាន", "link": "/news"},
+    {"name": "សិល្បករ", "link": "/artists"},
+    {"name": "ទាក់ទងយើង", "link": "/contact"}
+  ],
+  "age": "អាយុ",
+  "height": "កម្ពស់",
+  "role":"តួនាទី",
+  "see-more": "មើលបន្ថែម",
+  "latest-news": "ព័ត៌មានថ្មីៗ",
+  "contact": "ទាក់ទងយើង",
+  "about": "អំពីយើង",
+  "following-us": "បណ្ដាញសង្គមរបស់ពួកយើង",
+  "send-message": "ផ្ញើ​សារ",
+  "phone": "ទូរស័ព្ទ",
+  "email": "អ៊ីមែល",
+  "telegram": "តេឡេក្រាម",
+  "sending": "កំពុងផ្ញើ",
+  "copyright": "​© រក្សា​រ​សិទ្ធ​គ្រប់យ៉ាងដោយស្ទូឌីយោ៤ 2022​​ ។"
+}

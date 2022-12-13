@@ -6,6 +6,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import { LangSwitcher } from './LangButton/LangSwitcher';
 
 interface NavLinkProps {
   href: string;
@@ -100,6 +101,7 @@ const Navigator = () => {
             <NavLink href="/news" name="News" />
             <NavLink href="/artists" name="Artists" />
             <NavLink href="/contact" name="Contact" />
+            <LangSwitcher />
           </div>
         </div>
 
@@ -109,6 +111,7 @@ const Navigator = () => {
             <Link href="/" passHref>
               <img src="/images/logo.png" className=" h-12 w-auto cursor-pointer" alt="studio" />
             </Link>
+            <LangSwitcher />
           </div>
         </div>
         <div

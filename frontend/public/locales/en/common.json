@@ -1,0 +1,23 @@
+{
+  "navigation-bar": [
+    {"name": "About", "link": "/about"},
+    {"name": "Movies", "link": "/movies"},
+    {"name": "Works", "link": "/works"},
+    {"name": "News", "link": "/news"},
+    {"name": "Artists", "link": "/artists"},
+    {"name": "Contact", "link": "/contact"}
+  ],
+  "more": "More",
+  "age": "Age",
+  "role": "Role",
+  "height": "Height",
+  "latest-news": "Latest News",
+  "contact": "Contact",
+  "about": "About",
+  "following-us": "FOLLOWING US",
+  "phone": "Phone",
+  "email": "Email",
+  "telegram": "Telegram",
+  "sending": "Sending",
+  "copyright": "© 2022 Studio4. All rights reserved."
+}

@@ -8,6 +8,9 @@ import { QueryClient, QueryClientProvider, Hydrate } from 'react-query';
 
 import type { AppProps } from 'next/app';
 import { useState } from 'react';
+import { appWithTranslation } from 'next-i18next';
+import '../i18n';
+
 function MyApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(() => new QueryClient());
 
@@ -36,4 +39,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
