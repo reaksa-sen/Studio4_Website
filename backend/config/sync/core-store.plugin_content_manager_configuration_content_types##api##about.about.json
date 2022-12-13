@@ -34,6 +34,20 @@
           "sortable": false
         }
       },
+      "slogan": {
+        "edit": {
+          "label": "slogan",
+          "description": "",
+          "placeholder": "",
+          "visible": true,
+          "editable": true
+        },
+        "list": {
+          "label": "slogan",
+          "searchable": true,
+          "sortable": true
+        }
+      },
       "createdAt": {
         "edit": {
           "label": "createdAt",
@@ -67,13 +81,20 @@
       "list": [
         "id",
         "createdAt",
-        "updatedAt"
+        "updatedAt",
+        "slogan"
       ],
       "edit": [
         [
           {
             "name": "content",
             "size": 12
+          }
+        ],
+        [
+          {
+            "name": "slogan",
+            "size": 6
           }
         ]
       ]

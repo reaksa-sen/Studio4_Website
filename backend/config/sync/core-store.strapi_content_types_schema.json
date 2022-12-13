@@ -1700,24 +1700,20 @@
       "options": {
         "draftAndPublish": true
       },
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
+      "pluginOptions": {},
       "attributes": {
         "content": {
-          "pluginOptions": {
-            "i18n": {
-              "localized": false
-            }
-          },
+          "pluginOptions": {},
           "type": "richtext",
           "options": {
             "preset": "rich"
           },
           "required": false,
           "customField": "plugin::ckeditor.CKEditor"
+        },
+        "slogan": {
+          "pluginOptions": {},
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -1750,22 +1746,6 @@
           "visible": false,
           "useJoinTable": false,
           "private": true
-        },
-        "localizations": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "relation",
-          "relation": "oneToMany",
-          "target": "api::about.about"
-        },
-        "locale": {
-          "writable": true,
-          "private": false,
-          "configurable": false,
-          "visible": false,
-          "type": "string"
         }
       },
       "__schema__": {
@@ -1779,24 +1759,20 @@
         "options": {
           "draftAndPublish": true
         },
-        "pluginOptions": {
-          "i18n": {
-            "localized": true
-          }
-        },
+        "pluginOptions": {},
         "attributes": {
           "content": {
-            "pluginOptions": {
-              "i18n": {
-                "localized": false
-              }
-            },
+            "pluginOptions": {},
             "type": "customField",
             "options": {
               "preset": "rich"
             },
             "required": false,
             "customField": "plugin::ckeditor.CKEditor"
+          },
+          "slogan": {
+            "pluginOptions": {},
+            "type": "string"
           }
         },
         "kind": "singleType"
@@ -1863,6 +1839,9 @@
         },
         "email": {
           "type": "email"
+        },
+        "twitter": {
+          "type": "string"
         },
         "createdAt": {
           "type": "datetime"
@@ -1949,6 +1928,9 @@
           },
           "email": {
             "type": "email"
+          },
+          "twitter": {
+            "type": "string"
           }
         },
         "kind": "collectionType"
@@ -1978,7 +1960,7 @@
       "attributes": {
         "name": {
           "type": "string",
-          "required": true
+          "required": false
         },
         "image": {
           "type": "media",
@@ -1990,7 +1972,7 @@
         },
         "link": {
           "type": "string",
-          "required": true
+          "required": false
         },
         "moreWidth": {
           "type": "boolean"
@@ -2000,7 +1982,7 @@
         },
         "ordering": {
           "type": "integer",
-          "required": true
+          "required": false
         },
         "createdAt": {
           "type": "datetime"
@@ -2050,7 +2032,7 @@
         "attributes": {
           "name": {
             "type": "string",
-            "required": true
+            "required": false
           },
           "image": {
             "type": "media",
@@ -2062,7 +2044,7 @@
           },
           "link": {
             "type": "string",
-            "required": true
+            "required": false
           },
           "moreWidth": {
             "type": "boolean"
@@ -2072,7 +2054,7 @@
           },
           "ordering": {
             "type": "integer",
-            "required": true
+            "required": false
           }
         },
         "kind": "collectionType"
@@ -2274,7 +2256,7 @@
         },
         "ordering": {
           "type": "integer",
-          "required": true
+          "required": false
         },
         "createdAt": {
           "type": "datetime"
@@ -2344,7 +2326,7 @@
           },
           "ordering": {
             "type": "integer",
-            "required": true
+            "required": false
           }
         },
         "kind": "collectionType"
@@ -2490,15 +2472,6 @@
             "images"
           ]
         },
-        "facebook_url": {
-          "type": "string"
-        },
-        "tiktok_url": {
-          "type": "string"
-        },
-        "youtube_url": {
-          "type": "string"
-        },
         "createdAt": {
           "type": "datetime"
         },
@@ -2552,15 +2525,6 @@
             "allowedTypes": [
               "images"
             ]
-          },
-          "facebook_url": {
-            "type": "string"
-          },
-          "tiktok_url": {
-            "type": "string"
-          },
-          "youtube_url": {
-            "type": "string"
           }
         },
         "kind": "collectionType"

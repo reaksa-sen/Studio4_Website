@@ -8,7 +8,7 @@
       "searchable": true,
       "pageSize": 10,
       "mainField": "id",
-      "defaultSortBy": "facebook_url",
+      "defaultSortBy": "id",
       "defaultSortOrder": "ASC"
     },
     "metadatas": {
@@ -32,48 +32,6 @@
           "label": "image",
           "searchable": false,
           "sortable": false
-        }
-      },
-      "facebook_url": {
-        "edit": {
-          "label": "Facebook_url",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "facebook_url",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "tiktok_url": {
-        "edit": {
-          "label": "Tiktok_url",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "tiktok_url",
-          "searchable": true,
-          "sortable": true
-        }
-      },
-      "youtube_url": {
-        "edit": {
-          "label": "Youtube_url",
-          "description": "",
-          "placeholder": "",
-          "visible": true,
-          "editable": true
-        },
-        "list": {
-          "label": "youtube_url",
-          "searchable": true,
-          "sortable": true
         }
       },
       "createdAt": {
@@ -115,22 +73,6 @@
           {
             "name": "image",
             "size": 12
-          }
-        ],
-        [
-          {
-            "name": "facebook_url",
-            "size": 6
-          },
-          {
-            "name": "youtube_url",
-            "size": 6
-          }
-        ],
-        [
-          {
-            "name": "tiktok_url",
-            "size": 6
           }
         ]
       ]

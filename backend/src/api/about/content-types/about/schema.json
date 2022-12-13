@@ -17,11 +17,7 @@
   },
   "attributes": {
     "content": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": false
-        }
-      },
+      "pluginOptions": {},
       "type": "customField",
       "options": {
         "preset": "rich"
