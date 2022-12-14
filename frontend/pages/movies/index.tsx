@@ -7,20 +7,21 @@ import { InfiniteMovieList } from 'screens/movies/InfiniteMovielist';
 import { NewReleased } from 'components/NewReleased/NewReleased';
 import { GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   movie: MoviesResponse;
 }
 
 const Page: NextPage<Props> = ({ movie }) => {
+  const { t } = useTranslation();
   const router = useRouter();
-  const TITLE = 'Movies';
   const DESCRIPTION = 'Studio Four Team Members';
 
   return (
     <div className="container mt-16 pb-6 md:mt-24">
-      <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
-      <Heading text={TITLE} />
+      <Header title={'Movies'} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Heading text={t('movies')} />
       <NewReleased movie={movie.data[0]} />
       <InfiniteMovieList />
     </div>

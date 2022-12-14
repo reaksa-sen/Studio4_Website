@@ -8,11 +8,12 @@ import { Heading } from 'components/Heading';
 import { useRouter } from 'next/router';
 import Header from 'components/Header';
 import { NextPage } from 'next';
+import { useTranslation } from 'react-i18next';
 
 const Page: NextPage = () => {
   const router = useRouter();
   const PAGE_SIZE = 24;
-  const TITLE = 'Works';
+  const { t } = useTranslation();
   const DESCRIPTION = 'Studio Four Team Members';
 
   const { data, status, isLoading, fetchNextPage, hasNextPage } = useInfiniteQuery(
@@ -30,8 +31,8 @@ const Page: NextPage = () => {
 
   return (
     <div className="container mt-16 pb-6 md:mt-24">
-      <Header title={TITLE} siteUrl={router.asPath} description={DESCRIPTION} />
-      <Heading text={TITLE} />
+      <Header title={'Works'} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Heading text={t('works')} />
       {isLoading && <Spinner />}
       {status === 'success' && (
         <XInfiniteScroll
