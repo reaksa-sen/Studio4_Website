@@ -32,7 +32,7 @@ export const LangSwitcher = () => {
   return (
     <div
       onClick={() => handleChangeLang(lang.key === 'en' ? languages[1] : languages[0])}
-      className="flex items-center"
+      className="flex items-center px-3 py-2"
     >
       <img
         className="h-8 w-auto cursor-pointer"
