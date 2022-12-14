@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { IoPlaySkipForwardSharp } from 'react-icons/io5';
 interface HeadingProps {
   text: string;
@@ -6,6 +7,7 @@ interface HeadingProps {
 }
 
 export const Heading: React.FC<HeadingProps> = ({ text, link }) => {
+  const { t } = useTranslation();
   return (
     <div className="my-4 flex items-center justify-between pb-2">
       <div>
@@ -15,7 +17,7 @@ export const Heading: React.FC<HeadingProps> = ({ text, link }) => {
       {link && (
         <Link href={link}>
           <a className=" flex items-center gap-x-1 font-heading text-white hover:text-primary-500">
-            More <IoPlaySkipForwardSharp className="h-5 w-auto text-primary-500" />
+            {t('more')} <IoPlaySkipForwardSharp className="h-5 w-auto text-primary-500" />
           </a>
         </Link>
       )}
