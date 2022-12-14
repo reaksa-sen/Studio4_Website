@@ -1,6 +1,7 @@
 import { sendMessage } from 'api/strapiApi';
 import { useRef, useState } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { useTranslation } from 'react-i18next';
 
 import { ContactHead } from './ContactAddress';
 import { ContactSchema, useContactForm } from './types';
@@ -74,6 +75,7 @@ const Spinner: React.FC = () => (
 );
 
 export const ContactForm: React.FC = () => {
+  const { t } = useTranslation();
   const reCaptchaRef = useRef<any>();
   const [isLoading, setLoading] = useState(false);
   const { register, reset, handleSubmit, setValue, formState } = useContactForm();
@@ -101,7 +103,7 @@ export const ContactForm: React.FC = () => {
           error={formState.errors.fullName?.message}
           name="fullName"
           type="text"
-          placeholder="Name"
+          placeholder={t('name')}
         />
         {/* <InputBox
           props={register('email', { required: true })}
@@ -115,13 +117,13 @@ export const ContactForm: React.FC = () => {
           error={formState.errors.phone?.message}
           name="phone"
           type="text"
-          placeholder="Phone"
+          placeholder={t('phone')}
         />
         <TextArea
           props={register('message', { required: true })}
           error={formState.errors.message?.message}
           name="message"
-          placeholder="Message"
+          placeholder={t('message')}
           rows={4}
         />
 
@@ -148,7 +150,7 @@ export const ContactForm: React.FC = () => {
               <Spinner /> <span>Sending</span>
             </div>
           ) : (
-            'Send Message'
+            t('send-message')
           )}
         </button>
       </form>
