@@ -1,6 +1,7 @@
 import { NewsAttribute } from 'api/interface';
 import Link from 'next/link';
 import NextImage from 'components/Image';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   news: NewsAttribute[];
@@ -36,9 +37,10 @@ const LatestNewsItem: React.FC<INews> = ({ image, title, id }) => {
 };
 
 export const LatestNewsList: React.FC<Props> = ({ news }) => {
+  const { t } = useTranslation();
   return (
     <div className="divide-y divide-primary-500">
-      <div className="pb-2 font-sans text-lg uppercase text-white">latest news</div>
+      <div className="pb-2 font-sans text-lg uppercase text-white">{t('latest-news')}</div>
       {news.map(item => (
         <LatestNewsItem
           key={item.attributes.title}

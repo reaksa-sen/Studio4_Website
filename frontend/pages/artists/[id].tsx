@@ -8,12 +8,14 @@ import { Heading } from 'components/Heading';
 import { getArtist } from 'api/strapiApi';
 import { useRouter } from 'next/router';
 import Header from 'components/Header';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   artist: ArtistResponse;
 }
 
 const ArtistsProfile: NextPage<Props> = ({ artist }) => {
+  const { t } = useTranslation();
   const router = useRouter();
   const { facebook, tiktok, instagram, youtube, twitter, description, height, roles, email, age } =
     artist.data.attributes;
@@ -39,10 +41,26 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
           <div className="col-span-4 text-white md:p-5 md:pt-0">
             <Heading text={artist.data.attributes.fullname} />
             <div className="flex flex-col gap-y-4">
-              {age && <span className="font-sans">Age: {age || ''}</span>}
-              {height && <span className="font-sans">Height: {height || ''} cm</span>}
-              {roles && <span className="font-sans">Role: {roles || ''}</span>}
-              {email && <span className="font-sans">Email: {email || ''}</span>}
+              {age && (
+                <span className="font-sans">
+                  {t('age')} : {age || ''}
+                </span>
+              )}
+              {height && (
+                <span className="font-sans">
+                  {t('height')} : {height || ''} cm
+                </span>
+              )}
+              {roles && (
+                <span className="font-sans">
+                  {t('role')} : {roles || ''}
+                </span>
+              )}
+              {email && (
+                <span className="font-sans">
+                  {t('email')} : {email || ''}
+                </span>
+              )}
               <div className="flex flex-row space-x-4">
                 {facebook && (
                   <LinkButton target="_blank" href={facebook || ''}>
