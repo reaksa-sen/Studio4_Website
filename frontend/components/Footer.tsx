@@ -2,10 +2,12 @@
 import { Facebook, Instagram, Tiktok, Twitter, Youtube } from '@icons-pack/react-simple-icons';
 import { getAbout, getContact } from 'api/strapiApi';
 import Link from 'next/link';
+import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { LinkButton } from './Button';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const { data } = useQuery('footer', () => getContact(), {
     retry: false,
     refetchOnWindowFocus: false,
@@ -38,24 +40,22 @@ const Footer: React.FC = () => {
             <div className="flex  flex-col items-center gap-y-5 gap-x-5 font-heading text-lg md:gap-y-9 lg:items-start">
               <Link href="/about">
                 <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
-                  អំពីយើង
+                  {t('about')}
                 </a>
               </Link>
               <Link href="/contact">
                 <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
-                  ទាក់ទងយើង
+                  {t('contact')}
                 </a>
               </Link>
               <Link href="/term-and-privacy">
                 <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
-                  Term & Privacy
+                  {t('term-privacy')}
                 </a>
               </Link>
             </div>
             <div className="mt-2 flex flex-col lg:mt-0">
-              <p className="whitespace-pre text-center font-heading text-lg">
-                បណ្តាញសង្គមរបស់ពួកយើង
-              </p>
+              <p className="whitespace-pre text-center font-heading text-lg">{t('following-us')}</p>
               <div className="mt-5 flex justify-center space-x-5">
                 {facebook_url && (
                   <LinkButton target="_blank" href={facebook_url || ''}>
@@ -88,9 +88,7 @@ const Footer: React.FC = () => {
         </div>
 
         <div className="flex flex-col items-center justify-center">
-          <p className="py-4 text-center font-heading text-sm text-gray-400 ">
-            © រក្សាសិទ្ថិគ្រប់យ៉ាងដោយ Studio 4 ឆ្នាំ 2022
-          </p>
+          <p className="py-4 text-center font-heading text-sm text-gray-400 ">{t('copyright')}</p>
         </div>
       </div>
     </footer>

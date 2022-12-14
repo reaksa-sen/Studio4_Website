@@ -5,8 +5,9 @@ import XIcon from '@heroicons/react/outline/XIcon';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
 import { LangSwitcher } from './LangButton/LangSwitcher';
+import { useTranslation } from 'react-i18next';
 
 interface NavLinkProps {
   href: string;
@@ -70,6 +71,7 @@ const NavButton: React.FC<{ onClick: () => void; isNavOpen: boolean }> = ({
 const Navigator = () => {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const [isTop, setIsTop] = useState(true);
+  const { t } = useTranslation();
 
   useScrollPosition(
     ({ currPos }) => {
@@ -92,15 +94,15 @@ const Navigator = () => {
       <div className="container px-4 py-4">
         <div className=" flex justify-center ">
           <div className="hidden gap-x-3 md:flex ">
-            <NavLink exact href="/about" name="About" />
-            <NavLink href="/movies" name="Movies" />
-            <NavLink href="/works" name="Works" />
+            <NavLink exact href="/about" name={t('about')} />
+            <NavLink href="/movies" name={t('movies')} />
+            <NavLink href="/works" name={t('works')} />
             <Link href="/" passHref>
               <img src="/images/logo.png" className="h-16 w-auto cursor-pointer" alt="studio4" />
             </Link>
-            <NavLink href="/news" name="News" />
-            <NavLink href="/artists" name="Artists" />
-            <NavLink href="/contact" name="Contact" />
+            <NavLink href="/news" name={t('news')} />
+            <NavLink href="/artists" name={t('artists')} />
+            <NavLink href="/contact" name={t('contact')} />
             <LangSwitcher />
           </div>
         </div>
@@ -122,12 +124,12 @@ const Navigator = () => {
           id="mobile-menu"
         >
           <div className="grid grid-cols-2 px-2 pt-2 pb-3">
-            <SmNavLink href="/about" name="About" onClick={handleNavBar} />
-            <SmNavLink href="/movies" name="Movies" onClick={handleNavBar} />
-            <SmNavLink href="/works" name="Works" onClick={handleNavBar} />
-            <SmNavLink href="/news" name="News" onClick={handleNavBar} />
-            <SmNavLink href="/artists" name="Artists" onClick={handleNavBar} />
-            <SmNavLink href="/contact" name="Contacts" onClick={handleNavBar} />
+            <SmNavLink href="/about" name={t('about')} onClick={handleNavBar} />
+            <SmNavLink href="/movies" name={t('movies')} onClick={handleNavBar} />
+            <SmNavLink href="/works" name={t('works')} onClick={handleNavBar} />
+            <SmNavLink href="/news" name={t('news')} onClick={handleNavBar} />
+            <SmNavLink href="/artists" name={t('artists')} onClick={handleNavBar} />
+            <SmNavLink href="/contact" name={t('contact')} onClick={handleNavBar} />
           </div>
         </div>
       </div>
