@@ -37,7 +37,7 @@ const Footer: React.FC = () => {
             </span>
           </div>
           <div className="flex flex-col gap-2 text-white md:gap-10 lg:flex-row">
-            <div className="flex  flex-col items-center gap-y-5 gap-x-5 font-heading text-lg md:gap-y-9 lg:items-start">
+            <div className="flex flex-col items-center  gap-y-6  font-heading text-lg lg:min-w-[150px] lg:items-start lg:gap-y-9">
               <Link href="/about">
                 <a className="cursor-pointer whitespace-pre hover:text-primary-500 hover:underline">
                   {t('about')}
@@ -55,7 +55,7 @@ const Footer: React.FC = () => {
               </Link>
             </div>
             <div className="mt-2 flex flex-col lg:mt-0">
-              <p className="whitespace-pre text-center font-heading text-lg">{t('following-us')}</p>
+              <p className="min-w-[200px] text-center font-heading text-lg">{t('following-us')}</p>
               <div className="mt-5 flex justify-center space-x-5">
                 {facebook_url && (
                   <LinkButton target="_blank" href={facebook_url || ''}>

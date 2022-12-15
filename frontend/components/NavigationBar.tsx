@@ -26,7 +26,7 @@ const NavLink: React.FC<NavLinkProps> = props => {
       <a
         aria-label={`click here to view ${name}`}
         className={classNames(
-          'flex items-center  px-3 py-2 font-heading text-lg leading-normal hover:text-primary-500',
+          'flex min-w-[80px] items-center justify-center font-heading text-lg leading-normal hover:text-primary-500 lg:min-w-[100px]',
           isActive ? 'text-primary-500' : 'text-white'
         )}
       >
@@ -92,19 +92,17 @@ const Navigator = () => {
       })}
     >
       <div className="container px-4 py-4">
-        <div className=" flex justify-center ">
-          <div className="hidden gap-x-3 md:flex ">
-            <NavLink exact href="/about" name={t('about')} />
-            <NavLink href="/movies" name={t('movies')} />
-            <NavLink href="/works" name={t('works')} />
-            <Link href="/" passHref>
-              <img src="/images/logo.png" className="h-16 w-auto cursor-pointer" alt="studio4" />
-            </Link>
-            <NavLink href="/news" name={t('news')} />
-            <NavLink href="/artists" name={t('artists')} />
-            <NavLink href="/contact" name={t('contact')} />
-            <LangSwitcher />
-          </div>
+        <div className="hidden justify-center gap-x-3 md:flex">
+          <NavLink exact href="/about" name={t('about')} />
+          <NavLink href="/movies" name={t('movies')} />
+          <NavLink href="/works" name={t('works')} />
+          <Link href="/" passHref>
+            <img src="/images/logo.png" className="h-16 w-auto cursor-pointer" alt="studio4" />
+          </Link>
+          <NavLink href="/news" name={t('news')} />
+          <NavLink href="/artists" name={t('artists')} />
+          <NavLink href="/contact" name={t('contact')} />
+          <LangSwitcher />
         </div>
 
         <div className="block md:hidden ">
