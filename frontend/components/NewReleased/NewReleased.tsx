@@ -1,13 +1,19 @@
 import { IoPlayCircleSharp } from 'react-icons/io5';
 import { MovieAttribute } from 'api/interface';
 import { VideoPlayer } from 'components/Video/VideoPlayer';
+import { useRouter } from 'next/router';
 
 interface Props {
   movie: MovieAttribute;
 }
 
 export const NewReleased: React.FC<Props> = ({ movie }) => {
-  const { title, image, description, link } = movie.attributes;
+  const { locale } = useRouter();
+  const { title, image, link } = movie.attributes;
+
+  const translateData =
+    movie.attributes.localizations.data.find(x => x.attributes.locale === locale) ?? movie;
+
   return (
     <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
       <VideoPlayer
@@ -19,9 +25,9 @@ export const NewReleased: React.FC<Props> = ({ movie }) => {
         }
       />
       <div className="p-2 text-center text-white md:text-left lg:max-w-sm">
-        <h2 className="mb-4 font-heading text-lg lg:text-2xl">{title}</h2>
+        <h2 className="mb-4 font-heading text-lg lg:text-2xl">{translateData.attributes.title}</h2>
         <p className="break-all font-sans text-sm !leading-relaxed lg:text-base lg:!leading-8">
-          {description}
+          {translateData.attributes.description}
         </p>
       </div>
     </div>

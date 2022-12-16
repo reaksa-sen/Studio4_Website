@@ -46,6 +46,9 @@ interface IMovie {
   title: string;
   description: string;
   link: string;
+  //--
+  locale: string;
+  localizations: { data?: MovieAttribute[] };
 }
 
 interface IClient {

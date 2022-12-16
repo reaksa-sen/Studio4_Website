@@ -1,12 +1,11 @@
 {
-  "navigation-bar": [
-    {"name": "About", "link": "/about"},
-    {"name": "Movies", "link": "/movies"},
-    {"name": "Works", "link": "/works"},
-    {"name": "News", "link": "/news"},
-    {"name": "Artists", "link": "/artists"},
-    {"name": "Contact", "link": "/contact"}
-  ],
+  "movies": "Movies", 
+  "works": "Works", 
+  "news": "News", 
+  "artists": "Artists", 
+  "new-released": "New Released",
+  "works-showcase": "Works Showcase",
+  "our-clients": "Our Clients",
   "more": "More",
   "age": "Age",
   "role": "Role",
@@ -14,10 +13,14 @@
   "latest-news": "Latest News",
   "contact": "Contact",
   "about": "About",
-  "following-us": "FOLLOWING US",
+  "following-us": "following Us",
+  "send-message": "Send Message",
+  "message": "Message",
+  "name": "Name",
   "phone": "Phone",
   "email": "Email",
   "telegram": "Telegram",
   "sending": "Sending",
+  "term-privacy":"Term & Privacy",
   "copyright": "© 2022 Studio4. All rights reserved."
 }

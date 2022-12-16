@@ -1,6 +1,7 @@
 import { MoviesResponse } from 'api/interface';
 import { IoPlayCircleSharp } from 'react-icons/io5';
 import { VideoPlayer } from 'components/Video/VideoPlayer';
+import { useRouter } from 'next/router';
 
 interface Props {
   movies: MoviesResponse;
@@ -33,9 +34,14 @@ const MovieItem: React.FC<IMovie> = ({ image, title, link }) => {
 };
 
 export const MovieList: React.FC<Props> = ({ movies }) => {
+  const { locale } = useRouter();
+  const translateData = movies.data.map(
+    m => m.attributes.localizations.data.find(m => m.attributes.locale === locale) ?? m
+  );
+
   return (
     <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
-      {movies.data?.map(x => (
+      {translateData.map(x => (
         <MovieItem
           key={x.id}
           image={x.attributes.image}

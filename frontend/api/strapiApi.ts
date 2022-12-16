@@ -59,7 +59,13 @@ export function getMovies(pagination: I.Pagination): Promise<I.MoviesResponse> {
     sort: ['id:desc'],
     pagination,
     populate: {
-      image: { fields: ['name', 'url', 'formats'] }
+      image: { fields: ['name', 'url', 'formats'] },
+      localizations: {
+        fields: ['*'],
+        populate: {
+          image: { fields: ['name', 'url', 'formats'] }
+        }
+      }
     }
   });
 }
