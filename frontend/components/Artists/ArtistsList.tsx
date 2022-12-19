@@ -1,5 +1,6 @@
 import { ArtistsResponse } from 'api/interface';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 import NextImage from '../Image';
 
@@ -29,7 +30,7 @@ export const ArtistListItem: React.FC<IArtistListItem> = ({ id, fullname, image 
             objectFit="cover"
           />
           <div className="absolute top-1/2 left-1/2 z-20 hidden -translate-x-1/2 -translate-y-1/2 text-white group-hover:block">
-            <div className="cursor-pointer p-4 text-center text-xl hover:text-primary-500 group-hover:underline">
+            <div className="cursor-pointer p-4 text-center text-xl leading-normal hover:text-primary-500 group-hover:underline">
               {fullname}
             </div>
           </div>
@@ -40,9 +41,13 @@ export const ArtistListItem: React.FC<IArtistListItem> = ({ id, fullname, image 
 };
 
 export const ArtistList: React.FC<Props> = ({ artists }) => {
+  const { locale } = useRouter();
+  const translateData = artists.data.map(
+    m => m.attributes.localizations.data?.find(m => m.attributes.locale === locale) ?? m
+  );
   return (
     <div className="mb-10 grid grid-cols-2 gap-y-5 gap-x-5 md:grid-cols-3 md:gap-x-10 md:gap-y-10 lg:grid-cols-4">
-      {artists.data.map(item => (
+      {translateData.map(item => (
         <ArtistListItem
           key={item.attributes.fullname}
           id={item.id}

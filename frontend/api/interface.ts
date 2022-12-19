@@ -40,6 +40,9 @@ interface INews {
   title: string;
   content: string;
   createdAt: string;
+  //--
+  locale: string;
+  localizations: { data?: NewsAttribute[] };
 }
 interface IMovie {
   image: { data?: IAttribute<Image> };
@@ -72,6 +75,9 @@ interface IArtist {
   youtube: string;
   tiktok: string;
   twitter: string;
+  //--
+  locale: string;
+  localizations: { data?: ArtistAttribute[] };
 }
 
 interface IWorkShowcase {

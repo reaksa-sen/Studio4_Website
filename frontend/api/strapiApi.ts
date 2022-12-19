@@ -27,7 +27,13 @@ export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse>
     fields: ['fullname', 'roles'],
     pagination,
     populate: {
-      image: { fields: ['name', 'url', 'formats'] }
+      image: { fields: ['name', 'url', 'formats'] },
+      localizations: {
+        fields: ['*'],
+        populate: {
+          image: { fields: ['name', 'url', 'formats'] }
+        }
+      }
     }
   });
 }
@@ -35,10 +41,13 @@ export function getArtists(pagination: I.Pagination): Promise<I.ArtistsResponse>
 export function getArtist(id: string): Promise<I.ArtistResponse> {
   return fetchAPI(`/artists/${id}`, {
     populate: {
+      fields: ['*'],
       image: { fields: ['name', 'url', 'formats'] },
-      fields: ['title'],
-      populate: {
-        poster: { fields: ['name', 'url', 'formats'] }
+      localizations: {
+        fields: ['*'],
+        populate: {
+          image: { fields: ['name', 'url', 'formats'] }
+        }
       }
     }
   });
@@ -75,7 +84,13 @@ export function getNews(pagination: I.Pagination): Promise<I.NewsResponses> {
     sort: ['id:desc'],
     pagination,
     populate: {
-      image: { fields: ['name', 'url', 'formats'] }
+      image: { fields: ['name', 'url', 'formats'] },
+      localizations: {
+        fields: ['*'],
+        populate: {
+          image: { fields: ['name', 'url', 'formats'] }
+        }
+      }
     }
   });
 }
@@ -84,7 +99,13 @@ export function getNew(id: string): Promise<I.NewsResponse> {
   return fetchAPI(`/news/${id}`, {
     fields: ['title', 'content', 'createdAt'],
     populate: {
-      image: { fields: ['name', 'url', 'formats'] }
+      image: { fields: ['name', 'url', 'formats'] },
+      localizations: {
+        fields: ['*'],
+        populate: {
+          image: { fields: ['name', 'url', 'formats'] }
+        }
+      }
     }
   });
 }

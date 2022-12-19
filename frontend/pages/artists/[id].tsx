@@ -17,16 +17,19 @@ interface Props {
 const ArtistsProfile: NextPage<Props> = ({ artist }) => {
   const { t } = useTranslation();
   const router = useRouter();
+  const { locale } = useRouter();
   const { facebook, tiktok, instagram, youtube, twitter, description, height, roles, email, age } =
     artist.data.attributes;
-
+  const translateData =
+    artist.data.attributes.localizations.data.find(m => m.attributes.locale === locale) ??
+    artist.data;
   return (
     <>
       <Header
-        title={artist.data.attributes.fullname}
+        title={translateData.attributes.fullname}
         siteUrl={router.asPath}
-        description={(artist.data.attributes.description || '').substring(160, 0)}
-        imageUrl={artist.data.attributes.image?.data?.attributes.url}
+        description={(translateData.attributes.description || '').substring(160, 0)}
+        imageUrl={translateData.attributes.image?.data?.attributes.url}
       />
 
       <div className="container mt-16 md:mt-24">
@@ -34,12 +37,12 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
           <div className="col-span-2 flex justify-center md:justify-end md:pt-5">
             <img
               className="h-56 w-56 cursor-pointer rounded-full object-cover"
-              src={artist.data.attributes.image?.data?.attributes.url}
-              alt={artist.data.attributes.fullname}
+              src={translateData.attributes.image?.data?.attributes.url}
+              alt={translateData.attributes.fullname}
             />
           </div>
           <div className="col-span-4 text-white md:p-5 md:pt-0">
-            <Heading text={artist.data.attributes.fullname} />
+            <Heading text={translateData.attributes.fullname} />
             <div className="flex flex-col gap-y-4">
               {age && (
                 <span className="font-sans">
@@ -53,7 +56,7 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
               )}
               {roles && (
                 <span className="font-sans">
-                  {t('role')} : {roles || ''}
+                  {t('role')} : {translateData.attributes.roles || ''}
                 </span>
               )}
               {email && (
@@ -91,9 +94,9 @@ const ArtistsProfile: NextPage<Props> = ({ artist }) => {
             </div>
 
             {description && (
-              <div className="mt-5 ">
+              <div className="mt-5  ">
                 <div className="mb-5 w-full border-b-2 border-primary-500 pt-2 font-sans" />
-                <span>{description}</span>
+                <span className="leading-loose">{translateData.attributes.description}</span>
               </div>
             )}
           </div>

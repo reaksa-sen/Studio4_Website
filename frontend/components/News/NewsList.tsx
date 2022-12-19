@@ -1,6 +1,7 @@
 import { NewsResponses } from 'api/interface';
 import Link from 'next/link';
 import NextImage from 'components/Image';
+import { useRouter } from 'next/router';
 
 interface Props {
   news: NewsResponses;
@@ -38,9 +39,14 @@ export const NewsItem: React.FC<INews> = ({ image, title, id }) => {
 };
 
 export const NewsList: React.FC<Props> = ({ news }) => {
+  const { locale } = useRouter();
+  const translateData = news.data.map(
+    m => m.attributes.localizations.data.find(m => m.attributes.locale === locale) ?? m
+  );
+
   return (
     <div className="mb-5 grid grid-cols-1 gap-5 md:grid-cols-3 lg:grid-cols-4">
-      {news.data.map(item => (
+      {translateData.map(item => (
         <NewsItem
           id={item.id}
           key={item.attributes.title}

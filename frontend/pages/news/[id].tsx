@@ -7,6 +7,7 @@ import NextImage from 'components/Image';
 import { useRouter } from 'next/router';
 import { dateFormat } from 'utils/date';
 import Header from 'components/Header';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   data: NewsResponse;
@@ -15,26 +16,35 @@ interface Props {
 
 const NewsList: NextPage<Props> = ({ data, news }) => {
   const router = useRouter();
+  const { locale } = useRouter();
+  const translateData =
+    data?.data.attributes.localizations.data.find(m => m.attributes.locale === locale) ??
+    data?.data;
 
+  const translateDataNews = news.data.map(
+    m => m.attributes.localizations.data?.find(m => m.attributes.locale === locale) ?? m
+  );
   return (
     <>
       <Header
-        title={data?.data.attributes.title}
+        title={translateData.attributes.title}
         siteUrl={router.asPath}
-        description={(data?.data.attributes.title || '').substring(160, 0)}
-        imageUrl={data?.data.attributes.image?.data?.attributes.url}
+        description={(translateData.attributes.title || '').substring(160, 0)}
+        imageUrl={translateData.attributes.image?.data?.attributes.url}
       />
       <div className="container mt-16 md:mt-24">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           <div className="col-span-2 py-4 text-white md:py-8">
-            <h2 className="font-heading text-xl leading-relaxed">{data?.data.attributes.title}</h2>
+            <h2 className="font-heading text-xl leading-relaxed">
+              {translateData.attributes.title}
+            </h2>
             <p className="flex items-center gap-x-1.5 pb-2 pt-4 text-sm">
               <BiTimeFive />
-              <span>{dateFormat(data.data.attributes.createdAt, 'en-Us')}</span>
+              <span>{dateFormat(translateData.attributes.createdAt, 'km-KH')}</span>
             </p>
             <NextImage
-              alt={data?.data.attributes.title}
-              image={data?.data.attributes.image}
+              alt={translateData.attributes.title}
+              image={translateData.attributes.image}
               height={9}
               size={'M'}
               width={16}
@@ -42,11 +52,11 @@ const NewsList: NextPage<Props> = ({ data, news }) => {
             />
             <article
               className="prose max-w-none pt-4 text-white prose-p:pt-2 prose-img:pt-2 md:prose-lg"
-              dangerouslySetInnerHTML={{ __html: data?.data.attributes.content }}
+              dangerouslySetInnerHTML={{ __html: translateData.attributes.content }}
             />
           </div>
           <div className="col-span-1 py-4 font-heading md:py-8">
-            <LatestNewsList news={news.data} />
+            <LatestNewsList news={translateDataNews} />
           </div>
         </div>
       </div>
