@@ -31,7 +31,7 @@ const Page: NextPage = () => {
 
   return (
     <div className="container mt-16 pb-6 md:mt-24">
-      <Header title={'Artists'} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Header title={t('artists')} siteUrl={router.asPath} description={DESCRIPTION} />
       <Heading text={t('artists')} />
       {isLoading && <Spinner />}
       {status === 'success' && (

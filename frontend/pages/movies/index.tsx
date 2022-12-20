@@ -20,7 +20,7 @@ const Page: NextPage<Props> = ({ movie }) => {
 
   return (
     <div className="container mt-16 pb-6 md:mt-24">
-      <Header title={'Movies'} siteUrl={router.asPath} description={DESCRIPTION} />
+      <Header title={t('movies')} siteUrl={router.asPath} description={DESCRIPTION} />
       <Heading text={t('movies')} />
       <NewReleased movie={movie.data[0]} />
       <InfiniteMovieList />
