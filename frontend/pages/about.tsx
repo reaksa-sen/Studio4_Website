@@ -3,22 +3,27 @@ import { Wrapper } from 'components/Wrapper';
 import { AboutResponse } from 'api/interface';
 import { getAbout } from 'api/strapiApi';
 import Header from 'components/Header';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 interface Props {
   about: AboutResponse;
 }
 
 const About: NextPage<Props> = ({ about }) => {
-  const TITLE = 'About';
-  const { data } = about;
+  const { t } = useTranslation();
+  const { locale } = useRouter();
+  const translateData =
+    about.data.attributes.localizations.data.find(m => m.attributes.locale === locale) ??
+    about.data;
 
   return (
     <div className="mt-16 md:mt-20">
-      <Header title={TITLE} siteUrl="/about" />
+      <Header title={t('about')} siteUrl="/about" />
       <Wrapper>
         <article
           className=" prose max-w-none text-white"
-          dangerouslySetInnerHTML={{ __html: data.attributes.content }}
+          dangerouslySetInnerHTML={{ __html: translateData.attributes.content }}
         />
       </Wrapper>
     </div>

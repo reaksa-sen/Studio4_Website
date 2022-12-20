@@ -15,9 +15,15 @@ interface Image {
 interface IAbout {
   content: string;
   slogan: string;
+  //--
+  locale: string;
+  localizations: { data?: AboutAttribute[] };
 }
 interface ITermAndPrivacy {
   content: string;
+  //--
+  locale: string;
+  localizations: { data?: TermAndPrivacyAttribute[] };
 }
 
 interface ICarousel {
@@ -88,8 +94,12 @@ interface IWorkShowcase {
 }
 
 export type AboutResponse = { data: IAttribute<IAbout> };
+export type AboutAttribute = IAttribute<IAbout>;
+
 export type ContactResponse = { data: IAttribute<IContact> };
+
 export type TermAndPrivacyResponse = { data: IAttribute<ITermAndPrivacy> };
+export type TermAndPrivacyAttribute = IAttribute<ITermAndPrivacy>;
 
 export type ArtistAttribute = IAttribute<IArtist>;
 export type ArtistsResponse = IResponse<ArtistAttribute>;

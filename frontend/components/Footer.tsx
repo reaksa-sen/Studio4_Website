@@ -2,12 +2,14 @@
 import { Facebook, Instagram, Tiktok, Twitter, Youtube } from '@icons-pack/react-simple-icons';
 import { getAbout, getContact } from 'api/strapiApi';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import { useQuery } from 'react-query';
 import { LinkButton } from './Button';
 
 const Footer: React.FC = () => {
   const { t } = useTranslation();
+  const { locale } = useRouter();
   const { data } = useQuery('footer', () => getContact(), {
     retry: false,
     refetchOnWindowFocus: false,
@@ -20,6 +22,11 @@ const Footer: React.FC = () => {
   });
   const { facebook_url, youtube_url, tiktok_url, instagram_url, twitter_url } =
     data?.data?.attributes || {};
+
+  const translateData =
+    slogan?.data.attributes.localizations.data.find(m => m.attributes.locale === locale) ??
+    slogan?.data;
+
   return (
     <footer className="mt-3 bg-[#1E1E1E]">
       <div className="container py-4 md:px-8 md:py-6 ">
@@ -33,7 +40,7 @@ const Footer: React.FC = () => {
               />
             </Link>
             <span className="hidden break-all font-heading !leading-loose text-white md:block">
-              {slogan?.data.attributes.slogan}
+              {translateData?.attributes.slogan}
             </span>
           </div>
           <div className="flex flex-col gap-2 text-white md:gap-10 lg:flex-row">

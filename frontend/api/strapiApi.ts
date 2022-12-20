@@ -2,7 +2,13 @@ import { fetchAPI } from './api';
 import * as I from './interface';
 
 export function getAbout(): Promise<I.AboutResponse> {
-  return fetchAPI('/about', {});
+  return fetchAPI('/about', {
+    populate: {
+      localizations: {
+        fields: ['*']
+      }
+    }
+  });
 }
 
 export function getContact(): Promise<I.ContactResponse> {
@@ -10,7 +16,13 @@ export function getContact(): Promise<I.ContactResponse> {
 }
 
 export function getTermAndPrivacy(): Promise<I.TermAndPrivacyResponse> {
-  return fetchAPI('/term-and-privacy', {});
+  return fetchAPI('/term-and-privacy', {
+    populate: {
+      localizations: {
+        fields: ['*']
+      }
+    }
+  });
 }
 
 export function getCarousel(): Promise<I.CarouselsResponse> {
