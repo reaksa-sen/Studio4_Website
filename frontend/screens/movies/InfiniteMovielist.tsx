@@ -29,7 +29,7 @@ export const InfiniteMovieList: React.FC = () => {
           next={fetchNextPage}
           hasMore={hasNextPage}
         >
-          {!data.pages[0].data.length && <NoResult />}
+          {!data.pages.length && <NoResult />}
           <div className="w-full border-b-2 border-primary-500 pt-8"></div>
           {data?.pages.map((page, i) => (
             <div key={i}>

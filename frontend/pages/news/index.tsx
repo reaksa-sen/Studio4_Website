@@ -42,7 +42,7 @@ const Page: NextPage = () => {
           next={fetchNextPage}
           hasMore={hasNextPage}
         >
-          {!data.pages[0].data.length && <NoResult />}
+          {!data.pages.length && <NoResult />}
 
           {data?.pages.map((page, i) => (
             <NewsList key={`news-${i}`} news={page} />
