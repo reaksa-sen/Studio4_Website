@@ -56,9 +56,8 @@ export const Carousel: React.FC = () => {
   return (
     <>
       <div className="relative">
-        <div>
-          <SliderContent />
-        </div>
+        <div className="absolute z-10 w-full bg-gradient-to-b from-[#434240] py-12" />
+        <SliderContent />
         <Swiper
           loop
           navigation

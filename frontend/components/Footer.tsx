@@ -10,13 +10,13 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center justify-center gap-y-4 pb-8 pt-2 text-center md:pt-0 lg:w-2/4 lg:justify-start lg:text-left">
             <Link href="/">
               <img
-                src="/images/logo.png"
+                src="/images/logo1.png"
                 className="z-10 h-auto w-20 cursor-pointer md:w-32"
                 alt="Logo"
               />
             </Link>
             <span className="hidden font-heading !leading-loose text-white md:block md:text-base">
-              Studio4
+              Angkor DC
               គឺជាបណ្ដុំនៃអ្នកអនុវត្តប្រព័ន្ធផ្សព្វផ្សាយដែលមានជំនាញវិជ្ជាជីវៈដែលត្រូបានបង្កើតនៅពាក់កណ្ដាលឆ្នាំ
               2014។ក្រុមនេះត្រូវបានបង្កើតឡើងដោយអ្នកជំនាញដែលមានបទពិសោធន៍សិក្សា
               និងការអនុវត្តជាក់ស្ដែងរួមទាំងជំនាញដូចជាផលិតភាពយន្ត និងឯកសារ
@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
 
         <div className="flex flex-col items-center justify-center">
           <p className="py-4 text-center font-heading text-sm text-gray-400 ">
-            © រក្សាសិទ្ថិគ្រប់យ៉ាងដោយ Studio 4 ឆ្នាំ 2022
+            © រក្សាសិទ្ថិគ្រប់យ៉ាងដោយ Angkor DC 4 ឆ្នាំ 2022
           </p>
         </div>
       </div>
