@@ -12,7 +12,7 @@ const Header: React.FC<Props> = ({ title, description, imageUrl, siteUrl }) => {
   // const FB_DOMAIN_APP_ID = process.env.NEXT_FB_DOMAIN_APP_ID;
   const defaultSiteUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${siteUrl || ''}`;
   const defaultImageUrl = `${process.env.NEXT_PUBLIC_SITE_URL}${imageUrl || '/images/studio4_logo.jpg'}`; // prettier-ignore
-  const defaultTitle = 'Studio Four';
+  const defaultTitle = 'Angkor dc';
   const defaultDescription =
     description ||
     'As one of the biggest movie organization in Cambodia, we strive to bring fun and entertainment to people of all ages while fostering creativity and innovation through our movies.';
